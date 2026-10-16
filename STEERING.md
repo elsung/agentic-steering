@@ -57,6 +57,24 @@ We tried the opposite direction too: terse, controlled language (in the style of
    ```
    `NOT DONE` can't be left out, which makes stopping short visible at a glance.
 
+## A report the checker can read: BRIEF.json and REPORT.json
+
+Prose reports let a worker leave things out without saying so. So the deliverables and the report are also data:
+
+1. Before briefing, the orchestrator writes the numbered deliverables into the worktree with `tools/make_brief.py <worktree> "D1|test|..." "D2|screenshot|..."` (proof is test, screenshot, real-data or none) and pastes the printed list into the brief.
+2. Before replying, the worker writes `REPORT.json` in the worktree: status, commit, the pasted test summary line, and one entry per deliverable (`done` or `not_done`, evidence, evidence files).
+3. `tools/review_branch.sh` runs `tools/check_report.py`, which fails when:
+   - a deliverable has no entry;
+   - a `done` has no evidence, or names a file that doesn't exist;
+   - a screenshot deliverable has no image;
+   - the commit isn't HEAD;
+   - the claimed test count differs from the orchestrator's own run;
+   - the status is `done` while an item is `not_done`.
+
+   A missing REPORT.json is a FAIL: silence is not success.
+
+Both files stay untracked (add them to `.gitignore`). This is the cheap version of schema-constrained output for tools that can't enforce a schema on a subagent's reply: the structure is checked after the fact, in code.
+
 ## Rules for the orchestrator when a report arrives
 
 1. A missing, partial or idle-only report = NOT DONE. Ask once. If the worker stops short again, stop it and brief a fresh worker with the remaining items.
@@ -77,6 +95,7 @@ Grammar- or schema-constrained output (llama.cpp GBNF; JSON-schema structured ou
 ## Tools
 
 - [`tools/wt_new.sh`](tools/wt_new.sh): creates `<prefix><name>` on a new branch from current main and refuses any path inside the live checkout.
+- [`tools/make_brief.py`](tools/make_brief.py) and [`tools/check_report.py`](tools/check_report.py): the deliverables as BRIEF.json, and the check of the worker's REPORT.json against them (see above).
 - [`tools/review_branch.sh`](tools/review_branch.sh): mechanical checks before you read a worker's claims:
   - where the worktree is, and whether the branch contains current main;
   - uncommitted changes and committed junk;

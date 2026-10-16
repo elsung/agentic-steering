@@ -26,6 +26,15 @@ Read these first. If you need more, read the code that writes the data; never gu
 - If you run low on room, commit each finished deliverable and continue. Do not end with parts deferred.
 - If the same test fails twice after real attempts, stop and report BLOCKED with what you tried.
 
+## REPORT.json (required, before you reply)
+Write `REPORT.json` in the worktree root (untracked):
+```json
+{"status": "done|blocked", "commit": "<full sha of HEAD>", "tests": "<pasted full-suite summary line>",
+ "deliverables": [{"id": "D1", "status": "done|not_done", "evidence": "<what proves it>", "files": ["_shots/x.png"]}],
+ "decide": "<one line or nothing>"}
+```
+One entry per deliverable in BRIEF.json. A script checks it against BRIEF.json and the orchestrator's own test run.
+
 ## Report (exactly this shape, one message)
 ```
 STATUS: DONE | BLOCKED

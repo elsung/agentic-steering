@@ -13,7 +13,7 @@ echo "branch $(git rev-parse --abbrev-ref HEAD) at $(git rev-parse --short HEAD)
 case "$WT" in "$REPO"/*) F "worktree is inside the live checkout";; esac
 git merge-base --is-ancestor main HEAD || F "branch does not contain current main (rebase first)"
 git diff --quiet && git diff --cached --quiet || F "uncommitted changes: $(git status --short | grep -v '^??' | wc -l) files"
-git diff --name-only main...HEAD | grep -E '(^|/)RESULT\.md$|_scratch/|\.pyc$' && F "junk committed (above)"
+git diff --name-only main...HEAD | grep -E '(^|/)(RESULT\.md|REPORT\.json|BRIEF\.json)$|_scratch/|_shots/|\.pyc$' && F "junk committed (above)"
 git diff --diff-filter=D --name-only main...HEAD -- tests | sed 's/^/deleted test file: /' | grep . && F "test files deleted"
 DT=$(git diff main...HEAD -- tests | grep -E '^-\s*(async )?def test_' | sed 's/^-\s*//' | sort)
 AT=$(git diff main...HEAD -- tests | grep -E '^\+\s*(async )?def test_' | sed 's/^+\s*//' | sort)
@@ -34,4 +34,6 @@ if [ "${2:-}" != "--no-suite" ]; then
   echo "$S" | grep -qE 'failed|^FAILED|^ERROR' && F "test suite"
   echo "$S" | grep -q passed || F "no suite summary"
 fi
+# the worker's REPORT.json against the orchestrator's BRIEF.json (every deliverable accounted for, with evidence)
+python3 "$(dirname "$(realpath "$0")")/check_report.py" "$WT" "${S:-}" || fail=1
 [ $fail = 0 ] && echo "PASS" || echo "FAIL"; exit $fail
