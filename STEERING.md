@@ -20,6 +20,7 @@ The task was a dashboard build: about ten features across a Python back end and 
 | 6 | Invented file paths: the feature found nothing on real data | 1 | Wrote code from the brief's words, not from the real folders | Acceptance includes proof on real data (read-only), pasted in the report. |
 | 7 | Built on an old main; merging would have deleted work merged since | 1 | Long-running branch | The review script checks the branch contains current main and flags files where the branch deletes far more than it adds. |
 | 8 | Stale facts in the product (an old model name) | 2 | The small model's own knowledge | A "facts I checked" block in the brief with exact names and values. |
+| 9 | Reported DONE with the full suite passing, but the screens were broken in a browser (a script error, a 500 on real data, content invisible, off-theme colours) | 1 | Tests covered the API, not the page; the worker never opened the page | For any screen, the worker must load it in a headless browser against real data, report zero page and console errors, and attach screenshots it has looked at. The orchestrator opens them too. |
 
 What worked:
 - **Briefs that open with the goal and why** (see below).
