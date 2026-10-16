@@ -1,13 +1,17 @@
-# One advisor, many cheap workers: running a multi-session Claude Code setup for less
+# Agentic steering: getting cheap agents to finish the job
 
-A small field guide to how we cut the token bill of a long-running, multi-window Claude Code setup without losing quality.
+A field guide to running many AI coding agents from one orchestrator: one capable model steers, many cheap workers execute, and mechanical checks (not the workers' own reports) decide whether the work is done. It started as a way to cut the token bill; it grew into a playbook for keeping cheap agents from skipping work, over-claiming, or failing silently.
 
 **The setup:**
-- One expensive model steers.
+- One expensive model steers: priorities, briefs, review, merge.
 - Many cheap workers execute.
-- Tests decide whether the work is done.
+- Tests and scripted checks decide whether the work is done; silence or a claim never does.
 
-Everything here was checked against the official docs or a source we could fetch. Anything we could not verify is marked as such.
+**The two halves of this repo:**
+1. **Cost**: route every worker to a small model, scoped to one tmux session (this page).
+2. **Steering**: what goes wrong when cheap workers build real features, and the briefs, report shape and review scripts that fix it ([STEERING.md](STEERING.md)).
+
+Everything here was checked against the official docs, a source we could fetch, or our own logged runs. Anything we could not verify is marked as such.
 
 ## The situation we started from
 
@@ -113,6 +117,10 @@ Only switch windows that are idle at the prompt. A window showing a pending ques
 - **Research gets verified.** Our first summary from a worker recommended mid-size workers and large-model threads, the opposite of the rule. It also cited a source it had never fetched. A second, cheap pass that fetched every source verbatim caught both. Treat worker research as a draft until it is checked against the sources.
 
 See `templates/worker-brief.md` for the brief we hand every worker.
+
+### 4. Steering: keep cheap workers from skipping work
+
+Cheap workers on a real build stop halfway and call it done, claim tests pass when they don't, put worktrees in the wrong place, and sometimes make a check pass by weakening it. [STEERING.md](STEERING.md) has the failure log from our first big run (9 workers, 8 failure types), the brief rules (goal and why first, checked facts, numbered deliverables), the fixed report shape, and two scripts: `tools/wt_new.sh` (the orchestrator makes every worktree) and `tools/review_branch.sh` (mechanical checks before reading any worker's claims).
 
 ## Not verified / open
 

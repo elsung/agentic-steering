@@ -1,31 +1,39 @@
 # Worker brief (template)
 
 The orchestrator fills this in and hands it to one fresh worker (small model, high effort).
-One brief, one task, one worktree.
+One brief, one job of about one screen or one module, one worktree. See [STEERING.md](../STEERING.md) for why each part is here.
 
-## Goal
-<one sentence: what is true when this is done>
+## Goal and why it matters
+<Who this serves, what it is for, and what good looks like, in a few sentences. Include why it matters now.
+A worker that knows the purpose makes better calls than one that only has steps.>
 
-## Context packet (read only these)
-- `<path>`: <why it matters, one line>
-- `<path>`: <why it matters, one line>
-Do not read the whole repository. If you need more, say which file and why in your report.
+## Facts I checked
+- Worktree: `<absolute path>` on branch `<name>` (already created; work only there; never create worktrees; never edit the live checkout).
+- `<path or function>`: <what it does today, one line>
+- `<real data example>`: <what it looks like>
+Read these first. If you need more, read the code that writes the data; never guess a path or layout.
 
-## Interfaces you must keep
-- `<function / CLI / file format>`: <exact signature or shape>
+## Deliverables
+1. <deliverable>. Acceptance: <test or check that proves it>.
+2. <deliverable, including any screen the user will see>. Acceptance: <screenshot on real data, or a test>.
+3. ...
 
-## Acceptance tests
-- [ ] `<test command>` passes (write the failing test first)
-- [ ] the full suite passes: `<command>`
-- [ ] <any output check: file exists, image size, no error lines in log>
+## Rules (each with its reason)
+- WARNING: do not change existing API fields or file formats; add new ones. (Other screens depend on them.)
+- WARNING: do not delete or weaken a test or a check. If a check is wrong, say so under DECIDE.
+- Full suite before reporting: `<test command>`. Paste its summary line; "still running" is not a result.
+- Do not delete files; move them to `_trash/`. (Owner's rule.)
+- If you run low on room, commit each finished deliverable and continue. Do not end with parts deferred.
+- If the same test fails twice after real attempts, stop and report BLOCKED with what you tried.
 
-## Rules
-- Work in your own git worktree, never the live checkout.
-- Do not delete files: move them to a `_trash/` folder.
-- Stop and report if the same test fails twice after real attempts. Don't keep looping.
-- Note every deviation from this brief, and why.
-
-## Report (once)
-Write the detail to `RESULT.md` in your worktree: what changed, test output, deviations, what was not tested.
-Then send ONE short message: done or blocked, the branch name, the test count, and one line on anything the orchestrator must decide.
+## Report (exactly this shape, one message)
+```
+STATUS: DONE | BLOCKED
+COMMIT: <hash> on <branch>
+TESTS: <full-suite summary line, pasted>
+BUILT: <one line per deliverable>
+PROOF: <real-data output or screenshot paths, when asked>
+NOT DONE: <list, or "nothing">
+DECIDE: <one line, or "nothing">
+```
 No follow-up "idle" summary.
