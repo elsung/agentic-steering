@@ -12,6 +12,7 @@ REPORT.json: {"status": "done|blocked", "commit": "<sha>", "tests": "<suite summ
               "decide": "..."}
 """
 import json
+import os
 import re
 import subprocess
 import sys
@@ -73,6 +74,16 @@ if report is not None:
             fails.append(f"{d['id']} needs a screenshot in files")
     if report.get("status") == "done" and any(d.get("status") == "not_done" for d in got.values()):
         fails.append("status is done but some deliverables are not_done")
+
+# files changed outside the brief's SCOPE (standing order 7); .gitignore and docs/ are always allowed
+scope = (brief or {}).get("scope") or []
+if scope:
+    changed = subprocess.run(["git", "-C", str(wt), "diff", "--name-only", os.environ.get("BASE", "main") + "...HEAD"],
+                             capture_output=True, text=True).stdout.split()
+    allowed = tuple(scope) + (".gitignore", "docs/")
+    outside = [f for f in changed if not f.startswith(allowed)]
+    if outside:
+        fails.append(f"files changed outside SCOPE {scope}: {', '.join(outside[:8])}")
 
 for w in warns:
     print("WARN:", w)

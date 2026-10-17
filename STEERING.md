@@ -62,7 +62,7 @@ We tried the opposite direction too: terse, controlled language (in the style of
 
 Prose reports let a worker leave things out without saying so. So the deliverables and the report are also data:
 
-1. Before briefing, the orchestrator writes the numbered deliverables into the worktree with `tools/make_brief.py <worktree> "D1|test|..." "D2|screenshot|..."` (proof is test, screenshot, real-data or none) and pastes the printed list into the brief.
+1. Before briefing, the orchestrator writes the numbered deliverables into the worktree with `tools/make_brief.py <worktree> --goal ... --why ... --scope src/x/,tests/ --verify "cmd" "D1|test|..." "D2|screenshot|..."` (proof is test, screenshot, real-data or none) and pastes the printed list into the brief.
 2. Before replying, the worker writes `REPORT.json` in the worktree: status, commit, the pasted test summary line, and one entry per deliverable (`done` or `not_done`, evidence, evidence files).
 3. `tools/review_branch.sh` runs `tools/check_report.py`, which fails when:
    - a deliverable has no entry;
@@ -76,10 +76,41 @@ Prose reports let a worker leave things out without saying so. So the deliverabl
 
 Both files stay untracked (add them to `.gitignore`). This is the cheap version of schema-constrained output for tools that can't enforce a schema on a subagent's reply: the structure is checked after the fact, in code.
 
+## What we took from pstack
+
+[pstack](https://github.com/cursor/plugins/tree/main/pstack) (Cursor's engineering plugin, MIT) arrives at many of the same rules from the other side: one strong engineer running fleets of agents. Four of its ideas filled real gaps here.
+
+1. **Standing orders, pasted verbatim into every brief.** Directives decay across re-briefs and resumes, and each dropped one costs a human turn. `tools/STANDING_ORDERS.md` holds numbered constraints, each with its reason; `make_brief.py` pastes it into every brief. When you catch yourself restating an instruction, add the line before you act.
+2. **A brief with an empty field is a unit you haven't scoped.** `make_brief.py` refuses to write a brief without a goal, a why, a SCOPE (paths the worker may write) and a VERIFY command, and it adds a timebox. `check_report.py` fails any file changed outside SCOPE. On its first run against a past branch it flagged three files outside the brief's folder.
+3. **A verification ledger keyed by commit.** `review_branch.sh` appends one row per verdict (time, branch, commit, PASS/FAIL, level). `merge_verified.sh` merges only a commit with a full-suite PASS; a commit made after review voids it. "Was this verified?" is answered by the ledger, not by memory or a transcript.
+4. **Each rule paired with what enforces it** (pstack's `/correct`): eliminate the mistake by structure first, then a check, then a test, and write docs only for judgment calls, because nothing fails when an agent skips a doc. When the same correction comes twice and the rule lives only in docs, move it up a level in the same change.
+
+| Rule | Enforced by | Level |
+|---|---|---|
+| Worktree outside the live checkout | `wt_new.sh` creates it; `review_branch.sh` fails otherwise | structure |
+| Brief has goal, why, scope, verify | `make_brief.py` refuses otherwise | structure |
+| Standing orders reach every worker | `make_brief.py` pastes them | structure |
+| Only reviewed commits merge | ledger + `merge_verified.sh` | structure |
+| Every deliverable answered with evidence | BRIEF.json + `check_report.py` | check |
+| Write only inside SCOPE | `check_report.py` | check |
+| Full suite passes; claimed count matches | `review_branch.sh` + `check_report.py` | check |
+| No deleted tests, split strings, removed keys | `review_branch.sh` | check |
+| Screens work on real data | screenshot proof in BRIEF.json; the orchestrator opens them | check + eye |
+| Context and intent in briefs | `--why` required; the rest is judgment | docs |
+
+Also from pstack, now in our orchestrator rules:
+
+- **Never resume an agent to check on it**; a resume restarts it. Probe read-only (its branch, its REPORT.json, its process). A transcript's modification time is not liveness.
+- **A silent death is a failure with a cause.** Write down the unit, the last evidence and what's left, then brief a fresh worker with consolidated scope: the original brief, every later directive, the prior report and branch. Never trust a resumed agent's "done".
+- **Retry by failure mode.** Out of room: split the scope. Tool or model error: a different model. Unknown: once. Two retries, then replan around it.
+- **Verify on a different model family** from the worker for high-blast-radius units (UI, data formats, schedulers). Agreement across families is high signal.
+
+What we did not take: pstack's terse-prose rules for creative work. For prompts that produce story, style or direction, rich language and intent stay (see "Context and intent first").
+
 ## Rules for the orchestrator when a report arrives
 
 1. A missing, partial or idle-only report = NOT DONE. Ask once. If the worker stops short again, stop it and brief a fresh worker with the remaining items.
-2. Run `tools/review_branch.sh <worktree>` before reading the worker's claims. Merge only on its PASS plus your own look at the diff.
+2. Run `tools/review_branch.sh <worktree>` before reading the worker's claims. Merge with `tools/merge_verified.sh` only on its PASS plus your own look at the diff.
 3. UI changes: screenshot at desktop and phone width on real data before merging.
 4. Rebase or resolve conflicts yourself when main has moved; a worker resolving conflicts in code it didn't write is how merged work gets lost.
 5. Add every new failure type to the table above the same day.
@@ -97,6 +128,8 @@ Grammar- or schema-constrained output (llama.cpp GBNF; JSON-schema structured ou
 
 - [`tools/wt_new.sh`](tools/wt_new.sh): creates `<prefix><name>` on a new branch from current main and refuses any path inside the live checkout.
 - [`tools/make_brief.py`](tools/make_brief.py) and [`tools/check_report.py`](tools/check_report.py): the deliverables as BRIEF.json, and the check of the worker's REPORT.json against them (see above).
+- [`tools/STANDING_ORDERS.md`](tools/STANDING_ORDERS.md): numbered constraints with reasons, pasted into every brief.
+- [`tools/merge_verified.sh`](tools/merge_verified.sh): merges only a commit with a full-suite PASS in the ledger.
 - [`tools/review_branch.sh`](tools/review_branch.sh): mechanical checks before you read a worker's claims:
   - where the worktree is, and whether the branch contains current main;
   - uncommitted changes and committed junk;

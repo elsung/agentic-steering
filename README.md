@@ -120,7 +120,7 @@ See `templates/worker-brief.md` for the brief we hand every worker.
 
 ### 4. Steering: keep cheap workers from skipping work
 
-Cheap workers on a real build stop halfway and call it done, claim tests pass when they don't, put worktrees in the wrong place, and sometimes make a check pass by weakening it. [STEERING.md](STEERING.md) has the failure log from our first big run (9 workers, 8 failure types), the brief rules (goal and why first, checked facts, numbered deliverables), the fixed report shape, and two scripts: `tools/wt_new.sh` (the orchestrator makes every worktree) and `tools/review_branch.sh` (mechanical checks before reading any worker's claims).
+Cheap workers on a real build stop halfway and call it done, claim tests pass when they don't, put worktrees in the wrong place, and sometimes make a check pass by weakening it. [STEERING.md](STEERING.md) has the failure log, the brief rules (goal and why first, checked facts, numbered deliverables), the fixed report shape, a table pairing each rule with what enforces it, and the ideas we took from [pstack](https://github.com/cursor/plugins/tree/main/pstack). The scripts in `tools/`: `wt_new.sh` (the orchestrator makes every worktree), `make_brief.py` (refuses a brief without goal, why, scope and verify; pastes the standing orders), `check_report.py` (the worker's REPORT.json and changed files against the brief), `review_branch.sh` (mechanical checks and the full suite, recorded in a ledger by commit) and `merge_verified.sh` (merges only a reviewed commit).
 
 ## Not verified / open
 

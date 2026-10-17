@@ -36,4 +36,9 @@ if [ "${2:-}" != "--no-suite" ]; then
 fi
 # the worker's REPORT.json against the orchestrator's BRIEF.json (every deliverable accounted for, with evidence)
 python3 "$(dirname "$(realpath "$0")")/check_report.py" "$WT" "${S:-}" || fail=1
+# verification ledger: one row per verdict keyed by commit; a new commit voids it (merge_verified.sh reads it)
+BR=$(git rev-parse --abbrev-ref HEAD); LVL=unit-test-verified; [ "${2:-}" = "--no-suite" ] && LVL=no-suite
+ls "$WT"/_shots/*.png >/dev/null 2>&1 && [ "$LVL" = unit-test-verified ] && LVL=unit-test+screenshots
+printf '%s\t%s\t%s\t%s\t%s\n' "$(date -Is)" "$BR" "$(git rev-parse HEAD)" "$([ $fail = 0 ] && echo PASS || echo FAIL)" "$LVL" \
+  >> "${LEDGER:-$(dirname "$(realpath "$0")")/ledger.tsv}"
 [ $fail = 0 ] && echo "PASS" || echo "FAIL"; exit $fail
