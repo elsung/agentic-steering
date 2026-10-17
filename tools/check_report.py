@@ -67,7 +67,7 @@ if report is not None:
         elif len(str(r.get("evidence") or "").strip()) < 15:
             fails.append(f"{d['id']} marked done with no evidence")
         for f in r.get("files") or []:
-            if not (wt / f).exists():
+            if not (wt / str(f).split("::")[0]).exists():   # "tests/x.py::test_name" names a test in a file
                 fails.append(f"{d['id']}: evidence file {f} does not exist")
         if d.get("proof") == "screenshot" and r.get("status") == "done" and not any(
                 str(f).lower().endswith((".png", ".jpg", ".webp")) for f in r.get("files") or []):

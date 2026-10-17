@@ -25,6 +25,7 @@ The task was a dashboard build: about ten features across a Python back end and 
 | 11 | Invented its own REPORT.json shape (so every item read as missing); silently dropped one brief item; used `rmtree`; called a main-thread-only function from a background thread against the docstring; worked off a stale main | 1 | A free-form report; long brief items read selectively; tests with a fake context hid the threading bug | `make_brief.py` writes a pre-filled REPORT.json (every item not_done) for the worker to fill in, not invent. Two new standing orders: honour docstring contracts; code never deletes. Reading the diff against each brief item stays the orchestrator's job. |
 
 | 12 | A "real-data proof" test that ended in `assert True`; a test named for a feature that never exercised it; a positional constructor call that put a value in the wrong field, so the feature never worked while its test passed | 1 | Tests written to pass, named for the brief item rather than checking it | `review_branch.sh` fails hollow asserts. The orchestrator reads each new test against the brief item it claims. Real-data proof goes in REPORT.json evidence, not in the suite. |
+| 13 | Claimed "default behaviour byte-identical" while the default path gained a second copy of every input; a cache that ignored its own key; failed sub-agents skipped silently; a model setting written to config that the code never reads (the cheap model would have run on the expensive one) | 1 | Tests checked the new mode only; "identical" was asserted, not compared; config added without tracing where it is read | A golden test of the default path against main's literal behaviour; a test per new config key that sets it and checks the effect; sub-agent failures change the output visibly. After two quality misses on one model family, the next round went to the other family and came back largely right (one over-correction, fixed in review). |
 What worked:
 - **Briefs that open with the goal and why** (see below).
 - **A "facts I checked" block**: exact paths, function names, current behaviour, a real-data example.
@@ -104,6 +105,7 @@ Also from pstack, now in our orchestrator rules:
 
 - **Never resume an agent to check on it**; a resume restarts it. Probe read-only (its branch, its REPORT.json, its process). A transcript's modification time is not liveness.
 - **A silent death is a failure with a cause.** Write down the unit, the last evidence and what's left, then brief a fresh worker with consolidated scope: the original brief, every later directive, the prior report and branch. Never trust a resumed agent's "done".
+- **Switch model family after repeated quality misses.** In our case two rounds from one family missed subtle bugs; one round from the other family fixed all six listed defects.
 - **Retry by failure mode.** Out of room: split the scope. Tool or model error: a different model. Unknown: once. Two retries, then replan around it.
 - **Verify on a different model family** from the worker for high-blast-radius units (UI, data formats, schedulers). Agreement across families is high signal.
 

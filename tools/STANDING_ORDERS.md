@@ -16,3 +16,5 @@ instruction to a worker, append the line here before you act. Reasons matter: a 
 11. Write REPORT.json before replying. Silence or a prose-only reply counts as not done.
 12. Honour the contracts in docstrings and comments of code you call (e.g. "only from the main thread"); if one blocks you, say so under DECIDE. (A worker broke one and its fake-context tests hid it.)
 13. Code never deletes either: no rmtree or unlink in product code unless the brief allows it; move aside instead.
+14. Any new config key or setting: add a test that sets it and checks the code's behaviour changes. A key nothing reads is a silent failure.
+15. When adding an optional mode, prove the default path is unchanged by comparing against main's exact behaviour in a test, never by assertion. A failed sub-step must change the output visibly (fall back, and record it). Never skip it silently.
