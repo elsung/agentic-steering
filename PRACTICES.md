@@ -62,3 +62,15 @@ Felix Rieseberg [built an art-directed interactive site in 48 hours](https://fel
 - **Numbers to climb.** Give workers measurable targets (frame rate, seconds per image, pixel-identical output) and let them hill-climb. Models are very good at it.
 - **Structure the code for parallel work.** One file per component means many threads can work at once. A 3,000-line front-end file was where most of our merge conflicts happened.
 - **The supervisor remembers decisions.** Owner decisions are written to a register that every new brief carries (our standing orders), so nobody repeats themselves.
+
+## 8. Doing more with less
+
+The frontier example above ran with effectively unlimited frontier compute. Most teams have plans with rate limits, a few local GPUs and a mix of providers. Constraints are a design input, not a handicap:
+
+- **Code before models.** Checks, browser journeys, scheduling, diffing and measuring cost no tokens and run every time. Indexes (code graphs, a story/asset graph) let models read answers instead of files.
+- **Route each task to the cheapest model that does it well.** The strongest model steers and judges. A design model is used at direction-setting moments. Mid-tier models implement from precise briefs. The cheapest tiers and local models do bulk reading, triage and first-pass QA. Keep a routing table, tuned by a per-model failure ledger.
+- **Explore wide cheap, go deep expensive.** Get several directions from one design call or from cheap tiers, then spend the expensive tier on the chosen one.
+- **Budget per provider, schedule to the quota windows.** Count calls against each plan's limits, cap concurrency in one shared pool, run fan-outs when a window is fresh, and move mechanical work to local machines.
+- **Small context, sharp briefs.** Short-lived workers, briefs that point at files, summaries instead of transcripts, caches keyed by input. Retire idle long-lived threads.
+- **The deliberate few.** One well-specified worker with a numeric target beats five vague ones. Quality comes from the brief and the check, not the head count.
+- **Measure efficiency:** tokens and calls per merged change, wall-clock time, and orchestrator interventions.
