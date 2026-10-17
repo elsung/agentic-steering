@@ -18,3 +18,5 @@ instruction to a worker, append the line here before you act. Reasons matter: a 
 13. Code never deletes either: no rmtree or unlink in product code unless the brief allows it; move aside instead.
 14. Any new config key or setting: add a test that sets it and checks the code's behaviour changes. A key nothing reads is a silent failure.
 15. When adding an optional mode, prove the default path is unchanged by comparing against main's exact behaviour in a test, never by assertion. A failed sub-step must change the output visibly (fall back, and record it). Never skip it silently.
+16. Tests write only under a temporary folder (monkeypatch any root paths); never relative paths into the repo. Never call a failure "pre-existing" without running the same test on main. Never fill a required field with invented or placeholder content.
+17. Commit each deliverable as soon as its tests pass, so an interruption loses little.
