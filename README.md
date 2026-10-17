@@ -26,7 +26,7 @@ Every one of them ran on the largest model, and so did every subagent. The bill 
 
 ## The rule we adopted
 
-> **No worker or subagent in this tmux set runs on the large model. Workers run on the small model (Haiku 5.5, high effort) or on a cheaper third-party model through a separate CLI. The large model only steers, writes specs and reviews.**
+> **No worker or subagent in this tmux set runs on the large model. Every coding, build and fix worker runs on the small model (Haiku 5.5, high effort). A cheaper third-party model, through a separate CLI, only does bulk reading, research and summaries that aren't time-sensitive; it lost a measured head-to-head on code (PRACTICES.md section 12). The large model only steers, writes specs and reviews.**
 
 The rule covers this tmux session only, not every Claude session on the machine. Scoping it took one gotcha to get right (see below).
 

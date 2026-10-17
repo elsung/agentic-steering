@@ -83,8 +83,8 @@ Owner rule: essential tracking runs locally with no remote model; models do the 
 |---|---|---|---|
 | **Local scripts (CPU)** | On the work machine, scheduler timers | Message log, ask audit, work board, tracking cards, review and merge gates, verification ledger | Judgment calls |
 | **Strong frontier model** | (Opus or equivalent) | Orchestrator only: steering, reviews, merges, talking to the owner | Workers or leads (prohibited by standing order) |
-| **Mid-tier model** | (Haiku or equivalent) | Track leads; workers with tool use; deep audit check, on demand only | Anything that runs on a timer |
-| **Code model** | (M3 or equivalent) | Implementation workers, bulk reading, one-off triage. Capped at 3 concurrent (rate limits have killed silent workers) | Essential tracking or status |
+| **Mid-tier model** | (Haiku 5.5 or equivalent) | Track leads; **every coding, build and fix worker**; deep audit check, on demand only | Anything that runs on a timer |
+| **Cheap bulk model** | (MiniMax M3.1 Flash or equivalent) | Only simple bulk work that is not time-sensitive: reading long documents, research digests, summaries, triage. Capped at 3 concurrent (rate limits have killed silent workers) | Code, essential tracking or status (it lost the head-to-head in section 12) |
 | **Design model** | (API with quota) | Visual direction, interface specs, design reviews. Measure quota against call count | Routine work |
 
 | If provider is | What keeps working | What waits |
@@ -125,3 +125,44 @@ It is a coarse net on purpose: it never creates work itself, only flags messages
 
 This keeps the owner's inbox from silently falling into a queue gap, and every decision visible on the board.
 
+
+## 12. Head-to-head before routing: measure time to an accepted result
+
+When it was unclear whether a cheap code model or a mid-tier model should do the coding, we ran both on the same build brief, from the same commit, at the same time, in separate worktrees, neither seeing the other. One lead reviewed both with the same script and the same probes, and sent fixes back to the same model.
+
+**Measure what the owner cares about:** not time to a first draft, but **time to a result the reviewer accepts**, including every send-back. Rows we tracked:
+
+| Measure | Why |
+|---|---|
+| Wall time to the first report | Raw speed |
+| First mechanical review result | Can it follow the report contract? |
+| Review rounds to an accepted PASS | Rework cost |
+| Defects the lead found that the tests missed | The quality the suite can't see |
+| Deliverables met | Scope coverage |
+| Reviewer's read of the code, 1–10 with reasons | Fit, correctness, simplicity |
+| Cross-check: each branch read by the other model family, asked to break it | Hidden defects |
+| Time to an accepted PASS; lead and orchestrator minutes spent | The real cost |
+
+**What we found (one backend build, six deliverables):**
+
+| | Cheap code model (MiniMax M3.1 Flash) | Mid-tier (Claude Haiku 5.5) |
+|---|---|---|
+| First report | 45 min | 21 min |
+| First mechanical review | PASS | FAIL (one inherited flaky test) |
+| Defects the lead found that tests missed | 3, including a real readiness bug | 1, inherited from main |
+| Reviewer's score | 6 (broadest, but overclaimed a deliverable) | 7 (correct, honest about its gaps) |
+| Lead minutes spent reviewing | 23 | 34 (two rounds were about report wording) |
+
+The cheap model's mechanical PASS was the misleading number: it passed the gates and still carried the worst defect. The mid-tier model was over 2x faster and had fewer real defects.
+
+**Routing now:**
+- Every coding, build and fix worker runs on the mid-tier model.
+- The cheap model only does bulk reading, research and summaries that aren't time-sensitive.
+- Re-run the head-to-head when a new model version lands, rather than switching on a benchmark.
+
+**Caveats worth keeping:**
+- Both workers shared one machine, so wall times include contention.
+- Lead minutes were estimates.
+- One brief is one sample.
+
+Record the decision with the owner's words and the evidence file, so it can be revisited.
