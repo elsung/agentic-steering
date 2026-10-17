@@ -50,3 +50,15 @@ One orchestrator (a strong model that only steers and reviews), cheap workers fr
 ## 6. The orchestrator's own mistakes go in the same log
 
 The orchestrator hid a rebase conflict behind `tail`, dropped a brace while resolving a conflict, and raced merges against running reviews. They're logged as failures like any worker's, and each got a check or a rule.
+
+## 7. Raising the ceiling: lessons from "Made by mechanical means"
+
+Felix Rieseberg [built an art-directed interactive site in 48 hours](https://felixrieseberg.com/made-by-mechanical-means/) by directing a model, with a supervising thread and ~60 worker threads. What we're taking from it:
+
+- **Start from first principles, then explore wide.** Ask what the product is fundamentally for, and who steers it and how. Then run several genuinely different directions in parallel with little guidance, pick one, and ask for variations of it. Polishing the first idea is how you get a "vanilla" result.
+- **Every iteration is a page the owner can open on their phone.** Review shouldn't need a desk, a folder or a question to the orchestrator.
+- **Taste feedback, not specs.** "Less excited", "warmer", "this one". The workers translate taste into changes and show the revision beside the original.
+- **Quality from process, not code review.** Adversarial QA threads drive the real product in a headless browser round after round and write findings. A night of six "working" branches that were broken in the browser taught us this: the orchestrator should not be the one catching them.
+- **Numbers to climb.** Give workers measurable targets (frame rate, seconds per image, pixel-identical output) and let them hill-climb. Models are very good at it.
+- **Structure the code for parallel work.** One file per component means many threads can work at once. A 3,000-line front-end file was where most of our merge conflicts happened.
+- **The supervisor remembers decisions.** Owner decisions are written to a register that every new brief carries (our standing orders), so nobody repeats themselves.
