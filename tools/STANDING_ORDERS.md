@@ -14,3 +14,5 @@ instruction to a worker, append the line here before you act. Reasons matter: a 
 9. Never invent a file path or data layout; read the code that writes the data and test on real data, read-only.
 10. If you run short on room, commit each finished deliverable and continue; never end with parts "deferred". The same failure twice after real attempts: stop and report BLOCKED with what you tried.
 11. Write REPORT.json before replying. Silence or a prose-only reply counts as not done.
+12. Honour the contracts in docstrings and comments of code you call (e.g. "only from the main thread"); if one blocks you, say so under DECIDE. (A worker broke one and its fake-context tests hid it.)
+13. Code never deletes either: no rmtree or unlink in product code unless the brief allows it; move aside instead.

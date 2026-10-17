@@ -22,6 +22,7 @@ The task was a dashboard build: about ten features across a Python back end and 
 | 8 | Stale facts in the product (an old model name) | 2 | The small model's own knowledge | A "facts I checked" block in the brief with exact names and values. |
 | 9 | Reported DONE with the full suite passing, but the screens were broken in a browser (a script error, a 500 on real data, content invisible, off-theme colours) | 1 | Tests covered the API, not the page; the worker never opened the page | For any screen, the worker must load it in a headless browser against real data, report zero page and console errors, and attach screenshots it has looked at. The orchestrator opens them too. |
 | 10 | The reply said "DONE, NOT DONE: nothing" while the same worker's REPORT.json marked two items not_done | 1 | The prose summary is written for the reader; the structured file was filled item by item | Read the checked REPORT.json, not the reply. `check_report.py` caught it on its first real use. |
+| 11 | Invented its own REPORT.json shape (so every item read as missing); silently dropped one brief item; used `rmtree`; called a main-thread-only function from a background thread against the docstring; worked off a stale main | 1 | A free-form report; long brief items read selectively; tests with a fake context hid the threading bug | `make_brief.py` writes a pre-filled REPORT.json (every item not_done) for the worker to fill in, not invent. Two new standing orders: honour docstring contracts; code never deletes. Reading the diff against each brief item stays the orchestrator's job. |
 
 What worked:
 - **Briefs that open with the goal and why** (see below).
@@ -63,7 +64,7 @@ We tried the opposite direction too: terse, controlled language (in the style of
 Prose reports let a worker leave things out without saying so. So the deliverables and the report are also data:
 
 1. Before briefing, the orchestrator writes the numbered deliverables into the worktree with `tools/make_brief.py <worktree> --goal ... --why ... --scope src/x/,tests/ --verify "cmd" "D1|test|..." "D2|screenshot|..."` (proof is test, screenshot, real-data or none) and pastes the printed list into the brief.
-2. Before replying, the worker writes `REPORT.json` in the worktree: status, commit, the pasted test summary line, and one entry per deliverable (`done` or `not_done`, evidence, evidence files).
+2. `make_brief.py` also writes a pre-filled `REPORT.json` (one entry per deliverable, all not_done). Before replying, the worker fills it in: status, commit, the pasted test summary line, and one entry per deliverable (`done` or `not_done`, evidence, evidence files).
 3. `tools/review_branch.sh` runs `tools/check_report.py`, which fails when:
    - a deliverable has no entry;
    - a `done` has no evidence, or names a file that doesn't exist;

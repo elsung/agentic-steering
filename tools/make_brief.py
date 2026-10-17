@@ -39,6 +39,11 @@ scope = [s.strip() for s in a.scope.split(",") if s.strip()]
     {"goal": a.goal, "why": a.why, "scope": scope, "verify": a.verify, "timebox": a.timebox,
      "deliverables": items}, indent=2) + "\n")
 
+# the report to fill in: one entry per deliverable, all not_done until the worker proves otherwise
+(wt / "REPORT.json").write_text(json.dumps(
+    {"status": "blocked", "commit": "<full sha of HEAD>", "tests": "<pasted full-suite summary line>",
+     "deliverables": [{"id": d["id"], "status": "not_done", "evidence": "", "files": []} for d in items],
+     "decide": ""}, indent=2) + "\n")
 standing = (HERE / "STANDING_ORDERS.md").read_text().strip()
 print(f"""GOAL: {a.goal}
 WHY: {a.why}
@@ -50,4 +55,5 @@ TIMEBOX: {a.timebox}. On expiry, commit what is done, write REPORT.json with the
 DELIVERABLES""")
 for d in items:
     print(f"{d['id']}. {d['text']} (proof: {d['proof']})")
-print(f"\n{standing}\n\n(BRIEF.json written to {wt})")
+print(f"\nREPORT.json is already in the worktree with one entry per deliverable, all not_done. Fill it in: keep its keys "
+      f"and shape exactly; set status done only with evidence (and files for screenshots).\n\n{standing}\n\n(BRIEF.json and REPORT.json written to {wt})")
