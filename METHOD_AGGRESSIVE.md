@@ -274,6 +274,28 @@ Two more pieces landed in the same window:
 - **A scope hook per worktree.** It refuses commits outside the builder's areas, which closed the "builder wandered
   into another area" collisions.
 
+**After 5 hours (05:10): 175 merges (32 an hour), 197 cards moved (49 to done), and still no mission milestone met.**
+What we learned about why, in order:
+1. **Missions wait on GPUs.** Run-bound jobs blocked behind a production run. Fix: judges see which machines are free.
+   "Production first" pauses mission scratch runs on the RTX while a production run is live, and resumes them after.
+2. **The loop's own blind spots looked like spinning.** The judge's look only read the newest live run, so it couldn't
+   see scratch work. A long-running scratch runner counted as a busy builder. A progress counter ignored jobs that
+   landed outside the mission's areas. Each fix took minutes once the bug was named.
+3. **Two copies of one decision.** The UI showed two different "next actions" because two files computed one. Jobs
+   fixed one side each round. Fix: one job owning both files, one shared function.
+4. **Judges move the goalposts.** Milestone 1 ("one clear next action") silently grew to include milestone 2 ("the
+   season as pictures"), so it could never be met in 24 rounds. Fix: judge only the current milestone's own words, and
+   keep later gaps for later milestones.
+
+**A watchdog outside every session (owner #368).**
+- A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
+  and the leads add lines there instead of writing waiter scripts.
+- It also has built-in checks: empty design calls, silent builder exits, unresolved conflicts, quiet runs, and
+  production-first holds.
+- It writes every action to the inbox.
+- It exists because the orchestrator went dormant twice in one night: a waiter script died silently, and a design call
+  wrote 0 characters, and nobody noticed for 45 minutes.
+
 **Next measurements:** merges per hour after the backlog, conflicts per merge (target: zero between concurrent
 builders), the time from collision to reshape, and whether main stays usable. That last one is checked by the outcome
 check's 34 views on real projects.
