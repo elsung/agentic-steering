@@ -259,6 +259,21 @@ The loop was dead for 5 minutes, and tokens and time were lost. What we changed:
   once (one run had sat 62 minutes in one stage with nobody acting).
 - "Gate met = go": leads act on a met condition without waiting for the orchestrator.
 
+**The first full reshape (01:28 to 01:55).**
+- 01:28: two builders collided in the 3,272-line crew file.
+- A split job was queued. Its first builder turned the file into an 8-module package behind a facade that keeps every
+  name.
+- Its land conflicted with main, because others kept changing the old file. A fresh builder merged main, re-applied
+  main's newer changes inside the new modules, and landed it 26 minutes after the collision.
+- The area map was then split along the modules (read, world, direct, cut; only the shared helpers stay a hub). Builders
+  on different crew stages no longer touch the same files.
+
+Two more pieces landed in the same window:
+- **Self-healing conflicts.** A conflicted branch gets one fresh resolver that merges main keeping both sides' intent.
+  The first one landed in 3 minutes.
+- **A scope hook per worktree.** It refuses commits outside the builder's areas, which closed the "builder wandered
+  into another area" collisions.
+
 **Next measurements:** merges per hour after the backlog, conflicts per merge (target: zero between concurrent
 builders), the time from collision to reshape, and whether main stays usable. That last one is checked by the outcome
 check's 34 views on real projects.
