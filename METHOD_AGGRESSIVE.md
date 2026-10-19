@@ -146,6 +146,27 @@ What we built from it, the same hour:
    its lead (Devin: stop when "a round fixes nothing new").
 4. **A non-progress exit and an attempt floor.** A plateau is not a stop; the judge must change approach (pstack).
 
+### Ambition as a protocol (owner #338)
+
+After 90 minutes the loop merged fast, but missions hadn't moved, and it was clear why. Builders did the literal
+ticket ("silence a 404") and stopped at the edge of their scope. Judges proposed polish while the purpose was far off.
+
+Ken Huang's "Your agent isn't lazy, it has no protocol" names this
+([substack](https://kenhuangus.substack.com/p/your-agent-isnt-lazy-it-has-no-protocol); most of it is paywalled), on
+top of Felix Rieseberg's ambition tutorial. The model "optimizes for the literal request", and the literal request is
+"your best guess, not your goal". The fix is ambition as rules the agent runs every time: "named rungs, forced
+statements before acting, a defined judge." It has three moves:
+- **altitude:** the goal beyond the goal;
+- **depth:** what the field's best expert would do;
+- **range:** a method from another field.
+
+What we built from it:
+- every brief makes the builder write ALTITUDE, DEPTH and RANGE before code, then deliver the ambitious version;
+- if the right fix is outside its scope, the builder names it with a default instead of shrinking the job;
+- every judge round starts with the single biggest step toward the purpose;
+- judges see which GPUs are free, because run-bound missions had been waiting on one busy box while two others sat
+  idle.
+
 ### pstack against this method
 
 poteto's Orchestrate playbook is the closest working example, and we take most of it:
@@ -194,6 +215,7 @@ cheapest runnable check on the real artifact, not the suite.
 |---|---|---|---|---|---|---|---|
 | 20:00 to 23:40 (gated) | 6 | 1.6 | n/a | n/a | n/a | n/a | 63 (19) |
 | 23:40 to 00:17 (no gate, loop v1) | 28 | 45 | 9 | 3 | 3 | 13* | 22 (6) |
+| 23:40 to 01:36 (areas, missions, restart-proof) | 54 | 28 | 9 | 7 | 3 | 17* | 73 (15) |
 
 \* Inflated: before 00:14, a builder whose work a lead had already landed was counted as a silent death.
 
