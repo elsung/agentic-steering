@@ -337,6 +337,15 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     patch job. Fix: every 5th unmet round on one milestone counts as a spin. The spin prompt shows the last five
     gaps side by side and asks for one job that first traces the root cause in the running system.
 
+13. **Finished work that never lands is the quietest failure.** The check for "a land is already running" matched any
+    process whose command line mentioned land.sh. A builder hanging after its reply has its brief on its command line,
+    and the brief names land.sh and the builder's own worktree. Autopilot marked that head as handled and never came
+    back to it. Fourteen finished builders sat unlanded, among them the ep01 voice work script-to-hit was waiting for.
+    Fix: count only processes running land.sh, and recheck a skipped head. A scan of finished-but-unlanded branches
+    found the 14.
+14. **A deploy is part of a merge.** The dashboard kept serving old web code after a web merge until h3:0 restarted it
+    (h3:0). land.sh now restarts it after any merge that touches the web code, and says so in the inbox.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
