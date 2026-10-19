@@ -185,6 +185,19 @@ the shell and the pages.
 
 One broken main so far: a stray character in `edl.py` landed through a merge at 23:48 and was fixed forward at 23:51.
 
+**Incidents in the first hour of missions (and the fix):**
+- **Queued jobs started 2-3 times.** The launcher ran `cd dir && nohup agent &`, which backgrounds a subshell. That
+  subshell held the caller's output pipe open for the agent's whole life, so the queue's launch timed out before it
+  could claim the job. Fix: claim the job before launching, and launch with `cd dir || exit; nohup agent &`, which
+  returns in milliseconds.
+- **A judge proposed jobs on another lead's live run** ("unstick R004"). They were stopped after 42 s with nothing
+  committed. Fix: every judge prompt now carries standing constraints: never touch a running run; use a scratch copy.
+- **A judge read an expected 404** (the app probing a dev-only endpoint) as a defect. The builder it sent found this in
+  minutes and said so. Cost: one small job. Fixing forward absorbed the judge's mistake.
+- **The loop worked end to end within the hour.** The UI judge looked at real screenshots, a builder fixed the phone
+  form and tabs in a couple of minutes, and it landed on exit. The pre-viz builder found its fix needed a file outside
+  its area and posted `blocked` with a default, as designed.
+
 **Next measurements:** merges per hour after the backlog, conflicts per merge (target: zero between concurrent
 builders), the time from collision to reshape, and whether main stays usable. That last one is checked by the outcome
 check's 34 views on real projects.
