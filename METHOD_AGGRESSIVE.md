@@ -316,6 +316,12 @@ word is the path. A contact sheet of the 145 s cut showed real cast takes with c
    on scope is re-briefed once with the areas of the files it named, and queued. The queue still keeps two builders
    out of one area.
 
+10. **Builders stop on decisions they already have defaults for.** The r23 builder wrote six decisions, each with a
+    sound default (Rachel's sample as a draft, voices on the idle Spark), then stopped. Fix: the brief now says a
+    decision with a default that can be undone is not a block: take it, mark it "draft, owner may swap", and keep
+    going. The owner gets one decision line with the default already under way. The same hour the scope self-heal
+    fired on its own (p-audience-input re-briefed with crew-cut added).
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
