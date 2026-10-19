@@ -298,6 +298,14 @@ reading why previz-15 and script-to-hit had no judge round for 70 minutes:
    second bug showed up as soon as that was fixed: two queued jobs on the same area started in the same tick, because
    the held set wasn't updated after the first launch.
 
+**07:00: the first milestone met.** previz-15's p0 (a run folder makes an ep01 cut and animatic of real takes, read
+back by run id). Three independent judges had said "met" since 06:37, and the loop threw each one out. Judges write
+an opened file as "path (how I looked)", and the evidence check tested the whole string as a path. Fix: the first
+word is the path. A contact sheet of the 145 s cut showed real cast takes with captions from start to end.
+7. **Holding a resource is not using it.** "Production first" paused seven mission scratch runs from 04:16 while a
+   production run counted as live. By 06:59 the RTX was at 0 % with 122 production jobs queued. Fix: an RTX idle 10
+   min releases the held runs for 30 min, and run-ops is told production isn't feeding the GPU.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
