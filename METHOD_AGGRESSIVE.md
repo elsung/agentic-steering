@@ -326,6 +326,12 @@ word is the path. A contact sheet of the 145 s cut showed real cast takes with c
 one obvious next action) was met at round 42, 20 minutes after the scope self-heal and an hour after the goalpost
 fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflicts, 0 did not start, 64 area collisions, 9 stalls, 20 silent deaths, 156 queue starts, 252 cards moved (65 to done).
 
+11. **A rule in a prompt is a suggestion; a rule in the code is a rule.** The judges' constraints said "a fresh run
+    it starts itself", and a mission builder started R008 inside the production project, beside the live R007. R007's
+    shoot sat unqueued and the RTX was idle about an hour (h3:0). Fix: every agent job carries `H3_AGENT_JOB`, and the
+    engine refuses to make, start, resume or pause a run in the production root for it, naming the way out (a
+    scratch root). The constraint text changed too, but the refusal is what holds.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
