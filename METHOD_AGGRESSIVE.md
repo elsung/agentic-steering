@@ -380,6 +380,11 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     waited 12 to 22 minutes behind them. Fix: re-land once per branch head, and land.sh refuses a second copy for
     one worktree. Self-healing loops need idempotence keys, or the healer becomes the outage.
 
+21. **"Blocked, the lead decides" is a silent wait unless the lead hears it.** hitmaker-ui blocked at 13:53 during the
+    merge jam. The line went only to the inbox, and h3:4 never saw it, so the mission sat for 45 minutes. Fix: the
+    block goes to the lead's pane with delivery checked, and a blocked mission whose own jobs land afterwards resumes
+    itself. The block was the pipe, not the goal.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
