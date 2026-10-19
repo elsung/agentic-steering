@@ -358,6 +358,22 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
 **13:05: three milestones met** (previz-15 p0, hitmaker-ui m1 and m2). The 14 stranded branches are all handled:
 4 merged, 6 already in main, 3 conflicts sent to the resolver, plus the voice work.
 
+17. **Throwaway copies are a resource leak a fast loop turns into an outage.** At about 30 merges an hour, every job
+    made a worktree, often a scratch run (~10 GB), and a land copy. `/` hit 0 bytes: 485 GB of scratch, 221 GB of
+    worktrees, 152 GB of failed land copies (owner #405/406). Fix:
+    - everything agents make lives on the 24 TB data disk: worktrees symlinked, scratch, TMPDIR, pytest temp, land copies;
+    - the engine refuses agent scratch and runs anywhere else;
+    - an hourly job moves merged worktrees and old scratch to an archive, never deleting;
+    - the watchdog alerts below 200 GB free.
+    A self-healing loop needs garbage collection as much as it needs retries.
+18. **Resource rules belong in one runtime file every router reads.** "Route nothing to justblaze0/1" (owner #392)
+    touched the engine's render targets, fallback cards, draft boxes and voice workers, plus autopilot's GPU watch
+    and the judges' GPU list. All of them now read `~/.config/h3/boxes_off.json` at every call, so the box's owner
+    hands it back by editing one file, with no merge.
+19. **Failover has to be rehearsed on a real pane.** Account failover (owner #394) keeps each lead's transcript and
+    flags. Its first trial found that pointing `CLAUDE_CONFIG_DIR` at the default dir makes Claude Code start as a
+    fresh install, and that a new account must trust each lead's folder once. Neither was in the docs.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
