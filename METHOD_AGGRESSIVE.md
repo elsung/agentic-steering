@@ -220,6 +220,23 @@ One broken main so far: a stray character in `edl.py` landed through a merge at 
   form and tabs in a couple of minutes, and it landed on exit. The pre-viz builder found its fix needed a file outside
   its area and posted `blocked` with a default, as designed.
 
+**The 01:10 crash (owner #334-337).** The desktop session ended. The user's service manager stopped, taking down
+the terminal multiplexer and every agent, builder and design call started under it, plus the loop's own supervisor.
+The loop was dead for 5 minutes, and tokens and time were lost. What we changed:
+- Every agent and long job now runs in its own session (`setsid`), so the session that started it can die without
+  taking it along.
+- Every brief is saved to disk at launch. Two builders couldn't be resumed because their briefs lived only in `/tmp`.
+- `resume_workers` runs when the terminal sessions are restored. It relaunches each killed builder once from its
+  brief, told to continue from its commits. A builder that finished but never landed is landed instead. A lost design
+  call is relaunched. The signal for "killed, not finished": the agent's log is empty, because `claude -p` writes its
+  reply only at the end.
+- A keeper restarts the supervisor within 30 s, with or without the service manager.
+- Messages to leads are delivery-checked: the sender waits for an empty input box, confirms the message was taken,
+  and retries.
+- Run stages have time budgets. Over budget, or no progress row for 15 minutes, raises a stall to the run's lead at
+  once (one run had sat 62 minutes in one stage with nobody acting).
+- "Gate met = go": leads act on a met condition without waiting for the orchestrator.
+
 **Next measurements:** merges per hour after the backlog, conflicts per merge (target: zero between concurrent
 builders), the time from collision to reshape, and whether main stays usable. That last one is checked by the outcome
 check's 34 views on real projects.
