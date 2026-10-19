@@ -374,6 +374,12 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     flags. Its first trial found that pointing `CLAUDE_CONFIG_DIR` at the default dir makes Claude Code start as a
     fresh install, and that a new account must trust each lead's folder once. Neither was in the docs.
 
+20. **A retry must be keyed on the state it retries, not on its own output.** The conflict re-land was keyed on the
+    inbox line it reacted to, and every re-land wrote a new line. Two watchers (autopilot and the watchdog) each
+    re-landed, and by 13:55 there were 36 duplicate lands of three dead branches on the merge lock. Every real merge
+    waited 12 to 22 minutes behind them. Fix: re-land once per branch head, and land.sh refuses a second copy for
+    one worktree. Self-healing loops need idempotence keys, or the healer becomes the outage.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
