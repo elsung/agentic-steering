@@ -332,6 +332,11 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     engine refuses to make, start, resume or pause a run in the production root for it, naming the way out (a
     scratch root). The constraint text changed too, but the refusal is what holds.
 
+12. **A spin can hide in new words.** hitmaker-ui m2 hit "FFAS1 shows no episode rows" in five rounds in a row. Each
+    judge worded it anew (similarity 0.2 to 0.76), so the same-gap check never fired, and each round queued another
+    patch job. Fix: every 5th unmet round on one milestone counts as a spin. The spin prompt shows the last five
+    gaps side by side and asks for one job that first traces the root cause in the running system.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
