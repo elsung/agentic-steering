@@ -322,6 +322,10 @@ word is the path. A contact sheet of the 145 s cut showed real cast takes with c
     going. The owner gets one decision line with the default already under way. The same hour the scope self-heal
     fired on its own (p-audience-input re-briefed with crew-cut added).
 
+**08:05: two milestones met.** hitmaker-ui m1 (Home and project pages clean and usable at phone and desktop width,
+one obvious next action) was met at round 42, 20 minutes after the scope self-heal and an hour after the goalpost
+fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflicts, 0 did not start, 64 area collisions, 9 stalls, 20 silent deaths, 156 queue starts, 252 cards moved (65 to done).
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
