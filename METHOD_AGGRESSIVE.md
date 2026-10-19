@@ -310,6 +310,12 @@ word is the path. A contact sheet of the 145 s cut showed real cast takes with c
    2-of-24-shot cut (rounds 21-22), only because it was newer, and queued jobs to fix the fresh run. Fix: judge the
    best output toward the milestone, name it, and say if a newer one passed it.
 
+9. **Scope blocks were the most common stop: 51 by 07:50.** Judges assigned areas by guessing from names, builders
+   found the code elsewhere, and each one stopped "outside my scope" and waited for a person or a later round. Fix,
+   two parts: (a) judges list the files a job edits, and the files' areas are added; (b) a builder that still blocks
+   on scope is re-briefed once with the areas of the files it named, and queued. The queue still keeps two builders
+   out of one area.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
