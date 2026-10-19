@@ -287,6 +287,17 @@ What we learned about why, in order:
    season as pictures"), so it could never be met in 24 rounds. Fix: judge only the current milestone's own words, and
    keep later gaps for later milestones.
 
+**06:15: 193 merges (29 an hour), still no milestone met.** hitmaker-ui is on round 30; its rounds now agree on the
+one next action at both screen sizes and are down to one contradiction on one page. Two more blind spots, found by
+reading why previz-15 and script-to-hit had no judge round for 70 minutes:
+5. **Unowned files block builders.** Five page folders (the project page among them) were in no area, so three UI
+   builders in a row stopped with "outside my scope". Fix: every file the app serves now has an owner.
+6. **A finished agent can still look alive.** A builder wrote its final reply at 05:15, but its `claude -p` process
+   kept waiting on a background shell it had started. It held two areas for an hour, which starved previz-15's job and
+   kept script-to-hit's judge from running. Fix: a builder whose reply is written has ended, whatever its pid says. A
+   second bug showed up as soon as that was fixed: two queued jobs on the same area started in the same tick, because
+   the held set wasn't updated after the first launch.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
