@@ -391,6 +391,10 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     first version started a second R3 beside the one the lead had just launched, in another worktree. Rounds are now
     matched by name, and a hand-started one is followed, not doubled.
 
+**16:15: four milestones met.** hitmaker-ui m3 (the Cut page shows the real cut with hit notes on the cut's own
+seconds) was met at round 89. hitmaker-ui is 3 of 5, previz-15 is 1 of 5 (its judge split p1 into smaller steps), and
+script-to-hit is 0 of 3: ep01 still lacks its spoken lines end to end. Loop numbers: since 2026-10-18 23:40: 450 merges (27.1/h), 309 land conflicts, 0 did not start, 67 area collisions, 12 stalls, 22 silent deaths, 301 queue starts, 405 cards moved (114 to done).
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
