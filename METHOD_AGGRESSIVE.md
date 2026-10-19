@@ -22,6 +22,7 @@ orchestrator. The owner wants it to:
 | to 2026-10-18 23:40 | **Gated** (STEERING.md): every finished worker ran the full suite twice (its own report, then the orchestrator's review); merge only on a PASS row for that exact commit | 6 merges in 3 h 40 min (1.6 per hour). About 22 pytest processes queued on one suite lock. A background suite inherited the merge lock's file descriptor, so every merge waited up to 15 minutes behind it. A worker's plain `pytest` run started real paid agent calls through a test. |
 | 23:40 | **land.sh**: a branch merges if it merges cleanly and the code starts (import + app build, about 20 s); no suite before or after | Main moved again: 16 merges in the first 10 minutes, from a backlog. |
 | 23:49 | **Loop v1**: autopilot lands a builder when its process exits; a work queue starts the next job when a slot frees; inbox events for progress, stalls (20 min with no commit) and silent deaths; after every land, an outcome check starts the merged app on the real projects and loads 34 views | The old gated review in autopilot (two full suites per finished worker) was removed, because it duplicated land.sh. |
+| 00:25 | **Missions** (see below): intent, then an inferred purpose, then living milestones; a cheap judge looks at the real output each round and writes the next area-owned jobs | Round 1 of the UI mission took about 2 minutes. It found phone-width clipping, label collisions and a 404 on every page, and queued 2 jobs that wait for the lead's own builder to free those areas. |
 | 00:14 | **Areas** (this page): `AREAS.yaml` maps the engine into 24 owned areas; a brief names its areas; the queue never gives one area to two running builders; the watcher posts a collision when two running builders touch one area anyway; every gate and suite step is gone from briefs, standing orders and scripts | Running: see Results. |
 
 ## The method
@@ -50,7 +51,26 @@ orchestrator. The owner wants it to:
 7. **Code pastes the facts.** Status lines (merged, conflict, progress, stall, collision, outcome) are written by
    scripts, never typed by a model.
 
+8. **Missions, not metrics** (owner, 00:25). The owner gives an intent, often loose ("a UI that helps us make
+   hits from scripts").
+   - The orchestrator infers the purpose from it: who it's for, why it matters, what it takes (what makes a hit),
+     the outcomes wanted.
+   - The path is a list of milestones, each a *visible* result.
+   - Each round a cheap judge (Haiku) opens the real output and says whether the current milestone is met *as it
+     serves the purpose*. "A page with no errors that doesn't help make a hit has not met anything."
+   - Then it writes up to three 15-30 minute jobs, each owning its areas.
+   - The judge may reshape the milestones when what it sees shows a better path, so the plan stays alive, not locked.
+   - A round that sees the same thing with nothing landed forces a change of approach, then asks the lead.
+   - Rounds start on events (a land in the mission's areas, or its jobs all gone), at most one round per mission per
+     10 minutes.
+9. **Strong model for top line only.** The orchestrator and the design agent (Astra) set missions and purposes. Cheap
+   models build (Haiku), judge (Haiku) and read research (MiniMax M3.1). No strong-model tokens go on manual reading
+   or routine review.
+
 The tools, in `~/AI/handoffs`:
+- `mission.py` with `missions/<id>/`: intent, purpose, milestones, rounds;
+- `look_pages.py`: real app screenshots at 1440 and 390 px, with console errors;
+- `look_run.sh`: a run's status, its timing, and frames from its newest cut;
 - `AREAS.yaml` and `areas.py`: map, branch areas, live collisions, conflicts by area;
 - `make_brief.py --areas … --look … --queue`;
 - `land.sh`;
@@ -103,6 +123,33 @@ Each source was checked; second-hand figures are marked as such.
 - Our own research digest (a cheap model's read of about 60 sources; not every figure re-verified):
   `AGENT_LOOPS_2026-10/FINDINGS.md`. Its strongest point agrees with the examples above: **partition the write-set
   before dispatch.** If builders overlap in a round, the map is wrong.
+
+### pstack against this method
+
+poteto's Orchestrate playbook is the closest working example, and we take most of it:
+- completions as queue events;
+- the brief as the product;
+- a rolling window of workers;
+- continuous landing;
+- one writer per worktree (our areas);
+- never asking the human "should I keep going".
+
+Its Autonomous run playbook is our mission loop in small: "State the exit condition as a checkable predicate", then
+"each iteration makes the smallest change the evidence justifies… A plateau is not a stop".
+
+Where it differs: every pstack unit gets a verdict against the real artifact before it lands. We moved that look
+*after* the land (the judge and the outcome check) and fix forward. Its coordinator "never authors or edits code". Ours
+doesn't either; the builders do.
+
+### The design agent's plan (Astra, L2_loops)
+
+It agreed on areas, landing without gates, and fixing forward. It added three things we took:
+- progress is the next *observable mission result*, not merges;
+- after landing, run the affected path on a small real input and inspect the frames and audio;
+- blocking is an event that releases the builder's claim at once.
+
+It also says to start with five builders (one per lead) and go to ten only when the work is disjoint. The area map is
+what makes ten safe.
 
 ### Where we depart from every example
 
