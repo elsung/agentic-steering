@@ -124,6 +124,28 @@ Each source was checked; second-hand figures are marked as such.
   `AGENT_LOOPS_2026-10/FINDINGS.md`. Its strongest point agrees with the examples above: **partition the write-set
   before dispatch.** If builders overlap in a round, the map is wrong.
 
+### What the research says about intent judges (and what we changed)
+
+A second digest (MiniMax M3.1 over about 30 sources, October 2026; figures as reported, not all re-checked) found
+one structural rule above all: **the judge must open the real artifact, not read the transcript.**
+- "Across 54 cycles a frontier agent claimed improvement every time, yet 56 percent had a measured delta of zero or
+  below". The in-band judge "accepted cycles of which 44 percent were real-world regressions"
+  ([arXiv 2607.25152](https://arxiv.org/abs/2607.25152)).
+- Where intent *is* checkable from the artifact, that error fell to zero.
+- 75.5% of failing runs claimed done.
+- Committed agent loops in public repos almost never have stop conditions, budgets or verifiers
+  (217 of 36,645 repos had loops; none had those, [arXiv 2608.21884](https://arxiv.org/abs/2608.21884)).
+- For video, humans agree only 66.9% on pairwise preference ([arXiv 2605.03475](https://arxiv.org/abs/2605.03475)),
+  so a judge's taste call on one clip is weak evidence. Numbers (duration, frames, a face match, the words spoken) are
+  strong evidence.
+
+What we built from it, the same hour:
+1. **Default-fail evidence.** A judge's "met" counts only if it lists the real outputs it opened, and they exist.
+2. **A fresh second judge confirms every "met"**, told to try to show it isn't. One lucky pass never ends a milestone.
+3. **Anti-spin as a counter, not a judgment.** Three rounds with nothing new landed puts the mission in `blocked` for
+   its lead (Devin: stop when "a round fixes nothing new").
+4. **A non-progress exit and an attempt floor.** A plateau is not a stop; the judge must change approach (pstack).
+
 ### pstack against this method
 
 poteto's Orchestrate playbook is the closest working example, and we take most of it:
