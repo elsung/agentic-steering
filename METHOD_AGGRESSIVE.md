@@ -306,6 +306,10 @@ word is the path. A contact sheet of the 145 s cut showed real cast takes with c
    production run counted as live. By 06:59 the RTX was at 0 % with 122 production jobs queued. Fix: an RTX idle 10
    min releases the held runs for 30 min, and run-ops is told production isn't feeding the GPU.
 
+8. **"Newest" is not "best".** script-to-hit's judge went from a 189 s cut with 183 s real (round 20) to a fresh run's
+   2-of-24-shot cut (rounds 21-22), only because it was newer, and queued jobs to fix the fresh run. Fix: judge the
+   best output toward the milestone, name it, and say if a newer one passed it.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
