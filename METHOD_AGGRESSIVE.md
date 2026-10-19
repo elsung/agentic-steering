@@ -385,6 +385,12 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     block goes to the lead's pane with delivery checked, and a blocked mission whose own jobs land afterwards resumes
     itself. The block was the pipe, not the goal.
 
+22. **Sequences need a hand-off, not a person.** A17's UI rounds sat idle after each landing (R1 13:45, R2 14:57)
+    until h3:0 pushed. Fix: a chain file lists the rounds, and autopilot starts the next the moment the previous
+    lands. With no brief written, it tells the lead where to write one, and starts the moment the file exists. The
+    first version started a second R3 beside the one the lead had just launched, in another worktree. Rounds are now
+    matched by name, and a hand-started one is followed, not doubled.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
