@@ -346,6 +346,18 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
 14. **A deploy is part of a merge.** The dashboard kept serving old web code after a web merge until h3:0 restarted it
     (h3:0). land.sh now restarts it after any merge that touches the web code, and says so in the inbox.
 
+15. **The model's own limits are an outage the loop must ride out.** From 10:56 to 12:37 every judge died on the
+    Claude session limit within a minute. The loop relaunched each one 10 minutes later, about 30 wasted rounds, and
+    builders started then died too. Fix: a judge that dies on a usage limit makes its mission wait 15 minutes, and
+    the round isn't counted.
+16. **Every wait needs the same "is it really alive?" rule.** land.sh waited on the newest row for a worktree, and
+    that row was a 10-hour scratch runner, so four lands sat for 2 to 10 hours. Fix: land.sh waits only on a
+    builder, and not past its written reply. The same bug had been fixed in autopilot three hours earlier. The rule
+    lives in each script that waits, so each one has to get it.
+
+**13:05: three milestones met** (previz-15 p0, hitmaker-ui m1 and m2). The 14 stranded branches are all handled:
+4 merged, 6 already in main, 3 conflicts sent to the resolver, plus the voice work.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
