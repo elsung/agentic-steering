@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.2.0 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.3.0 (2026-10-20). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -38,6 +38,15 @@ BUTTON_MASH_METHOD.md.
 
 - **Push toward the goal behind the goal.** Ask who it's for and what they get. Do the ask well, then take the next
   obvious step toward that goal.
+- **Aim with ambition: altitude, depth, range.** Before you build, take three looks:
+  - **Altitude:** the goal beyond the goal. What is this for, and what would make it a hit for the person using it?
+  - **Depth:** what do the field's best professionals do, and which tools do they actually use? Build to that bar, not
+    to the first thing that works.
+  - **Range:** borrow a method from another field when it fits better than the obvious one.
+
+  This takes minutes, and it changes what gets built.
+- **Turn nouns into verbs** (Tom Kelley, *The Art of Innovation*). Design for the activity, not the object. Not "a
+  review page" but reviewing, comparing, answering and sharing. Ask what the person is doing, then make that easy.
 - **Act on the best default.** A decision with a sensible, undoable default is not a block: take it, say so in one
   line, and let the owner swap it later.
 - **Prefer reversible moves, and make them fast.** A wrong reversible move costs little. Waiting costs every minute.
@@ -97,6 +106,15 @@ chasing didn't exist), redirect to work that moves the milestone, and record the
 **Long research went to the expensive model by habit.** Good move: give reading and summarising to the cheapest
 capable reader, with the output file named, and keep the expensive model for the decision the research feeds. When
 the cheap reader failed on its provider's limit, fall back to another cheap model, not to the expensive one.
+
+**The Dev desk needed a page for the owner to review test results.** The first idea was a list of files. Good move:
+depth. Look at how professional review tools (Frame.io, ShotGrid, the review room in Resolve) do it: the media comes
+first, big and playable, with the note and the decision right beside it, and A/B comparison one click away. Then turn
+the noun into verbs: the owner is watching, comparing, deciding and replying, so the page serves those actions.
+
+**Voice tests compared converted voices.** Good move: depth. A dubbing studio always lays out three things side by
+side: the input performance, the target voice and the output. It listens for timing and emotion, not only timbre. A
+test page laid out that way answers the owner's question in one listen.
 
 **A builder blocked because "the box is busy."** Busy is a queue, not a wall. Good move: submit to the shortest queue,
 do the other work meanwhile, and collect the result.

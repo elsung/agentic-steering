@@ -1,6 +1,6 @@
 # The Button Mash Method
 
-VERSION 1.2.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
+VERSION 1.3.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
 
 > **Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.** (the owner's definition, #516)
@@ -24,7 +24,7 @@ start. It has three layers, and it deliberately avoids brittle mechanical rules:
    - no gates;
    - nothing private in public material.
 2. **Strong steering** gives direction:
-   - push toward the goal behind the goal;
+   - push toward the goal behind the goal, with the ambition protocol (altitude, depth with the pros' real tools, range) and nouns turned into verbs;
    - act on the best default;
    - prefer reversible moves;
    - find the smallest move that unblocks progress;

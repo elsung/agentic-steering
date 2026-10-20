@@ -7,6 +7,22 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.3.0 (2026-10-20)
+
+**Minor: the ambition protocol moves into the skill, with "turn nouns into verbs" and two worked examples (owner note
+#549).**
+
+- **Ambition protocol:** altitude (the goal beyond the goal), depth (what the field's best professionals do, and the
+  tools they actually use), range (a method from another field). Until now it lived only in the method doc and in
+  briefs from one generator. Builders launched straight through the agent launcher, most of them today, never got it.
+  The skill is appended to every agent, so now all of them do.
+- **Turn nouns into verbs** (Tom Kelley, *The Art of Innovation*): design for the activity, not the object. Not "a
+  review page" but reviewing, comparing, answering, sharing.
+- **Taught by:**
+  - the Dev desk's review page, where depth means how professional review tools put the media first with the note
+    beside it;
+  - voice-conversion tests, where depth means how a dubbing studio compares input, target and output.
+
 ## 1.2.0 (2026-10-20)
 
 **Minor: a new steering line and a worked example (owner notes #530-#531).**
