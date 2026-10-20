@@ -1,6 +1,6 @@
 # The Button Mash Method
 
-VERSION 1.3.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
+VERSION 1.3.1 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
 
 > **Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.** (the owner's definition, #516)
@@ -189,7 +189,7 @@ ticket ("silence a 404") and stopped at the edge of their scope. Judges proposed
 
 Ken Huang's "Your agent isn't lazy, it has no protocol" names this
 ([substack](https://kenhuangus.substack.com/p/your-agent-isnt-lazy-it-has-no-protocol); most of it is paywalled), on
-top of Felix Rieseberg's ambition tutorial. The model "optimizes for the literal request", and the literal request is
+top of [Felix Rieseberg's "How to be more ambitious: a tutorial for humans with models"](https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/), which names four kinds of ambition (speed, altitude, depth, range) and credits Tom Kelley's nouns-into-verbs. The skill carries all four, plus his four-question depth check, beliefs checked against raw data, an outside check on the real output, durable workflows, and a crew of specialists with a red team. The model "optimizes for the literal request", and the literal request is
 "your best guess, not your goal". The fix is ambition as rules the agent runs every time: "named rungs, forced
 statements before acting, a defined judge." It has three moves:
 - **altitude:** the goal beyond the goal;

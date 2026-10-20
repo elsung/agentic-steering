@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.3.0 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.3.1 (2026-10-20). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -38,15 +38,28 @@ BUTTON_MASH_METHOD.md.
 
 - **Push toward the goal behind the goal.** Ask who it's for and what they get. Do the ask well, then take the next
   obvious step toward that goal.
-- **Aim with ambition: altitude, depth, range.** Before you build, take three looks:
-  - **Altitude:** the goal beyond the goal. What is this for, and what would make it a hit for the person using it?
-  - **Depth:** what do the field's best professionals do, and which tools do they actually use? Build to that bar, not
-    to the first thing that works.
-  - **Range:** borrow a method from another field when it fits better than the obvious one.
+- **Aim with ambition: speed, altitude, depth, range** (from [Felix Rieseberg's "How to be more ambitious: a tutorial for humans with models"](https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/); Ken Huang's "your agent optimizes for the literal
+  request" is why it has to be explicit).
+  - **Speed:** get to a real result fast, then raise the bar.
+  - **Altitude:** the goal beyond the goal. Ask "what do you want to happen next?", and treat an unreasonable goal as
+    reasonable. If your first answer is "impossible", keep going: that answer is where the work starts.
+  - **Depth:** before building, ask four things. What would a top professional do that nobody asked for? What is the
+    rawest material they'd start from? What methods and tools do they actually use? And what, outside us, would show
+    that it's right?
+  - **Range:** borrow a method from another field when it fits better.
 
   This takes minutes, and it changes what gets built.
-- **Turn nouns into verbs** (Tom Kelley, *The Art of Innovation*). Design for the activity, not the object. Not "a
-  review page" but reviewing, comparing, answering and sharing. Ask what the person is doing, then make that easy.
+- **Check beliefs against the raw data.** A story about why something is slow or broken is a hypothesis until you
+  reproduce it from the real records, logs, frames or numbers.
+- **Give the work an outside check you can run yourself** on the real output: a measurement, a comparison with the
+  pro reference, or a viewer's-eye pass. It feeds the assessment loop. It is never a gate.
+- **Build durable workflows.** Give the agent the raw access and the machines it needs, so the human can leave the
+  loop and the work keeps going without them.
+- **Bring a crew from the verbs' fields.** For reviewing, think like an editor and a producer; for dubbing, a voice
+  director. Add a red team whose job is to show the work is wrong before the owner sees it.
+- **Turn nouns into verbs** (Tom Kelley, *The Art of Innovation*, which Felix credits). Design for the activity, not
+  the object. Not "a review page" but reviewing, comparing, answering and sharing. Ask what the person is doing, then
+  make that easy.
 - **Act on the best default.** A decision with a sensible, undoable default is not a block: take it, say so in one
   line, and let the owner swap it later.
 - **Prefer reversible moves, and make them fast.** A wrong reversible move costs little. Waiting costs every minute.

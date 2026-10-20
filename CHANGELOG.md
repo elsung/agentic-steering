@@ -7,6 +7,21 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.3.1 (2026-10-20)
+
+**Credit and completion of the ambition moves (owner note #551).**
+
+- **Credit:** the ambition moves come from [Felix Rieseberg's "How to be more ambitious: a tutorial for humans with models"](https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/), which names speed, altitude, depth and range and credits Tom Kelley's
+  nouns-into-verbs. Ken Huang stays credited for the "literal request" framing.
+- **Added as short steering:**
+  - speed;
+  - the four-question depth check before building;
+  - unreasonable goals treated as reasonable;
+  - checking beliefs against the raw data;
+  - an outside check the agent runs on the real output (it feeds the assessment loop, never a gate);
+  - durable workflows that let the human leave the loop;
+  - a crew of specialists from the activity's fields, including a red team.
+
 ## 1.3.0 (2026-10-20)
 
 **Minor: the ambition protocol moves into the skill, with "turn nouns into verbs" and two worked examples (owner note
