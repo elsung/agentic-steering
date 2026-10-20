@@ -400,6 +400,14 @@ script-to-hit is 0 of 3: ep01 still lacks its spoken lines end to end. Loop numb
     (default 20 min), the runner releases expired holds and logs it, and the watchdog posts any hold over 10 min on a
     live run. The same goes for leases, locks and reservations: they all need a timeout plus an alarm.
 
+**19:46: seven milestones met.** In the last three hours:
+- hitmaker-ui m4 (one-tap steer) was met. hitmaker-ui is 4 of 5, now on m5 (premium).
+- previz-15 p1a (boards) was met. previz-15 is 2 of 5.
+- script-to-hit h1 (ep01 plays end to end, lines spoken, consistent faces) was met. That's its first milestone, after
+  about 75 rounds; the last gaps were the voice routing and the S24 face check.
+
+Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0 did not start, 67 area collisions, 12 stalls, 22 silent deaths, 342 queue starts, 446 cards moved (130 to done).
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
