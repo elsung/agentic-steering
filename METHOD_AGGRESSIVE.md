@@ -421,6 +421,12 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     rounds; mission jobs are marked no-visual, and the commit hook refuses stylesheets and fonts. Self-direction needs
     fenced areas where only a person decides.
 
+26. **"Only a user can retry" is a stop the user never hears about.** The engine blocks a failed job's key until a
+    user retries it. That's sensible for production, but nobody is told. R007 sat after a drain cancelled its jobs,
+    and r97's one-hour test sat 25 min after one lookbook failure, with every card stale and the Spark idle. Fix: the
+    watchdog catches a run that stopped on a failed or cancelled job. A mission scratch run is retried once per
+    failed job; a production run goes to its lead with the exact retry command.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
