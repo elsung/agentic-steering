@@ -1,6 +1,6 @@
 # The Button Mash Method
 
-VERSION 1.4.1 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
+VERSION 1.5.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
 
 > **Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.** (the owner's definition, #516)
@@ -531,6 +531,13 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     gate.
 44. **A fence an agent can override needs a watcher.** A builder pointed its test run at the production card by hand.
     The watchdog's production-first check missed it because the runner had no machine flag, so the gap was closed.
+45. **When you change a signal, move its readers with it.** Blocks that named a default began posting as decisions,
+    which was right, but the self-heal that re-briefs out-of-area stops only read blocks. For an afternoon, 25 such
+    stops parked instead of healing.
+46. **Quiet with nothing open is finished.** A watcher that keys on silence alone flags finished work as stuck, and
+    one that resumes everything it held revives ownerless experiments. Ask what is open and who still owns it.
+47. **The owner's inbox is for what changes what someone does.** Routine success (a restart onto new code) belongs in
+    the log; three routine lines every ten minutes buries the one that matters.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

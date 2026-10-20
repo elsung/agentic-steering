@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.4.1 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.5.0 (2026-10-20). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -81,7 +81,8 @@ BUTTON_MASH_METHOD.md.
   a decision), archive it at once with one line on what replaced it. When a newer write-up replaces an older one, mark
   the older one as superseded by the newer. The owner's "needs you" list should hold only live decisions. A stale ask
   costs the owner's attention, the scarcest thing in the system.
-- **Report outcomes, not effort.** Say what now works, where it is, and what's next, in plain words.
+- **Report outcomes, not effort.** Say what now works, where it is, and what's next, in plain words. Routine
+  success isn't news: a line in the owner's inbox should change what someone does.
 
 ## Judgment, by example (what happened this week, and what a good move looked like)
 
@@ -118,6 +119,10 @@ nobody has measured is effort, not progress.
 move: when a goal is worded so the loop can't satisfy it, restate it in terms the loop can check (frames,
 transcripts, sound measures), take that as a default the owner may swap, and let the owner's own review come after,
 not as a gate.
+
+**We changed how blocks with a default were posted, and the tool that re-briefed scope stops stopped seeing
+them.** For an afternoon, every builder that needed one file outside its area parked the fix. Good move: when you
+change a signal, find everything that reads it and move them with it.
 
 More worked examples: references/EXAMPLES.md.
 

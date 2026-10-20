@@ -7,6 +7,16 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.5.0 (2026-10-20)
+
+**Minor: one guideline line and four worked examples from the afternoon (the standing refinement pass).**
+
+- **Move a signal's readers with it:** blocks that named a default began posting as decisions, and the tool that
+  re-briefed scope stops only read blocks, so every out-of-area fix parked for an afternoon.
+- **Quiet with nothing open is finished, not stalled:** a run that had finished every stage was flagged as stuck.
+- **Bring back only what someone still owns:** 28 held test runs, days old and ownerless, were resumed at once.
+- **Routine success isn't news:** restart notices put three lines in the owner's inbox every ten minutes.
+
 ## 1.4.1 (2026-10-20)
 
 **Patch: shorter skill.** It's read at every start, so it holds the 8 most instructive worked examples, and the

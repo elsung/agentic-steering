@@ -11,3 +11,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   It added how to tell stale from important, after a cleanup that went by path alone stopped a live builder's runner.
 - **2026-10-20, v3 (owner #523).** 'Never leave the GPU idle' became 'push hard while working toward a goal'. Idle
   capacity is a problem only when goal work waits for it. Pace deliberately for power or heat, cost and rate limits.
+- **2026-10-20, v1.5.0 (standing refinement pass, 16:40).** From the afternoon's inbox: a changed signal whose
+  reader wasn't moved (25 scope stops parked), a finished run called stalled, 28 ownerless test runs resumed, and
+  routine restarts flooding the inbox.

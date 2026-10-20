@@ -30,3 +30,15 @@ first one's numbers instead of starting its own.
 
 **A builder blocked because "the box is busy."** Busy is a queue, not a wall. Good move: submit to the shortest queue,
 do the other work meanwhile, and collect the result.
+
+**The watchdog called the live run stalled because nothing had been written for 15 minutes.** The run had
+finished every stage; its status just hadn't been updated. Good move: before calling something stuck, ask
+whether anything is still open. Quiet with work waiting is a stall. Quiet with nothing open is finished.
+
+**After production finished, the watchdog brought back 28 held test runs at once, from experiments days old
+whose builders were long gone.** Good move: bring back only what someone still owns and is working. The rest
+stays put, and gets one line, not 28.
+
+**Every routine restart onto new code posted a line to the owner's inbox: three lines every ten minutes.** Good
+move: routine success goes to the log. The inbox is for what changes what someone does: a failure, a decision,
+a milestone.
