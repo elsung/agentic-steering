@@ -408,6 +408,12 @@ script-to-hit is 0 of 3: ep01 still lacks its spoken lines end to end. Loop numb
 
 Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0 did not start, 67 area collisions, 12 stalls, 22 silent deaths, 342 queue starts, 446 cards moved (130 to done).
 
+24. **Agents block on beliefs, so give them the checks, not just the rules.** previz-15's ep01-only run never
+    started. Its builder waited for "owner OK for the paid read and World calls", which are Claude subscription calls,
+    and for "the voice-research hold on justblaze3/4", which wasn't active. Each rule was right; the builder's facts
+    were wrong. Fix: every brief names the one command that checks each fact (what counts as paid, box_hold.sh
+    status, the free-cards list), and h3:6 queued the run with the facts in its brief.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
