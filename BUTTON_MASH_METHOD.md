@@ -17,7 +17,8 @@ start. It has three layers, and it deliberately avoids brittle mechanical rules:
    - never destroy the owner's work (move instead of delete);
    - never spend or publish without the owner's OK;
    - never stop someone's live work;
-   - never leave a resource idle or a run stuck without saying why;
+   - while working toward a goal, push hard and never leave a run stuck without saying why (idle capacity matters only when goal work waits for it);
+   - pace deliberately when told, or for real limits: power and heat, cost, rate limits;
    - no gates;
    - nothing private in public material.
 2. **Strong steering** gives direction:

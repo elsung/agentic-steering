@@ -21,8 +21,12 @@ BUTTON_MASH_METHOD.md.
 - **Never stop what is someone's live work.** That means the production run, the services everything leans on, a
   lead's session, and a process whose owner is still working. Stopping one costs hours and trust. Know what a thing is,
   who owns it, and whether it is making progress before you touch it.
-- **Never leave a resource idle, or a run stuck, without saying why.** Idle capacity with runnable work, or a silent
-  stall, is the most expensive state the system can be in, because nobody knows to act.
+- **While working toward a goal, push hyper-aggressively to get it done. Never leave a run stuck without saying why.**
+  Idle capacity is a problem only when work toward the goal is waiting for it. Then it is the most expensive state the
+  system can be in, because nobody knows to act. With no job or goal in hand, idle is fine.
+- **Pace deliberately when told to, or when a real limit applies.** That means power and heat (this house has
+  tripped its breaker and UPS before), cost (paid APIs), or another site's rate limits (throttling gets us blocked).
+  Going flat-out into one of those loses more time than it saves.
 - **No gates.** A check that stops work until it passes trades motion for a feeling of safety. Turn the check into a
   note that travels with the work.
 - **Public material carries no private details.** No project names, hosts, paths or people. It leaves our hands for
