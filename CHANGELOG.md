@@ -7,6 +7,15 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.4.0 (2026-10-20)
+
+**Minor: four worked examples from the afternoon's stalls (the standing refinement pass), and method lessons 42-44.**
+
+- **Measure first:** ten rounds of unmeasured speed fixes left a speed milestone unmoved.
+- **Restate a goal the loop can't satisfy:** "watched by ear" was read as needing a person.
+- **Production first:** a test run went past its default and onto the production card.
+- **One agent per task:** two measuring runs competed for one box.
+
 ## 1.3.1 (2026-10-20)
 
 **Credit and completion of the ambition moves (owner note #551).**

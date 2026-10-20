@@ -1,6 +1,6 @@
 # The Button Mash Method
 
-VERSION 1.3.1 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
+VERSION 1.4.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
 
 > **Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.** (the owner's definition, #516)
@@ -523,6 +523,14 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     is, who owns it and whether they are still here, and whether it is moving. Stop it only when it clearly belongs to
     no one's live work, and say what you stopped. When unsure, flag it. The root fix: scratch runners end with the
     builder that started them.
+
+42. **Measure before fixing again.** A speed milestone stayed unmet for ten rounds while fixes merged, because none of
+    them was measured end to end. The judge now asks for one timed run before any further fix.
+43. **A goal the loop can't satisfy has to be restated.** "Watched by ear" read as "a person must watch", so no round
+    could meet it. Restate it in checkable terms as a default, and keep the owner's review after the fact, not as a
+    gate.
+44. **A fence an agent can override needs a watcher.** A builder pointed its test run at the production card by hand.
+    The watchdog's production-first check missed it because the runner had no machine flag, so the gap was closed.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

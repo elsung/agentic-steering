@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.3.1 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.4.0 (2026-10-20). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -128,6 +128,22 @@ the noun into verbs: the owner is watching, comparing, deciding and replying, so
 **Voice tests compared converted voices.** Good move: depth. A dubbing studio always lays out three things side by
 side: the input performance, the target voice and the output. It listens for timing and emotion, not only timbre. A
 test page laid out that way answers the owner's question in one listen.
+
+**Ten rounds merged speed fixes, and the speed milestone never moved.** None of the fixes had been measured end to
+end, so every round named the same gap. Good move: measure first. One real run, timed, before any more fixes. A fix
+nobody has measured is effort, not progress.
+
+**A milestone said "watched by ear", and the judge read that as needing a person.** No round could ever meet it. Good
+move: when a goal is worded so the loop can't satisfy it, restate it in terms the loop can check (frames,
+transcripts, sound measures), take that as a default the owner may swap, and let the owner's own review come after,
+not as a gate.
+
+**A test run claimed the shared card while the live production run waited.** Its builder had pointed it at that card
+by hand, past the default that sends test work elsewhere. Good move: production goes first. Move or pause the test
+run, then close the gap that let it through, so the next one is caught at once.
+
+**Two measuring runs from one mission competed for one box.** Good move: one agent per task. The second reads the
+first one's numbers instead of starting its own.
 
 **A builder blocked because "the box is busy."** Busy is a queue, not a wall. Good move: submit to the shortest queue,
 do the other work meanwhile, and collect the result.

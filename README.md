@@ -1,6 +1,6 @@
 # Agentic steering: getting cheap agents to finish the job
 
-> **New: [BUTTON_MASH_METHOD.md](BUTTON_MASH_METHOD.md), the Button Mash Method (v1.3.1, [CHANGELOG](CHANGELOG.md), [skill](skills/button-mash/SKILL.md)).** Hyper-aggressively push the agents' work forward: assessment loops, not evals or tests, and no gates. We dropped test and review gates for owned code areas, landing on exit, looking at the real output and fixing forward. That page has the method, the examples it comes from, and live results, kept honest either way. The gated method below is what came before.
+> **New: [BUTTON_MASH_METHOD.md](BUTTON_MASH_METHOD.md), the Button Mash Method (v1.4.0, [CHANGELOG](CHANGELOG.md), [skill](skills/button-mash/SKILL.md)).** Hyper-aggressively push the agents' work forward: assessment loops, not evals or tests, and no gates. We dropped test and review gates for owned code areas, landing on exit, looking at the real output and fixing forward. That page has the method, the examples it comes from, and live results, kept honest either way. The gated method below is what came before.
 
 A field guide to running many AI coding agents from one orchestrator: one capable model steers, many cheap workers execute, and mechanical checks (not the workers' own reports) decide whether the work is done. It started as a way to cut the token bill; it grew into a playbook for keeping cheap agents from skipping work, over-claiming, or failing silently.
 
@@ -160,4 +160,6 @@ many agents at once, all in one terminal multiplexer:
 Every agent starts with the skill, including the ambition protocol (aim at the goal beyond the goal, build to the
 bar of the field's best and their real tools, borrow from other fields, design for the activity), so the same judgment travels from the orchestrator to the cheapest worker. We mash
 hard but spend where it counts: the expensive model steers and takes the hard decisions, and cheap models read and
-build. Whoever supersedes an owner-facing item archives it at once, so the owner sees only live decisions.
+build. Whoever supersedes an owner-facing item archives it at once, so the owner sees only live decisions. When a milestone
+stalls, the first question is whether the fixes were ever measured, and whether the goal is worded so the loop can
+meet it at all.
