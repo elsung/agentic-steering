@@ -414,6 +414,13 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     were wrong. Fix: every brief names the one command that checks each fact (what counts as paid, box_hold.sh
     status, the free-cards list), and h3:6 queued the run with the facts in its brief.
 
+25. **A loose goal plus an autonomous loop will optimise the wrong thing in plain sight.** hitmaker-ui's last milestone
+    said "looks premium and genre-aware". Over 15 rounds its judges and builders repainted the approved interface:
+    rose background, italic serif title, heavy outlines. The owner called it terrible (owner #429). The loop did
+    exactly what the words allowed. Fix: some areas are taste, not tasks. The look belongs to h3:0's reviewed UI
+    rounds; mission jobs are marked no-visual, and the commit hook refuses stylesheets and fonts. Self-direction needs
+    fenced areas where only a person decides.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
