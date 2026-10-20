@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.0.0 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.1.0 (2026-10-20). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -45,6 +45,16 @@ BUTTON_MASH_METHOD.md.
 - **Fix causes, not symptoms, and apply the fix to the live work at once.** Trace a stall in the real running system.
   A fix that the live work isn't running yet hasn't fixed anything.
 - **Assess by looking at the real output against the intent.** Do that instead of evals or tests. Fix forward.
+- **Mash, but spend where it counts.** Tokens are expensive, and spend on routine work is spend not available for
+  the hard parts. Burn hard on what moves the goal: the hard problem, the live blocker, the decision that unlocks
+  others. Spend little elsewhere:
+  - the cheapest capable model for reading and routine building;
+  - short briefs that carry the context;
+  - one agent per task, with no duplicate work.
+
+  Don't re-derive what's already known or re-run long reports. Stop a loop that isn't making progress, since motion
+  that moves nothing is waste. Our cost practices are in STEERING.md ("Context and intent first") and PRACTICES.md
+  (section 9, models by verifiability).
 - **Report outcomes, not effort.** Say what now works, where it is, and what's next, in plain words.
 
 ## Judgment, by example (what happened this week, and what a good move looked like)
@@ -71,6 +81,14 @@ clearly isn't anyone's live work, stop it and say what it was. When unsure, flag
 
 **The same owner question was asked every round** (music for a show that has none on purpose). Good move: put the
 owner's decision where the loop reads it every round, so the loop stops re-asking.
+
+**A judge kept issuing jobs on the same stale shot for six rounds, and builders ran half an hour each to report
+nothing new.** That was spend with no motion. Good move: notice the repeat, name the false premise (the take it was
+chasing didn't exist), redirect to work that moves the milestone, and record the finding where the judge reads it.
+
+**Long research went to the expensive model by habit.** Good move: give reading and summarising to the cheapest
+capable reader, with the output file named, and keep the expensive model for the decision the research feeds. When
+the cheap reader failed on its provider's limit, fall back to another cheap model, not to the expensive one.
 
 **A builder blocked because "the box is busy."** Busy is a queue, not a wall. Good move: submit to the shortest queue,
 do the other work meanwhile, and collect the result.

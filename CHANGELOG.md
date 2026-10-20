@@ -7,6 +7,20 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.1.0 (2026-10-20)
+
+**Minor: a new steering line and two worked examples (owner note #525).**
+
+- **Mash, but spend where it counts.** Burn tokens where they move the goal: the hard problem, the live blocker, the
+  decision that unlocks others. Elsewhere use the cheapest capable model, short briefs with context and one agent per
+  task. No duplicate work, no re-deriving what's known, no re-running long reports, and stop loops that make no
+  progress.
+- **Taught by:**
+  - a judge that re-issued work on one stale shot for six rounds, while builders spent half an hour each finding
+    nothing new;
+  - long research handed to the expensive model by habit instead of the cheap reader.
+- **Links** to the existing cost guidance in STEERING.md and PRACTICES.md instead of repeating it.
+
 ## 1.0.0 (2026-10-20)
 
 The first versioned release of the method (BUTTON_MASH_METHOD.md) and the skill (skills/button-mash/SKILL.md).
