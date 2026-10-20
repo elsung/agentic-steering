@@ -1,6 +1,6 @@
 # Steering cheap agents so they finish the job
 
-> **Now: [the Button Mash Method](BUTTON_MASH.md).** It keeps agents moving with assessment loops, not evals or tests, and no gates. The spec-first and test-gated advice below is the earlier method, kept for the record.
+> **Now: [the Button Mash Method](BUTTON_MASH_METHOD.md).** It keeps agents moving with assessment loops, not evals or tests, and no gates. The spec-first and test-gated advice below is the earlier method, kept for the record.
 
 Cheap workers are fast and inexpensive, but on a real build they fail in predictable ways. This page records the failures we saw and the fixes that worked, in the order we learned them. It is a living log: every new failure type is added the day it happens.
 
