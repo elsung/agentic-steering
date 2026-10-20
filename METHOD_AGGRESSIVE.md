@@ -427,6 +427,13 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     watchdog catches a run that stopped on a failed or cancelled job. A mission scratch run is retried once per
     failed job; a production run goes to its lead with the exact retry command.
 
+27. **Failover state lives where the work started, not where the process runs now.** After the switch to account b,
+    every resumed lead kept writing its transcript under account a's folder. A map that looked only in the pane's
+    current folder found nothing, and the next switch would have skipped six leads. The first switch also showed the
+    other trap: `/exit` can raise a dialog (feedback, "stop background tasks"). Fix: look in both folders. Never type
+    into a pane with background shells or child jobs. Dismiss the feedback prompt; cancel any other dialog and skip
+    the pane with the reason. A switch must leave every pane either moved or untouched, never half-exited.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
