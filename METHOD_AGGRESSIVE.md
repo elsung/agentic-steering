@@ -395,6 +395,11 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
 seconds) was met at round 89. hitmaker-ui is 3 of 5, previz-15 is 1 of 5 (its judge split p1 into smaller steps), and
 script-to-hit is 0 of 3: ep01 still lacks its spoken lines end to end. Loop numbers: since 2026-10-18 23:40: 450 merges (27.1/h), 309 land conflicts, 0 did not start, 67 area collisions, 12 stalls, 22 silent deaths, 301 queue starts, 405 cards moved (114 to done).
 
+23. **Every pause needs an end that doesn't depend on someone remembering.** A manual hold on R010's visualise
+    stage outlived the watcher meant to release it, and the run sat idle (h3:0). Fix: a hold carries an expiry
+    (default 20 min), the runner releases expired holds and logs it, and the watchdog posts any hold over 10 min on a
+    live run. The same goes for leases, locks and reservations: they all need a timeout plus an alarm.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
