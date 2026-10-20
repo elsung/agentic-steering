@@ -1,6 +1,6 @@
 # Agentic steering: getting cheap agents to finish the job
 
-> **New (2026-10-19): [BUTTON_MASH_METHOD.md](BUTTON_MASH_METHOD.md), the Button Mash Method.** Hyper-aggressively push the agents' work forward: assessment loops, not evals or tests, and no gates. We dropped test and review gates for owned code areas, landing on exit, looking at the real output and fixing forward. That page has the method, the examples it comes from, and live results, kept honest either way. The gated method below is what came before.
+> **New: [BUTTON_MASH_METHOD.md](BUTTON_MASH_METHOD.md), the Button Mash Method (v1.0.0, [CHANGELOG](CHANGELOG.md), [skill](skills/button-mash/SKILL.md)).** Hyper-aggressively push the agents' work forward: assessment loops, not evals or tests, and no gates. We dropped test and review gates for owned code areas, landing on exit, looking at the real output and fixing forward. That page has the method, the examples it comes from, and live results, kept honest either way. The gated method below is what came before.
 
 A field guide to running many AI coding agents from one orchestrator: one capable model steers, many cheap workers execute, and mechanical checks (not the workers' own reports) decide whether the work is done. It started as a way to cut the token bill; it grew into a playbook for keeping cheap agents from skipping work, over-claiming, or failing silently.
 
@@ -137,3 +137,24 @@ See [REFERENCES.md](REFERENCES.md).
 ## License
 
 MIT
+
+## How we use it
+
+We run the Button Mash Method ([BUTTON_MASH_METHOD.md](BUTTON_MASH_METHOD.md), skill
+[skills/button-mash](skills/button-mash/SKILL.md), [CHANGELOG.md](CHANGELOG.md)) on a video production engine built by
+many agents at once, all in one terminal multiplexer:
+
+- **One orchestrator and a handful of leads.** Each lead owns a mission: an intent, the goal behind it, and a few
+  milestones inferred from what the owner said.
+- **Builders work in owned code areas.** Many cheap builders each work in their own worktree and their own area, so
+  two of them never write the same code. A builder's branch lands on exit with no gate; conflicts are resolved or the
+  areas are reshaped.
+- **Assessment loops instead of tests.** A judge opens the real output (the cut, the page, the frames), compares it
+  with the intent, names the gap, and issues the next jobs. Wrong work is fixed forward.
+- **A watchdog outside every session.** It reads signals: idle capacity with waiting work, quiet runs, silent exits,
+  orphaned processes, stale runs, and services on old code. It acts when the answer is clear and asks when it isn't.
+- **A button-mash thread** keeps all of this moving. It reads the stalls, root-causes them, puts fixes into the live
+  work, nudges idle or waiting leads with the default and the next action, and turns each lesson into a new version of
+  the method and the skill.
+
+Every agent starts with the skill, so the same judgment travels from the orchestrator to the cheapest worker.
