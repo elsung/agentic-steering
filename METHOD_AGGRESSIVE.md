@@ -434,6 +434,21 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     into a pane with background shells or child jobs. Dismiss the feedback prompt; cancel any other dialog and skip
     the pane with the reason. A switch must leave every pane either moved or untouched, never half-exited.
 
+28. **A slow step in the loop holds every job behind it, so time each step.** One autopilot pass took 11 minutes, and
+    a UI round sat queued behind areas whose round had already merged. Timing each step showed the cause:
+    `drive_missions` took 253 s because starting a judge round ran the mission's look command (up to 10 min) inside
+    the pass. Fix: round starts run on their own, with the mission's own lock, and any step over 60 s is logged. The
+    same check found two autopilot loops running at once (keeper plus service); a lock file now allows one.
+29. **Agents name a safe default and then stop anyway.** Rounds r126, r129 and r157 each wrote "Default: ...",
+    undoable and scratch-only, and posted it as a block. A rule in the brief was not enough. Fix: the block command
+    itself (event.sh) turns any block that names a default into `[decided]` and tells the builder to take it and go
+    on. Two more versions of the same stop got rules in the brief: a busy box is a queue, not a block, and an
+    hours-long run is started detached and read by the next round, not fitted inside the builder's timebox.
+30. **An owner decision has to reach the judge, or the loop re-asks it every round.** The owner emptied the starter
+    music on purpose. The judge issued "starter music" jobs twice, and both blocked on the missing tracks. Fix: the
+    decision went into the mission's constraints (no music; sound carries the beats until tracks exist), which the
+    judge reads every round.
+
 **A watchdog outside every session (owner #368).**
 - A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
   and the leads add lines there instead of writing waiter scripts.
