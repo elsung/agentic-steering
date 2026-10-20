@@ -1,6 +1,6 @@
 # Agentic steering: getting cheap agents to finish the job
 
-> **New (2026-10-19): [METHOD_AGGRESSIVE.md](METHOD_AGGRESSIVE.md).** We dropped test and review gates for owned code areas, landing on exit, looking at the real output and fixing forward. That page has the method, the examples it comes from, and live results, kept honest either way. The gated method below is what came before.
+> **New (2026-10-19): [BUTTON_MASH.md](BUTTON_MASH.md), the Button Mash Method.** Hyper-aggressively push the agents' work forward: assessment loops, not evals or tests, and no gates. We dropped test and review gates for owned code areas, landing on exit, looking at the real output and fixing forward. That page has the method, the examples it comes from, and live results, kept honest either way. The gated method below is what came before.
 
 A field guide to running many AI coding agents from one orchestrator: one capable model steers, many cheap workers execute, and mechanical checks (not the workers' own reports) decide whether the work is done. It started as a way to cut the token bill; it grew into a playbook for keeping cheap agents from skipping work, over-claiming, or failing silently.
 
