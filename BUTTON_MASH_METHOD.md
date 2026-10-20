@@ -1,6 +1,6 @@
 # The Button Mash Method
 
-VERSION 1.4.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
+VERSION 1.4.1 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
 
 > **Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.** (the owner's definition, #516)

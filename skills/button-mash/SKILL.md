@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.4.0 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.4.1 (2026-10-20). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -97,37 +97,18 @@ can; otherwise B runs"), and when something waits, find out whether its precondi
 between "fixed in main" and "running in the live work", put the fix into the live run at once, and retry the items
 that failed.
 
-**The control loop took 11 minutes per pass, and work queued behind it.** No one had timed it. Good move: time the
-loop's own steps, find the slow one (it was doing slow work inline and reading a busy disk), and move that work off the
-loop. Then watch whether the fix held. The first fix didn't fully; the second did.
-
 **A cleanup stopped dozens of "orphaned" runners by their path alone, and one belonged to a live builder.** The path
 said scratch; the owner said alive. Good move: check who owns a process and whether it's still making progress. If it
 clearly isn't anyone's live work, stop it and say what it was. When unsure, flag it and leave it running.
-
-**The owner's "needs you" list held 36 items from earlier days, all already superseded.** The owner had to sort
-through them to find the one live decision. Good move: whoever supersedes an item archives it at once, with a note on
-what replaced it (it can be reopened), so the list stays true without a cleanup day.
-
-**The same owner question was asked every round** (music for a show that has none on purpose). Good move: put the
-owner's decision where the loop reads it every round, so the loop stops re-asking.
 
 **A judge kept issuing jobs on the same stale shot for six rounds, and builders ran half an hour each to report
 nothing new.** That was spend with no motion. Good move: notice the repeat, name the false premise (the take it was
 chasing didn't exist), redirect to work that moves the milestone, and record the finding where the judge reads it.
 
-**Long research went to the expensive model by habit.** Good move: give reading and summarising to the cheapest
-capable reader, with the output file named, and keep the expensive model for the decision the research feeds. When
-the cheap reader failed on its provider's limit, fall back to another cheap model, not to the expensive one.
-
 **The Dev desk needed a page for the owner to review test results.** The first idea was a list of files. Good move:
 depth. Look at how professional review tools (Frame.io, ShotGrid, the review room in Resolve) do it: the media comes
 first, big and playable, with the note and the decision right beside it, and A/B comparison one click away. Then turn
 the noun into verbs: the owner is watching, comparing, deciding and replying, so the page serves those actions.
-
-**Voice tests compared converted voices.** Good move: depth. A dubbing studio always lays out three things side by
-side: the input performance, the target voice and the output. It listens for timing and emotion, not only timbre. A
-test page laid out that way answers the owner's question in one listen.
 
 **Ten rounds merged speed fixes, and the speed milestone never moved.** None of the fixes had been measured end to
 end, so every round named the same gap. Good move: measure first. One real run, timed, before any more fixes. A fix
@@ -138,15 +119,7 @@ move: when a goal is worded so the loop can't satisfy it, restate it in terms th
 transcripts, sound measures), take that as a default the owner may swap, and let the owner's own review come after,
 not as a gate.
 
-**A test run claimed the shared card while the live production run waited.** Its builder had pointed it at that card
-by hand, past the default that sends test work elsewhere. Good move: production goes first. Move or pause the test
-run, then close the gap that let it through, so the next one is caught at once.
-
-**Two measuring runs from one mission competed for one box.** Good move: one agent per task. The second reads the
-first one's numbers instead of starting its own.
-
-**A builder blocked because "the box is busy."** Busy is a queue, not a wall. Good move: submit to the shortest queue,
-do the other work meanwhile, and collect the result.
+More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important
 

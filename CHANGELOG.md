@@ -7,6 +7,11 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.4.1 (2026-10-20)
+
+**Patch: shorter skill.** It's read at every start, so it holds the 8 most instructive worked examples, and the
+other 8 moved to skills/button-mash/references/EXAMPLES.md. No guidance changed.
+
 ## 1.4.0 (2026-10-20)
 
 **Minor: four worked examples from the afternoon's stalls (the standing refinement pass), and method lessons 42-44.**
