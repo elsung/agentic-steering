@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.1.0 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.2.0 (2026-10-20). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -55,6 +55,10 @@ BUTTON_MASH_METHOD.md.
   Don't re-derive what's already known or re-run long reports. Stop a loop that isn't making progress, since motion
   that moves nothing is waste. Our cost practices are in STEERING.md ("Context and intent first") and PRACTICES.md
   (section 9, models by verifiability).
+- **Keep the owner's view live.** When your work supersedes something waiting on the owner (a review item, a card,
+  a decision), archive it at once with one line on what replaced it. When a newer write-up replaces an older one, mark
+  the older one as superseded by the newer. The owner's "needs you" list should hold only live decisions. A stale ask
+  costs the owner's attention, the scarcest thing in the system.
 - **Report outcomes, not effort.** Say what now works, where it is, and what's next, in plain words.
 
 ## Judgment, by example (what happened this week, and what a good move looked like)
@@ -78,6 +82,10 @@ loop. Then watch whether the fix held. The first fix didn't fully; the second di
 **A cleanup stopped dozens of "orphaned" runners by their path alone, and one belonged to a live builder.** The path
 said scratch; the owner said alive. Good move: check who owns a process and whether it's still making progress. If it
 clearly isn't anyone's live work, stop it and say what it was. When unsure, flag it and leave it running.
+
+**The owner's "needs you" list held 36 items from earlier days, all already superseded.** The owner had to sort
+through them to find the one live decision. Good move: whoever supersedes an item archives it at once, with a note on
+what replaced it (it can be reopened), so the list stays true without a cleanup day.
 
 **The same owner question was asked every round** (music for a show that has none on purpose). Good move: put the
 owner's decision where the loop reads it every round, so the loop stops re-asking.

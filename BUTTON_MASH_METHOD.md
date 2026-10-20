@@ -1,6 +1,6 @@
 # The Button Mash Method
 
-VERSION 1.1.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
+VERSION 1.2.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
 
 > **Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.** (the owner's definition, #516)
@@ -31,6 +31,7 @@ start. It has three layers, and it deliberately avoids brittle mechanical rules:
    - fix causes and apply the fix to the live work at once;
    - assess the real output;
    - mash, but spend where it counts: burn tokens on the hard problem and the live blocker, and use the cheapest capable model, short briefs and one agent per task elsewhere;
+   - keep the owner's view live (archive what your work supersedes, with a note on what replaced it);
    - report outcomes.
 3. **Judgment** covers everything else. It is taught by worked examples from real stalls, with no numeric thresholds,
    timeouts or checklists. Rules written as thresholds kept breaking in the cases they didn't foresee. Judgment with a

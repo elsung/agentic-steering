@@ -7,6 +7,16 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.2.0 (2026-10-20)
+
+**Minor: a new steering line and a worked example (owner notes #530-#531).**
+
+- **Keep the owner's view live.** When work supersedes something waiting on the owner (a review item, a card, a
+  decision), archive it at once, with one line on what replaced it. When a newer write-up replaces an older one, mark
+  the older one as superseded.
+- **Taught by:** 36 items from earlier days sat in the owner's "needs you" list, all already superseded, and had to be
+  cleared by hand.
+
 ## 1.1.0 (2026-10-20)
 
 **Minor: a new steering line and two worked examples (owner note #525).**
