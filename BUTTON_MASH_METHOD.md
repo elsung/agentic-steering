@@ -8,6 +8,33 @@ why if it fails. The rest of this repo describes the gated method that came befo
 decide when work is done. This page is what we switched to and why. (This page was first called METHOD_AGGRESSIVE.md;
 the old name now points here.)
 
+## How it steers: hard guidelines, strong steering, judgment (owner #521, #522)
+
+The method is carried to every agent as a skill, [skills/button-mash](skills/button-mash/SKILL.md), read at every
+start. It has three layers, and it deliberately avoids brittle mechanical rules:
+
+1. **Hard guidelines** always hold, and each comes with its why so it can be applied in cases nobody foresaw:
+   - never destroy the owner's work (move instead of delete);
+   - never spend or publish without the owner's OK;
+   - never stop someone's live work;
+   - never leave a resource idle or a run stuck without saying why;
+   - no gates;
+   - nothing private in public material.
+2. **Strong steering** gives direction:
+   - push toward the goal behind the goal;
+   - act on the best default;
+   - prefer reversible moves;
+   - find the smallest move that unblocks progress;
+   - fix causes and apply the fix to the live work at once;
+   - assess the real output;
+   - report outcomes.
+3. **Judgment** covers everything else. It is taught by worked examples from real stalls, with no numeric thresholds,
+   timeouts or checklists. Rules written as thresholds kept breaking in the cases they didn't foresee. Judgment with a
+   clear why bends to fit them.
+
+The watchdog follows the same spirit. It reads signals (who owns a process, whether it's still making progress, and
+whether capacity sits idle with work waiting). It acts when the answer is clear and flags when it isn't.
+
 ## The owner's intent (#313, #321)
 
 The project is a video production engine built by about ten AI builders at once, with five leads and one
@@ -485,6 +512,12 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 40. **Inherit, don't invent.** When each prompt layer writes its own camera and lighting words, the layers drift
     apart. Every layer now derives from one source per scene and shot: one camera spec and one lighting
     sentence, copied down, not rewritten.
+
+41. **Tell stale from important by owner and progress, never by location alone.** A cleanup stopped dozens of
+    "orphaned" scratch runners by path. At least one belonged to a builder that was still working. Ask what the thing
+    is, who owns it and whether they are still here, and whether it is moving. Stop it only when it clearly belongs to
+    no one's live work, and say what you stopped. When unsure, flag it. The root fix: scratch runners end with the
+    builder that started them.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
