@@ -7,6 +7,12 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.9.1 (2026-10-21)
+
+**Patch: wording in the research digest.** Trimmed `research/FORWARD_AND_CLEAN.md` to the 1500-word budget without
+dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
+loose phrases went; every link, figure and starting-point verdict stayed.
+
 ## 1.9.0 (2026-10-21)
 
 **Minor: "Forward and clean", the owner's question of moving fast without code rot.** A new method section with ten
