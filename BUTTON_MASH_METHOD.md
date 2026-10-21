@@ -114,6 +114,29 @@ The tools, in the loop's tools directory:
 - `outcome_check.sh`;
 - `loop_stats.py`: the numbers below.
 
+## Staying smart through a very long run (owner, 2026-10-21)
+
+The owner's observation, after two days of continuous work across many context compactions with no hand-off
+documents: what keeps the models smart and focused is not memory but **living sources of truth that stay current**.
+
+- **Close-eye management with watchers:** the status board and the review desk are watched continuously, so a stale
+  card or an item with nothing to look at is caught within minutes, not discovered by the owner.
+- **The research docs and the pipeline spec are the sources of truth.** An agent arriving fresh, or one whose context
+  was just summarised, reads them and knows what is true now. The spec is regenerated whenever the settings it
+  describes change, so its version always matches what runs.
+- **Regular checking keeps them clean, current and improving,** so they give a clear picture of what we are doing.
+- **Old documents are archived, never left to rot and never deleted:** moved aside, listed in an archive index
+  (where each went, why, and how to fetch it back), so a stale page never misleads and nothing is lost.
+
+**How we apply it:** a regression watch runs on every heartbeat (every 15 minutes). It fixes what is safe (a pipeline
+spec out of date is rewritten; a card still open after its branch merged is closed; a duplicate queued job is moved
+aside) and flags the rest (cards untouched for hours, review items with nothing to look at, a mission still working on
+a closed run, a status file that stopped updating). It keeps the archive index current and says only what is new.
+
+**Why it works:** compaction keeps a summary of the conversation, but the work's real state lives in files. When those
+files are current, a summary is enough; when they rot, no summary can save the run. Freshness of the sources, not
+the length of the context, is what lets a long run stay coherent.
+
 ## Forward and clean: fast motion without code rot (owner, 2026-10-21)
 
 > "how do we be super ambitious and press forward and iterate towards our goal but doing smartly with architecture in
