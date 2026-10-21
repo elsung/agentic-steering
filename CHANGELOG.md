@@ -13,6 +13,13 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.16.0 (2026-10-21)
+
+**Minor: six lessons (90-95) and two worked examples from the afternoon.** A held box reached through a pinned name;
+failed work showing its last progress line instead of its cause; a default expiry silently undoing a person's hold;
+a reader watch blind to jobs with no declared output; backing off on the same model instead of a silent switch; and
+freeing idle resources.
+
 ## 1.15.1 (2026-10-21)
 
 **Patch: public-safety scrub.** The method's worked log named private project, mission and character names and run

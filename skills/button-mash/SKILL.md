@@ -175,6 +175,14 @@ sources of truth and were kept current, and old documents were archived with an 
 move: keep the living sources fresh on every heartbeat (fix the safe drift, flag the rest), archive rather than
 delete, and when you arrive or wake from a summary, read those sources before acting.
 
+**A box was held for an install; the router that spreads work skipped it, but a run pinned to that box by name sent
+its jobs straight there, and they failed.** Good move: a rule about where work may run lives where every job is
+claimed, matches every name the place goes by, and leaves the job waiting with the reason, never running.
+
+**A person's hold was found off, and later work it was there to stop had run.** No one had cleared it: a 20-minute
+default expiry had. Good move: find the real cause before guessing (the decision log said "expired"), size the
+default to how people use it, and log every change with who or what made it.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important

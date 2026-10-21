@@ -17,3 +17,8 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-20, v1.6.0 (standing refinement pass, 20:00).** From the evening: profiles on a trimmed copy hid the
   cost twice, a same-reason failure retried four times, a fence with a side door, a relaunch beside a live sibling,
   idle processes re-reading their history, and a cheap judge searching a slow disk.
+
+- **2026-10-21, v1.16.0 (standing refinement pass, 16:2x).** From the afternoon: a hold that only the new router
+  checked, failures that showed their last progress line, a default that undid a person's hold with no record of
+  who, a sensor blind to jobs without a declared output, a model fallback that should be said out loud, and models
+  left loaded on an idle card.

@@ -729,6 +729,23 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     root, and almost every merge conflicted on it. Per-worker records live per worker, or merge with a fixed rule.
 89. **The rules you give the agents bind you too.** The orchestrator searched the busy disk it had told every agent
     never to search. Run your own commands past your own standing orders.
+90. **A hold is checked at every door, not only the new one.** A box held for an install was skipped by the router
+    that spreads work, but a run pinned to that box by name went straight there and failed. A rule about where work
+    may run is checked where every job is claimed, for every way of naming the place.
+91. **A failure must show its cause, not its last words.** Failed jobs still showed their last progress line ("waiting
+    for the card"), so a person read a content check's failure as a wait that had failed. When work fails, its status
+    line becomes the reason.
+92. **A default that undoes a person's choice must say who undid it.** A 20-minute default expiry released a person's
+    hold, and later work ran that the hold was there to stop; nobody could tell what had cleared it. Size defaults to
+    how people use them, and log every change to shared state with who or what made it.
+93. **A sensor that skips what it cannot measure is blind there.** The watch for readers that die without their report
+    only looked at jobs that named an output file; one that named none died on a rate limit and nobody noticed for
+    half an hour. When a sensor can't check a case, it still watches for the failures it can see.
+94. **Back off on the same tool; switch tools only out loud.** A rate-limited reader is tried again on the same model
+    every few minutes, with one line saying so; moving it to another model is a visible decision, never a silent
+    fallback.
+95. **Idle is a state to act on.** The main card kept tens of GB of models loaded with both queues empty. A watcher
+    frees resources after a quiet stretch with nothing holding them; the next job loads what it needs.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
