@@ -13,6 +13,15 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.12.0 (2026-10-21)
+
+**Minor: one worked example in the skill, method lessons 74-77 (the rest of the Roll 13 night).**
+
+- **A new rule meets the old ones:** two right rules together moved a lab run onto the main card mid-roll.
+- **A hold must not wait on what it holds:** a hold until the cut blocked what the cut needed.
+- **A waiting job must not hold capacity:** waiting jobs filled every slot.
+- **One state, one owner:** two watchers resumed and held the same runs.
+
 ## 1.11.0 (2026-10-21)
 
 **Minor: one worked example in the skill, method lessons 69-73 (Roll 13 night).**

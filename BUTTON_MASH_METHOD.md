@@ -667,6 +667,15 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 73. **A declared output must be read where the worker writes it.** Two reports written to a path relative to the
     worker's folder were read as absolute, called missing, and their readers rerun. Resolve paths the way the worker
     would.
+74. **A new rule meets the old ones.** "Agent run work goes to the main card" and "only the owner's roll on the main
+    card while it runs" were each right; together they moved a lab run onto the card mid-roll, because the first ran
+    after the second had cleared it. When you add a rule, find the rules it overlaps and decide which wins, in code.
+75. **A hold must not wait on what it holds.** A hold "until the episode's cut" blocked the items the cut needed, so
+    the cut could never come. Before a hold, ask what its release depends on.
+76. **A waiting job must not hold capacity.** Every render slot was taken by jobs that were themselves waiting for the
+    card, so the work the card needed could not be claimed. Count waiting and working separately.
+77. **One state, one owner.** Two watchers both paused and resumed the same runs; one resumed what the other still
+    needed held. Hand state over explicitly instead of letting two loops act on it.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
