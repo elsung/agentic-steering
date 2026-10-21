@@ -7,6 +7,16 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.7.0 (2026-10-20)
+
+**Minor: two worked examples in the skill, two in EXAMPLES.md, method lessons 54-58 (the standing refinement pass).**
+
+- **Count only what someone is waiting on:** an idle-GPU alert counted two dead research queues as owner work.
+- **Two tools on one thing share one lock:** a prune during a move cost a worktree its git record.
+- **A superseded run competes with its replacement:** an ownerless old run held the card the live run needed.
+- **A delete is the owner's:** gather it in one folder, size it, give one command, remind weekly.
+- **Report the number that didn't move:** the disk move barely changed disk load; renders were the cost.
+
 ## 1.6.0 (2026-10-20)
 
 **Minor: one guideline line and six worked examples from the evening (the standing refinement pass).**

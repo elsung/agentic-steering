@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.6.0 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.7.0 (2026-10-20). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -129,6 +129,14 @@ change a signal, find everything that reads it and move them with it.
 (no images, no pinned code), which removed the cost. A full copy run the way the live one runs showed 16 s of work
 in every 2 s tick. Good move: when a measurement disagrees with what the live system shows, make the test more
 like the live one before you trust it.
+
+**An idle-GPU alert said hundreds of owner jobs were waiting, all evening.** They were two research copies nobody had
+served for two days. Good move: a signal counts only what someone is waiting on (here, queues a live runner reads),
+so an alert means a person or a run is actually stuck.
+
+**An old run, its builder long gone, held a render card for an hour without progress while the current run waited
+hours for that card.** Good move: what is it, whose is it, is it moving? Superseded, no owner, no progress: stop it,
+say what it was, and the live run gets the card.
 
 More worked examples: references/EXAMPLES.md.
 

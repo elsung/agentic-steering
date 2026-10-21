@@ -364,7 +364,7 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
 
 11. **A rule in a prompt is a suggestion; a rule in the code is a rule.** The judges' constraints said "a fresh run
     it starts itself", and a mission builder started R008 inside the production project, beside the live R007. R007's
-    shoot sat unqueued and the RTX was idle about an hour (h3:0). Fix: every agent job carries `H3_AGENT_JOB`, and the
+    shoot sat unqueued and the RTX was idle about an hour (the orchestrator). Fix: every agent job carries `H3_AGENT_JOB`, and the
     engine refuses to make, start, resume or pause a run in the production root for it, naming the way out (a
     scratch root). The constraint text changed too, but the refusal is what holds.
 
@@ -379,8 +379,8 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     back to it. Fourteen finished builders sat unlanded, among them the ep01 voice work script-to-hit was waiting for.
     Fix: count only processes running land.sh, and recheck a skipped head. A scan of finished-but-unlanded branches
     found the 14.
-14. **A deploy is part of a merge.** The dashboard kept serving old web code after a web merge until h3:0 restarted it
-    (h3:0). land.sh now restarts it after any merge that touches the web code, and says so in the inbox.
+14. **A deploy is part of a merge.** The dashboard kept serving old web code after a web merge until the orchestrator restarted it
+    (the orchestrator). land.sh now restarts it after any merge that touches the web code, and says so in the inbox.
 
 15. **The model's own limits are an outage the loop must ride out.** From 10:56 to 12:37 every judge died on the
     Claude session limit within a minute. The loop relaunched each one 10 minutes later, about 30 wasted rounds, and
@@ -432,7 +432,7 @@ seconds) was met at round 89. hitmaker-ui is 3 of 5, previz-15 is 1 of 5 (its ju
 script-to-hit is 0 of 3: ep01 still lacks its spoken lines end to end. Loop numbers: since 2026-10-18 23:40: 450 merges (27.1/h), 309 land conflicts, 0 did not start, 67 area collisions, 12 stalls, 22 silent deaths, 301 queue starts, 405 cards moved (114 to done).
 
 23. **Every pause needs an end that doesn't depend on someone remembering.** A manual hold on R010's visualise
-    stage outlived the watcher meant to release it, and the run sat idle (h3:0). Fix: a hold carries an expiry
+    stage outlived the watcher meant to release it, and the run sat idle (the orchestrator). Fix: a hold carries an expiry
     (default 20 min), the runner releases expired holds and logs it, and the watchdog posts any hold over 10 min on a
     live run. The same goes for leases, locks and reservations: they all need a timeout plus an alarm.
 
@@ -546,6 +546,20 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 51. **Self-heal checks for a live sibling.** Restarting quit work without asking who already took it over doubles it.
 52. **Idle has a cost; measure it.** Processes re-reading their history every tick taxed every real job on the machine.
 53. **Give cheap agents the facts they would otherwise go and search for**, and say what not to do and why.
+54. **Count only what someone is waiting on.** An idle-GPU alert counted every queued job on disk and labelled it
+    owner work; the 243 jobs were two research copies nobody had served for two days. A signal that counts the
+    unowned trains everyone to ignore it.
+55. **Two tools on one thing share one lock.** A cleanup that told git to forget missing worktrees ran while a mover
+    had one worktree in flight, and it lost its git record (re-attached; no edits lost). Movers and pruners now take
+    the same lock.
+56. **A superseded run competes with its replacement.** An old timed run, its builder gone, held a render card for
+    an hour without progress while the current timed run waited hours for that card. Stopping the old one is the
+    fastest speed-up available; check owner and progress first, then stop it and say so.
+57. **A delete is the owner's: gather it, size it, remind them.** Old merged worktrees go into one folder on the same
+    disk (an instant move), with an index, one copy-paste delete command, and a weekly reminder. The system frees
+    the decision; the owner frees the disk.
+58. **Report the number that didn't move.** Moving active worktrees off the busy disk took it from 95.5 % to 93 %
+    busy: renders were the load. Saying so points the next fix at the real cost.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

@@ -63,3 +63,11 @@ looks like work is still waste, and it taxes all the real work beside it.
 **A cheap judge ran its own search across hundreds of folders on a slow disk to find the newest outputs.** Good move:
 hand a cheap agent the answer it would otherwise search for. Put the facts it needs in its evidence, and say what
 not to do and why.
+
+**Two cleanup tools touched the same worktree at once.** A mover had a worktree in flight; a pruner saw it missing
+and told git to forget it. Good move: re-attach it without losing its uncommitted edits, then give both tools one
+shared lock, so the race can't happen again.
+
+**The owner wanted old worktrees gone but deletes are theirs.** Good move: move them into one folder on the same
+disk (instant), write an index with sizes and one delete command to copy, and post a weekly reminder. The agent does
+everything except the irreversible step.
