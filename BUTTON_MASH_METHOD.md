@@ -169,6 +169,16 @@ main page script, 5973 lines, each changed ~190 times and fixed ~17 times in a w
 web layer (the area map and dead-code inventory, one shared poller, the first route group out of the route file).
 Before/after numbers go here when they land.
 
+**First results (00:32 -> 01:39, about an hour, with feature work landing on top):** four cleanup builders, all landed
+with behaviour unchanged by their own before/after probes. The main page script went from 5973 to 5413 lines (its
+Dev desk block moved to its own file); the route file from 8052 to 7868 lines and from 207 to 194 routes (the
+house-rules group moved to its own module); polling loops from 10 to 8 behind one hidden-tab-aware poller; six toast
+copies became one helper (12 of 12 before/after screenshots identical). The whole web layer still grew by 143 lines
+that hour, from feature work. That is the point of tracking slope: cleanup has to outpace growth in the hot files,
+and one hour showed it can. One lesson about the signals themselves: a name-pattern count (toast definitions) read 5
+both before and after, because each page kept a small named lane on the shared helper. Count implementations, not
+names.
+
 ## Working examples we found (October 2026)
 
 Each source was checked; second-hand figures are marked as such.
