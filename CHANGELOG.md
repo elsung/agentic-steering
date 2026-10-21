@@ -13,6 +13,17 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.13.0 (2026-10-21)
+
+**Minor: one worked example in the skill, method lessons 78-83.**
+
+- **Check before spending:** stale inputs were found only after four-minute renders.
+- **A real need without a door goes around the fence:** give it a door, then fence.
+- **Stopping a worker takes back what it sent:** a stopped job's request kept rendering.
+- **Writer and reader agree on a contract's shape:** a guard misread the window file it was meant to honour.
+- **Reverse a wrong rule cleanly:** in code and briefs at once, saying what it replaces.
+- **A checklist is not a ladder:** independent milestones are checked together each round.
+
 ## 1.12.0 (2026-10-21)
 
 **Minor: one worked example in the skill, method lessons 74-77 (the rest of the Roll 13 night).**

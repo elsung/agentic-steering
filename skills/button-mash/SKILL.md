@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.12.0 (2026-10-21). See CHANGELOG.md in the repo root.
+VERSION 1.13.0 (2026-10-21). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -160,6 +160,10 @@ The routine action waits while the owner's live work runs, and says so once.
 **A hold "until the episode's cut" kept back the world items the cut needed, so the episode deadlocked.** Good
 move: before any hold or wait, name what releases it and check that the release does not depend on the held work;
 when it does, hold only the later work instead.
+
+**A builder had to time something on the main card, had no sanctioned way in, and posted straight to the renderer in
+a loop while the guard stopped each try.** Good move: give the legitimate need a door (a wrapper that waits its turn
+in the lock), say in every brief that it exists, and only then expect the fence to hold.
 
 More worked examples: references/EXAMPLES.md.
 

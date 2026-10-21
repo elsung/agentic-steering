@@ -676,6 +676,22 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     card, so the work the card needed could not be claimed. Count waiting and working separately.
 77. **One state, one owner.** Two watchers both paused and resumed the same runs; one resumed what the other still
     needed held. Hand state over explicitly instead of letting two loops act on it.
+78. **Check before spending, not after.** Renders whose inputs had changed ran four minutes each and only then failed
+    their freshness check. A cheap check belongs at claim time, before the expensive work.
+79. **A real need without a door goes around the fence.** A builder that had to time something on the main card had
+    no sanctioned way in, so it posted straight to the renderer in a loop while the guard stopped each attempt. Give
+    the need a door (a wrapper that takes the lock), then the fence holds.
+80. **Stopping a worker must take back what it sent.** A stopped job's request kept rendering on the card outside every
+    lock. A worker withdraws its own queued and running requests on the way out, and a sweep catches the ones whose
+    worker is already gone.
+81. **The writer and the reader of a contract must agree on its shape.** A guard looked for a JSON window file; the
+    orchestrator wrote YAML under another name, and the guard would have refused the very job the window was for. Read
+    the file the other side actually writes, in every format it uses.
+82. **Reverse a wrong rule cleanly.** "Run work goes to the main card" moved lab work onto it; the owner's rule was the
+    opposite. Turn the rule around in code and in the briefs at once, and say plainly that it replaces the old one.
+83. **A checklist is not a ladder.** A readiness list judged one item at a time sat on item one for seven rounds while
+    others' work had already met half of it. When milestones are independent, check them all each round and work only
+    on the open ones.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
