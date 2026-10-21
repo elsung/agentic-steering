@@ -692,6 +692,20 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 83. **A checklist is not a ladder.** A readiness list judged one item at a time sat on item one for seven rounds while
     others' work had already met half of it. When milestones are independent, check them all each round and work only
     on the open ones.
+84. **A long-lived process runs the code it loaded.** The loop that applied judges' verdicts had loaded its rules nine
+    hours earlier, so new rules reached the judges' prompts but never the code that acted on their answers. A
+    long-lived worker reloads its rules when they change, or is restarted with them.
+85. **"List what is left" erases what is done.** Judges told to send back only the unfinished items dropped each one
+    they met, and a checklist of eight showed five with nothing done. Keep finished items in the record; send changes,
+    not the remainder.
+86. **A citation must be about the claim.** A judge marked one item met citing a real owner message about another. A
+    check that the source exists is not a check that it says what is claimed; quote the source beside the claim.
+87. **A copy inherits its source's state; decide what it keeps.** Scratch copies carried their source's holds (they sat
+    queued forever), its closed status and its code pin. When you copy work, say which state comes along.
+88. **A per-worker file must not live in a shared place.** Every branch edited one report file at the repository's
+    root, and almost every merge conflicted on it. Per-worker records live per worker, or merge with a fixed rule.
+89. **The rules you give the agents bind you too.** The orchestrator searched the busy disk it had told every agent
+    never to search. Run your own commands past your own standing orders.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

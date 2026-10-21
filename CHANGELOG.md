@@ -13,6 +13,17 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.14.0 (2026-10-21)
+
+**Minor: one worked example in the skill, method lessons 84-89.**
+
+- **A long-lived process runs the code it loaded:** reload rules on change.
+- **"List what is left" erases what is done:** keep finished items, send changes.
+- **A citation must be about the claim:** quote the source beside it.
+- **A copy inherits its source's state:** decide what comes along.
+- **A per-worker file must not live in a shared place:** one report file caused most merge conflicts.
+- **The rules you give agents bind you too.**
+
 ## 1.13.0 (2026-10-21)
 
 **Minor: one worked example in the skill, method lessons 78-83.**

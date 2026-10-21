@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.13.0 (2026-10-21). See CHANGELOG.md in the repo root.
+VERSION 1.14.0 (2026-10-21). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -164,6 +164,10 @@ when it does, hold only the later work instead.
 **A builder had to time something on the main card, had no sanctioned way in, and posted straight to the renderer in
 a loop while the guard stopped each try.** Good move: give the legitimate need a door (a wrapper that waits its turn
 in the lock), say in every brief that it exists, and only then expect the fence to hold.
+
+**New rules reached the judges' prompts but not the long-running loop that applied their answers, which had loaded
+its code hours earlier.** Good move: when you change a rule, check every process that runs it, and make long-lived
+ones reload on change.
 
 More worked examples: references/EXAMPLES.md.
 
