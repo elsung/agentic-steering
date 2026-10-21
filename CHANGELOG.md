@@ -7,6 +7,16 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.8.0 (2026-10-21)
+
+**Minor: one worked example in the skill, method lessons 59-63 (the night's incidents and owner corrections).**
+
+- **An environment pointer travels to everything spawned under it:** agents' lab-box pointer sent real runs there.
+- **Guard the write, not the door:** a UI check reached live data through an unfenced path.
+- **A cleanup check must recognise every shape of the thing:** a second launch form hid runners for seven hours.
+- **Goals evolve; keep the path versioned:** judges revise milestones from the owner's newest words, history kept.
+- **What a process starts, it stops:** leftover test children pushed the machine's load to 72.
+
 ## 1.7.1 (2026-10-20)
 
 **Patch: public-safety scrub.** Session window names and a private config path in older method lessons are now

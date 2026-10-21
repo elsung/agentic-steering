@@ -560,6 +560,21 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     the decision; the owner frees the disk.
 58. **Report the number that didn't move.** Moving active worktrees off the busy disk took it from 95.5 % to 93 %
     busy: renders were the load. Saying so points the next fix at the real cost.
+59. **A pointer in the environment travels to everything spawned under it.** Agents were pointed at a lab box so
+    their checks stayed off the main card; every run and runner they started inherited the pointer, so real work kept
+    landing on the slow boxes. Fix by construction: the place that starts run work decides the machine, drops the
+    inherited pointer, and says so; the lab boxes stay for tests.
+60. **Guard the write, not the door.** A UI check reached the live data through a path nobody fenced. The guard
+    belongs where every path meets (the queue write), keyed on who is asking, and it answers with the right place to
+    go instead.
+61. **A cleanup check must recognise every shape of the thing.** Runners started through a second launch form were
+    invisible to the orphan check and respawned for seven hours. When something survives a cleanup, look at how it
+    was started.
+62. **Goals evolve; keep the path versioned.** The owner's intent sharpens as work lands. Judges read the owner's
+    newest words each round and may add, split, reword, replace or call a milestone good enough for now, with the why
+    and its source kept beside the old list, so the path can move without losing how it got there.
+63. **What a process starts, it stops.** Test helpers left encoders and job runners alive after the builder ended,
+    and load reached 72. Give children a process group and a timeout at the source, and a sweep for leftovers.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

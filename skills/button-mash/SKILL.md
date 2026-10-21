@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.7.1 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.8.0 (2026-10-21). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -137,6 +137,10 @@ so an alert means a person or a run is actually stuck.
 **An old run, its builder long gone, held a render card for an hour without progress while the current run waited
 hours for that card.** Good move: what is it, whose is it, is it moving? Superseded, no owner, no progress: stop it,
 say what it was, and the live run gets the card.
+
+**Agents were pointed at the lab boxes so their checks stayed off the main card, and real runs kept landing there.**
+Every run and runner an agent started inherited the pointer. Good move: fix it where the work starts. The run's
+machine is decided there, the inherited pointer is dropped with a note, and the lab boxes stay for tests.
 
 More worked examples: references/EXAMPLES.md.
 
