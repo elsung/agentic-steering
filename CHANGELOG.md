@@ -13,6 +13,16 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.10.0 (2026-10-21)
+
+**Minor: one worked example in the skill, method lessons 64-68, and Forward and clean's first results.**
+
+- **A rank means something only inside the queue that made it:** a cross-project cap kept a timed run off the card.
+- **Mark at the moment it becomes true:** a run that started after its runner was never marked timed.
+- **Check the effect, not the echo:** a collapsed long message made a delivery check resend it for half an hour.
+- **A hang is silence on every meter at once:** watch the conjunction, then escalate in steps.
+- **Count implementations, not names:** a name count missed a six-to-one consolidation.
+
 ## 1.9.0 (2026-10-21)
 
 **Minor: "Forward and clean", the owner's question of moving fast without code rot.** A new method section with ten

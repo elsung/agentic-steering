@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.9.0 (2026-10-21). See CHANGELOG.md in the repo root.
+VERSION 1.10.0 (2026-10-21). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -148,6 +148,10 @@ say what it was, and the live run gets the card.
 **Agents were pointed at the lab boxes so their checks stayed off the main card, and real runs kept landing there.**
 Every run and runner an agent started inherited the pointer. Good move: fix it where the work starts. The run's
 machine is decided there, the inherited pointer is dropped with a note, and the lab boxes stay for tests.
+
+**A timed run's jobs never reached the card queue, so the priority rule that would have put them first never saw
+them.** An admission cap upstream compared ranks across projects, which meant nothing. Good move: when a rule "can't
+help", look for the gate in front of it, and give comparisons across boundaries a shared first key.
 
 More worked examples: references/EXAMPLES.md.
 

@@ -640,6 +640,19 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     and its source kept beside the old list, so the path can move without losing how it got there.
 63. **What a process starts, it stops.** Test helpers left encoders and job runners alive after the builder ended,
     and load reached 72. Give children a process group and a timeout at the source, and a sweep for leftovers.
+64. **A rank means something only inside the queue that made it.** A timed run was kept off the card because an
+    admission cap compared its job ranks with another project's, which were numbered in another catalog. Give every
+    cross-boundary comparison a shared first key (the run's class), or it orders by accident.
+65. **Mark at the moment it becomes true, not once at start.** A timed runner marked its runs when it started; the run
+    it served began a minute later and was never marked. A state that can arrive later is checked each tick.
+66. **A delivery check that reads the screen must know how the screen shortens things.** A long message shows as a
+    collapsed placeholder, so a check for its words failed every time and the message was resent every minute for half
+    an hour. Check the effect (the input box emptied) rather than the echo.
+67. **A hang looks like silence on every meter at once.** A video loader deadlocked with the card idle and the lock
+    held for 20 min, and nothing flagged it. The watch is the conjunction: one call for 10 min, card idle, lock held;
+    then escalate in steps (interrupt, restart, retry the job) and say each one.
+68. **Count implementations, not names.** A cleanup folded six toast copies into one helper and the name count read
+    the same before and after. Measure the thing the cleanup removes.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
