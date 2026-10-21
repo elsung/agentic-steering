@@ -7,6 +7,18 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.6.0 (2026-10-20)
+
+**Minor: one guideline line and six worked examples from the evening (the standing refinement pass).**
+
+- **Reproduce on the real thing as it really runs:** two profiles on a cut-down copy found nothing; a full copy showed
+  16 s of work in every 2 s tick.
+- **A repeated reason is the code, not luck:** one job failed four times on the same error and was retried each time.
+- **A fence guards a resource, not one door:** a 3D preview reached the GPU through the graphics driver.
+- **Check for a live sibling before a restart:** a relaunch put two builders in one worktree.
+- **Measure what idle costs:** idle processes re-read their whole history every two seconds.
+- **Hand cheap agents the answer:** a judge searched a slow disk for outputs the system already knew.
+
 ## 1.5.0 (2026-10-20)
 
 **Minor: one guideline line and four worked examples from the afternoon (the standing refinement pass).**

@@ -14,3 +14,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-20, v1.5.0 (standing refinement pass, 16:40).** From the afternoon's inbox: a changed signal whose
   reader wasn't moved (25 scope stops parked), a finished run called stalled, 28 ownerless test runs resumed, and
   routine restarts flooding the inbox.
+- **2026-10-20, v1.6.0 (standing refinement pass, 20:00).** From the evening: profiles on a trimmed copy hid the
+  cost twice, a same-reason failure retried four times, a fence with a side door, a relaunch beside a live sibling,
+  idle processes re-reading their history, and a cheap judge searching a slow disk.

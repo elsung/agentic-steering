@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.5.0 (2026-10-20). See CHANGELOG.md in the repo root.
+VERSION 1.6.0 (2026-10-20). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -50,7 +50,8 @@ BUTTON_MASH_METHOD.md.
 
   This takes minutes, and it changes what gets built.
 - **Check beliefs against the raw data.** A story about why something is slow or broken is a hypothesis until you
-  reproduce it from the real records, logs, frames or numbers.
+  reproduce it from the real records, logs, frames or numbers, on the real thing as it really runs: a trimmed copy
+  can hide the very cost you are chasing.
 - **Give the work an outside check you can run yourself** on the real output: a measurement, a comparison with the
   pro reference, or a viewer's-eye pass. It feeds the assessment loop. It is never a gate.
 - **Build durable workflows.** Give the agent the raw access and the machines it needs, so the human can leave the
@@ -123,6 +124,11 @@ not as a gate.
 **We changed how blocks with a default were posted, and the tool that re-briefed scope stops stopped seeing
 them.** For an afternoon, every builder that needed one file outside its area parked the fix. Good move: when you
 change a signal, find everything that reads it and move them with it.
+
+**Idle runners each held most of a CPU core, and the first two profiles found nothing.** Both used a cut-down copy
+(no images, no pinned code), which removed the cost. A full copy run the way the live one runs showed 16 s of work
+in every 2 s tick. Good move: when a measurement disagrees with what the live system shows, make the test more
+like the live one before you trust it.
 
 More worked examples: references/EXAMPLES.md.
 

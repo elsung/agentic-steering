@@ -1,6 +1,6 @@
 # The Button Mash Method
 
-VERSION 1.5.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
+VERSION 1.6.0 (2026-10-20), with the skill [skills/button-mash](skills/button-mash/SKILL.md). History: [CHANGELOG.md](CHANGELOG.md).
 
 > **Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.** (the owner's definition, #516)
@@ -538,6 +538,14 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     one that resumes everything it held revives ownerless experiments. Ask what is open and who still owns it.
 47. **The owner's inbox is for what changes what someone does.** Routine success (a restart onto new code) belongs in
     the log; three routine lines every ten minutes buries the one that matters.
+48. **Reproduce on the real thing, as it really runs.** Two profiles of an idle process on a trimmed copy found nothing;
+    the full copy with the real pinned code showed 16 s of work per 2 s tick. The trim removed the cost.
+49. **The same failure twice is the code, not luck.** A retry that hits the same reason gets no further; find the fix
+    (often already merged) and move the work onto it.
+50. **A fence guards a resource, not one door to it.** Hiding the GPU from one API left another path open.
+51. **Self-heal checks for a live sibling.** Restarting quit work without asking who already took it over doubles it.
+52. **Idle has a cost; measure it.** Processes re-reading their history every tick taxed every real job on the machine.
+53. **Give cheap agents the facts they would otherwise go and search for**, and say what not to do and why.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
