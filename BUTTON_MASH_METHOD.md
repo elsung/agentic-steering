@@ -114,6 +114,61 @@ The tools, in the loop's tools directory:
 - `outcome_check.sh`;
 - `loop_stats.py`: the numbers below.
 
+## Forward and clean: fast motion without code rot (owner, 2026-10-21)
+
+> "how do we be super ambitious and press forward and iterate towards our goal but doing smartly with architecture in
+> mind ... so we dont end up with spaghetti code and code rot and massive compounding tech debt? ... extreme forward
+> motion and fervor for constant quality improvements ... while still be able to have cleaner and cleaner and better
+> and better code and construction as we iterate aggressively."
+
+The research digest is in research/FORWARD_AND_CLEAN.md (Beck, Fowler, evolutionary architecture, Rieseberg, the
+large-codebase practices of fast teams, and 2024-2026 studies of agent-written code). Its main finding fits this
+method: **a check that would block a merge is worth more as a sensor the builder sees inside its own loop**, with the
+judgement-heavy measures on a trend board. Agents' failure mode is measured and specific: they re-implement what
+already exists, because they can't see it, not because they're careless. So the cure is mostly a map plus a nudge,
+not discipline.
+
+**The practices (each with the trend that shows it working; never a gate):**
+
+1. **One commit, one kind.** A behaviour change and a structure change (rename, move, extract) go in separate
+   commits. *Trend:* share of mixed commits.
+2. **Tidy what the next change needs, in its own small commit, first or right after.** The rest goes on a list,
+   never a cleanup branch. *Trend:* size of structure commits.
+3. **Second copy: look it up. Third copy: consolidate.** Agents reach a re-implementation by the second time, so the
+   brief says "before you add a player, modal, poller or endpoint, find the existing one and extend it". *Trend:*
+   how many places define each pattern (rot signals: players, modals, toasts, pollers).
+4. **An architecture map per area, cited in every brief.** Short: what each part owns, its seams, and where each kind
+   of new thing belongs. A map stops reinvention where history alone does not. *Trend:* features that extend an
+   existing module vs add a parallel one.
+5. **One writer per hotspot.** A hub file (the big route file, the big page script) has one builder at a time
+   (the area queue already does this); others add a new file the hub includes. *Trend:* land conflicts per merge.
+6. **A cleanup queue with a target, fed by real signals.** Rank areas by churn x size x fix commits and by
+   direction (getting worse or better), not by a score. While any hot area is getting worse, at least one builder
+   slot in five takes the top item of the queue; as the trends improve, the slice shrinks. *Trend:* the slope of the
+   worst area's signals.
+7. **Delete by moving, only what the evidence says is dead.** Dead code, flags and endpoints go to a retired folder
+   when nothing references them (search proves it; for endpoints, the request log too). False positives are the
+   worse failure. *Trend:* count of dead items found vs moved.
+8. **Small landings; migrations, never rewrites.** A big change goes in shards behind a seam (strangler fig, branch
+   by abstraction), each shard landed and undoable, and the temporary seam has a removal date. *Trend:* the biggest
+   landed diff; the oldest open branch.
+9. **Rot as a trend on the board.** The rot signals are measured hourly from main and kept as history; the board
+   shows the slope. A threshold may ratchet one notch with a reason; it never blocks. *Trend:* the board's slope.
+10. **Outside eyes on the real output.** A fresh-context look at the running page, render or run, and a red-team
+    crew member whose job is to show the change is wrong; never the builder grading itself. *Trend:* faults the
+    outside look catches before the owner does.
+
+**Where we differ from the sources.** Nearly every team studied blocks merges on deterministic checks and runs full
+suites. We don't (owner #321, #572): the deterministic checks (dependency direction, duplicate blocks, dead symbols)
+run as sensors inside the builder's loop and travel with its report; semantic conflicts are caught by looking at
+the real output after a merge and fixing forward. The owner proposed a fixed one-in-five cleanup slot; no source
+sets a ratio, so we run it as a floor while the trends are worsening, not as a permanent tax.
+
+**Applied first (2026-10-21):** rot signals measured hourly (worst: the route file, 8052 lines and 207 routes, and the
+main page script, 5973 lines, each changed ~190 times and fixed ~17 times in a week); three cleanup builders on the
+web layer (the area map and dead-code inventory, one shared poller, the first route group out of the route file).
+Before/after numbers go here when they land.
+
 ## Working examples we found (October 2026)
 
 Each source was checked; second-hand figures are marked as such.

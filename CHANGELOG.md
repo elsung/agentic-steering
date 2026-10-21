@@ -7,6 +7,14 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.9.0 (2026-10-21)
+
+**Minor: "Forward and clean", the owner's question of moving fast without code rot.** A new method section with ten
+practices (one commit one kind; tidy what the change needs; look it up at the second copy, consolidate at the third;
+a map per area cited in briefs; one writer per hotspot; a signal-fed cleanup queue with a floor while trends worsen;
+delete by moving only what evidence says is dead; small landings and migrations, never rewrites; rot as a trend;
+outside eyes), a steering line in the skill, and the research digest (research/FORWARD_AND_CLEAN.md).
+
 ## 1.8.0 (2026-10-21)
 
 **Minor: one worked example in the skill, method lessons 59-63 (the night's incidents and owner corrections).**

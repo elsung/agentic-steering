@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.8.0 (2026-10-21). See CHANGELOG.md in the repo root.
+VERSION 1.9.0 (2026-10-21). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -78,6 +78,13 @@ BUTTON_MASH_METHOD.md.
   Don't re-derive what's already known or re-run long reports. Stop a loop that isn't making progress, since motion
   that moves nothing is waste. Our cost practices are in STEERING.md ("Context and intent first") and PRACTICES.md
   (section 9, models by verifiability).
+- **Forward and clean.** Move fast and leave each area a little cleaner:
+  - one commit, one kind: behaviour and structure (rename, move, extract) never share a commit;
+  - tidy what your change needs, in its own small commit;
+  - before you add a player, modal, poller, endpoint or helper, find the existing one and extend it (the area's map in
+    docs/architecture/ says where things belong); a third copy gets consolidated;
+  - move dead code aside only when a search proves nothing uses it; land small steps, never a rewrite.
+  Rot signals are a trend the board shows, never a gate. The method's "Forward and clean" section has the why.
 - **Keep the owner's view live.** When your work supersedes something waiting on the owner (a review item, a card,
   a decision), archive it at once with one line on what replaced it. When a newer write-up replaces an older one, mark
   the older one as superseded by the newer. The owner's "needs you" list should hold only live decisions. A stale ask
