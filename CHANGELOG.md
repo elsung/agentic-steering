@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.15.1 (2026-10-21)
+
+**Patch: public-safety scrub.** The method's worked log named private project, mission and character names and run
+ids; they are now plain roles ("the UI mission", "a character", "a run"). A check (scripts/public_check.sh) now runs
+before every push and refuses one that names the private project.
+
 ## 1.15.0 (2026-10-21)
 
 **Minor: "Staying smart through a very long run", the owner's observation, as a method section and a worked example.**
@@ -44,7 +50,7 @@ index instead of rotting or being deleted.
 
 ## 1.12.0 (2026-10-21)
 
-**Minor: one worked example in the skill, method lessons 74-77 (the rest of the Roll 13 night).**
+**Minor: one worked example in the skill, method lessons 74-77 (the rest of the roll night).**
 
 - **A new rule meets the old ones:** two right rules together moved a lab run onto the main card mid-roll.
 - **A hold must not wait on what it holds:** a hold until the cut blocked what the cut needed.
@@ -53,7 +59,7 @@ index instead of rotting or being deleted.
 
 ## 1.11.0 (2026-10-21)
 
-**Minor: one worked example in the skill, method lessons 69-73 (Roll 13 night).**
+**Minor: one worked example in the skill, method lessons 69-73 (the roll night).**
 
 - **A rule enforced by the asker's code fails while older code runs:** enforce where every version passes, sweep too.
 - **A sweep reacts; a guard at the door prevents:** refuse at start, keep the sweep as a backstop.
@@ -66,7 +72,7 @@ index instead of rotting or being deleted.
 **Minor: one worked example in the skill, method lessons 64-68, and Forward and clean's first results.**
 
 - **A rank means something only inside the queue that made it:** a cross-project cap kept a timed run off the card.
-- **Mark at the moment it becomes true:** a run that started after its runner was never marked timed.
+- **Mark at the moment it becomes true:** A run that started after its runner was never marked timed.
 - **Check the effect, not the echo:** a collapsed long message made a delivery check resend it for half an hour.
 - **A hang is silence on every meter at once:** watch the conjunction, then escalate in steps.
 - **Count implementations, not names:** a name count missed a six-to-one consolidation.
@@ -122,7 +128,7 @@ plain roles ("the orchestrator", "a lead").
 
 - **Move a signal's readers with it:** blocks that named a default began posting as decisions, and the tool that
   re-briefed scope stops only read blocks, so every out-of-area fix parked for an afternoon.
-- **Quiet with nothing open is finished, not stalled:** a run that had finished every stage was flagged as stuck.
+- **Quiet with nothing open is finished, not stalled:** A run that had finished every stage was flagged as stuck.
 - **Bring back only what someone still owns:** 28 held test runs, days old and ownerless, were resumed at once.
 - **Routine success isn't news:** restart notices put three lines in the owner's inbox every ten minutes.
 

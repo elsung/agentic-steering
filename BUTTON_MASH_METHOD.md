@@ -358,7 +358,7 @@ One broken main so far: a stray character in `edl.py` landed through a merge at 
   subshell held the caller's output pipe open for the agent's whole life, so the queue's launch timed out before it
   could claim the job. Fix: claim the job before launching, and launch with `cd dir || exit; nohup agent &`, which
   returns in milliseconds.
-- **A judge proposed jobs on another lead's live run** ("unstick R004"). They were stopped after 42 s with nothing
+- **A judge proposed jobs on another lead's live run** ("unstick a run"). They were stopped after 42 s with nothing
   committed. Fix: every judge prompt now carries standing constraints: never touch a running run; use a scratch copy.
 - **A judge read an expected 404** (the app probing a dev-only endpoint) as a defect. The builder it sent found this in
   minutes and said so. Cost: one small job. Fixing forward absorbed the judge's mistake.
@@ -411,18 +411,18 @@ What we learned about why, in order:
    season as pictures"), so it could never be met in 24 rounds. Fix: judge only the current milestone's own words, and
    keep later gaps for later milestones.
 
-**06:15: 193 merges (29 an hour), still no milestone met.** hitmaker-ui is on round 30; its rounds now agree on the
+**06:15: 193 merges (29 an hour), still no milestone met.** The UI mission is on round 30; its rounds now agree on the
 one next action at both screen sizes and are down to one contradiction on one page. Two more blind spots, found by
-reading why previz-15 and script-to-hit had no judge round for 70 minutes:
+reading why the pre-viz mission and the episode mission had no judge round for 70 minutes:
 5. **Unowned files block builders.** Five page folders (the project page among them) were in no area, so three UI
    builders in a row stopped with "outside my scope". Fix: every file the app serves now has an owner.
 6. **A finished agent can still look alive.** A builder wrote its final reply at 05:15, but its `claude -p` process
-   kept waiting on a background shell it had started. It held two areas for an hour, which starved previz-15's job and
-   kept script-to-hit's judge from running. Fix: a builder whose reply is written has ended, whatever its pid says. A
+   kept waiting on a background shell it had started. It held two areas for an hour, which starved the pre-viz mission's job and
+   kept the episode mission's judge from running. Fix: a builder whose reply is written has ended, whatever its pid says. A
    second bug showed up as soon as that was fixed: two queued jobs on the same area started in the same tick, because
    the held set wasn't updated after the first launch.
 
-**07:00: the first milestone met.** previz-15's p0 (a run folder makes an ep01 cut and animatic of real takes, read
+**07:00: the first milestone met.** The pre-viz mission's p0 (a run folder makes an ep01 cut and animatic of real takes, read
 back by run id). Three independent judges had said "met" since 06:37, and the loop threw each one out. Judges write
 an opened file as "path (how I looked)", and the evidence check tested the whole string as a path. Fix: the first
 word is the path. A contact sheet of the 145 s cut showed real cast takes with captions from start to end.
@@ -430,7 +430,7 @@ word is the path. A contact sheet of the 145 s cut showed real cast takes with c
    production run counted as live. By 06:59 the RTX was at 0 % with 122 production jobs queued. Fix: an RTX idle 10
    min releases the held runs for 30 min, and run-ops is told production isn't feeding the GPU.
 
-8. **"Newest" is not "best".** script-to-hit's judge went from a 189 s cut with 183 s real (round 20) to a fresh run's
+8. **"Newest" is not "best".** The episode mission's judge went from a 189 s cut with 183 s real (round 20) to a fresh run's
    2-of-24-shot cut (rounds 21-22), only because it was newer, and queued jobs to fix the fresh run. Fix: judge the
    best output toward the milestone, name it, and say if a newer one passed it.
 
@@ -440,23 +440,23 @@ word is the path. A contact sheet of the 145 s cut showed real cast takes with c
    on scope is re-briefed once with the areas of the files it named, and queued. The queue still keeps two builders
    out of one area.
 
-10. **Builders stop on decisions they already have defaults for.** The r23 builder wrote six decisions, each with a
-    sound default (Rachel's sample as a draft, voices on the idle Spark), then stopped. Fix: the brief now says a
+10. **Builders stop on decisions they already have defaults for.** One builder wrote six decisions, each with a
+    sound default (a character's sample as a draft, voices on the idle Spark), then stopped. Fix: the brief now says a
     decision with a default that can be undone is not a block: take it, mark it "draft, owner may swap", and keep
     going. The owner gets one decision line with the default already under way. The same hour the scope self-heal
     fired on its own (p-audience-input re-briefed with crew-cut added).
 
-**08:05: two milestones met.** hitmaker-ui m1 (Home and project pages clean and usable at phone and desktop width,
+**08:05: two milestones met.** The UI mission m1 (Home and project pages clean and usable at phone and desktop width,
 one obvious next action) was met at round 42, 20 minutes after the scope self-heal and an hour after the goalpost
 fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflicts, 0 did not start, 64 area collisions, 9 stalls, 20 silent deaths, 156 queue starts, 252 cards moved (65 to done).
 
 11. **A rule in a prompt is a suggestion; a rule in the code is a rule.** The judges' constraints said "a fresh run
-    it starts itself", and a mission builder started R008 inside the production project, beside the live R007. R007's
+    it starts itself", and a mission builder started a run inside the production project, beside the live production run. That run's
     shoot sat unqueued and the RTX was idle about an hour (the orchestrator). Fix: every agent job carries `H3_AGENT_JOB`, and the
     engine refuses to make, start, resume or pause a run in the production root for it, naming the way out (a
     scratch root). The constraint text changed too, but the refusal is what holds.
 
-12. **A spin can hide in new words.** hitmaker-ui m2 hit "the test project shows no episode rows" in five rounds in a row. Each
+12. **A spin can hide in new words.** The UI mission m2 hit "the test project shows no episode rows" in five rounds in a row. Each
     judge worded it anew (similarity 0.2 to 0.76), so the same-gap check never fired, and each round queued another
     patch job. Fix: every 5th unmet round on one milestone counts as a spin. The spin prompt shows the last five
     gaps side by side and asks for one job that first traces the root cause in the running system.
@@ -464,7 +464,7 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
 13. **Finished work that never lands is the quietest failure.** The check for "a land is already running" matched any
     process whose command line mentioned land.sh. A builder hanging after its reply has its brief on its command line,
     and the brief names land.sh and the builder's own worktree. Autopilot marked that head as handled and never came
-    back to it. Fourteen finished builders sat unlanded, among them the ep01 voice work script-to-hit was waiting for.
+    back to it. Fourteen finished builders sat unlanded, among them the ep01 voice work the episode mission was waiting for.
     Fix: count only processes running land.sh, and recheck a skipped head. A scan of finished-but-unlanded branches
     found the 14.
 14. **A deploy is part of a merge.** The dashboard kept serving old web code after a web merge until the orchestrator restarted it
@@ -479,7 +479,7 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     builder, and not past its written reply. The same bug had been fixed in autopilot three hours earlier. The rule
     lives in each script that waits, so each one has to get it.
 
-**13:05: three milestones met** (previz-15 p0, hitmaker-ui m1 and m2). The 14 stranded branches are all handled:
+**13:05: three milestones met** (the pre-viz mission p0, the UI mission m1 and m2). The 14 stranded branches are all handled:
 4 merged, 6 already in main, 3 conflicts sent to the resolver, plus the voice work.
 
 17. **Throwaway copies are a resource leak a fast loop turns into an outage.** At about 30 merges an hour, every job
@@ -504,7 +504,7 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     waited 12 to 22 minutes behind them. Fix: re-land once per branch head, and land.sh refuses a second copy for
     one worktree. Self-healing loops need idempotence keys, or the healer becomes the outage.
 
-21. **"Blocked, the lead decides" is a silent wait unless the lead hears it.** hitmaker-ui blocked at 13:53 during the
+21. **"Blocked, the lead decides" is a silent wait unless the lead hears it.** The UI mission blocked at 13:53 during the
     merge jam. The line went only to the inbox, and a lead never saw it, so the mission sat for 45 minutes. Fix: the
     block goes to the lead's pane with delivery checked, and a blocked mission whose own jobs land afterwards resumes
     itself. The block was the pipe, not the goal.
@@ -515,30 +515,30 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     first version started a second R3 beside the one the lead had just launched, in another worktree. Rounds are now
     matched by name, and a hand-started one is followed, not doubled.
 
-**16:15: four milestones met.** hitmaker-ui m3 (the Cut page shows the real cut with hit notes on the cut's own
-seconds) was met at round 89. hitmaker-ui is 3 of 5, previz-15 is 1 of 5 (its judge split p1 into smaller steps), and
-script-to-hit is 0 of 3: ep01 still lacks its spoken lines end to end. Loop numbers: since 2026-10-18 23:40: 450 merges (27.1/h), 309 land conflicts, 0 did not start, 67 area collisions, 12 stalls, 22 silent deaths, 301 queue starts, 405 cards moved (114 to done).
+**16:15: four milestones met.** The UI mission m3 (the Cut page shows the real cut with hit notes on the cut's own
+seconds) was met at round 89. The UI mission is 3 of 5, the pre-viz mission is 1 of 5 (its judge split p1 into smaller steps), and
+the episode mission is 0 of 3: ep01 still lacks its spoken lines end to end. Loop numbers: since 2026-10-18 23:40: 450 merges (27.1/h), 309 land conflicts, 0 did not start, 67 area collisions, 12 stalls, 22 silent deaths, 301 queue starts, 405 cards moved (114 to done).
 
-23. **Every pause needs an end that doesn't depend on someone remembering.** A manual hold on R010's visualise
+23. **Every pause needs an end that doesn't depend on someone remembering.** A manual hold on a run's visualise
     stage outlived the watcher meant to release it, and the run sat idle (the orchestrator). Fix: a hold carries an expiry
     (default 20 min), the runner releases expired holds and logs it, and the watchdog posts any hold over 10 min on a
     live run. The same goes for leases, locks and reservations: they all need a timeout plus an alarm.
 
 **19:46: seven milestones met.** In the last three hours:
-- hitmaker-ui m4 (one-tap steer) was met. hitmaker-ui is 4 of 5, now on m5 (premium).
-- previz-15 p1a (boards) was met. previz-15 is 2 of 5.
-- script-to-hit h1 (ep01 plays end to end, lines spoken, consistent faces) was met. That's its first milestone, after
+- The UI mission m4 (one-tap steer) was met. The UI mission is 4 of 5, now on m5 (premium).
+- The pre-viz mission p1a (boards) was met. The pre-viz mission is 2 of 5.
+- The episode mission h1 (ep01 plays end to end, lines spoken, consistent faces) was met. That's its first milestone, after
   about 75 rounds; the last gaps were the voice routing and the S24 face check.
 
 Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0 did not start, 67 area collisions, 12 stalls, 22 silent deaths, 342 queue starts, 446 cards moved (130 to done).
 
-24. **Agents block on beliefs, so give them the checks, not just the rules.** previz-15's ep01-only run never
+24. **Agents block on beliefs, so give them the checks, not just the rules.** The pre-viz mission's ep01-only run never
     started. Its builder waited for "owner OK for the paid read and World calls", which are Claude subscription calls,
     and for "the voice-research hold on two draft boxes", which wasn't active. Each rule was right; the builder's facts
     were wrong. Fix: every brief names the one command that checks each fact (what counts as paid, box_hold.sh
     status, the free-cards list), and the loops lead queued the run with the facts in its brief.
 
-25. **A loose goal plus an autonomous loop will optimise the wrong thing in plain sight.** hitmaker-ui's last milestone
+25. **A loose goal plus an autonomous loop will optimise the wrong thing in plain sight.** The UI mission's last milestone
     said "looks premium and genre-aware". Over 15 rounds its judges and builders repainted the approved interface:
     rose background, italic serif title, heavy outlines. The owner called it terrible (owner #429). The loop did
     exactly what the words allowed. Fix: some areas are taste, not tasks. The look belongs to the orchestrator's reviewed UI
@@ -546,8 +546,8 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     fenced areas where only a person decides.
 
 26. **"Only a user can retry" is a stop the user never hears about.** The engine blocks a failed job's key until a
-    user retries it. That's sensible for production, but nobody is told. R007 sat after a drain cancelled its jobs,
-    and r97's one-hour test sat 25 min after one lookbook failure, with every card stale and the Spark idle. Fix: the
+    user retries it. That's sensible for production, but nobody is told. A run sat after a drain cancelled its jobs,
+    and another run's one-hour test sat 25 min after one lookbook failure, with every card stale and the Spark idle. Fix: the
     watchdog catches a run that stopped on a failed or cancelled job. A mission scratch run is retried once per
     failed job; a production run goes to its lead with the exact retry command.
 
@@ -563,7 +563,7 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     `drive_missions` took 253 s because starting a judge round ran the mission's look command (up to 10 min) inside
     the pass. Fix: round starts run on their own, with the mission's own lock, and any step over 60 s is logged. The
     same check found two autopilot loops running at once (keeper plus service); a lock file now allows one.
-29. **Agents name a safe default and then stop anyway.** Rounds r126, r129 and r157 each wrote "Default: ...",
+29. **Agents name a safe default and then stop anyway.** Three rounds each wrote "Default: ...",
     undoable and scratch-only, and posted it as a block. A rule in the brief was not enough. Fix: the block command
     itself (event.sh) turns any block that names a default into `[decided]` and tells the builder to take it and go
     on. Two more versions of the same stop got rules in the brief: a busy box is a queue, not a block, and an
