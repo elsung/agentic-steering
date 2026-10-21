@@ -653,6 +653,20 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     then escalate in steps (interrupt, restart, retry the job) and say each one.
 68. **Count implementations, not names.** A cleanup folded six toast copies into one helper and the name count read
     the same before and after. Measure the thing the cleanup removes.
+69. **A rule enforced by the asker's own code fails while older code is running.** A card window held new takers
+    back, but a runner started on older code never checked it and took the card in turns. Enforce at a point every
+    version passes (the start of the thing, a shared lock) and keep an outside sweep that acts whatever code is running.
+70. **A sweep reacts; a guard at the door prevents.** A once-a-minute pause let a runner that started and claimed inside
+    that minute take the card first. Refuse at start, and keep the sweep as the backstop.
+71. **Your own automation must respect the owner's live work.** A routine "restart onto new code" restarted the
+    owner's live roll; nobody had told it about the rule "never restart the roll". Every self-healing action asks the
+    same stale-vs-important question a person would.
+72. **A service that starts work in the background and returns can kill that work on exit.** A timer-started board
+    pass died at birth every hour for four hours, because the service manager cleaned up the unit's processes when its
+    start command returned. A job that must outlive its starter says so in how it is run.
+73. **A declared output must be read where the worker writes it.** Two reports written to a path relative to the
+    worker's folder were read as absolute, called missing, and their readers rerun. Resolve paths the way the worker
+    would.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

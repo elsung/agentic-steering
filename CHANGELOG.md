@@ -13,6 +13,16 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.11.0 (2026-10-21)
+
+**Minor: one worked example in the skill, method lessons 69-73 (Roll 13 night).**
+
+- **A rule enforced by the asker's code fails while older code runs:** enforce where every version passes, sweep too.
+- **A sweep reacts; a guard at the door prevents:** refuse at start, keep the sweep as a backstop.
+- **Your own automation must respect the owner's live work:** a routine restart hit the live roll.
+- **Background work can die with its starter:** a timer's job was cleaned up every hour for four hours.
+- **Read a declared output where the worker writes it:** relative paths read as absolute caused false failures.
+
 ## 1.10.0 (2026-10-21)
 
 **Minor: one worked example in the skill, method lessons 64-68, and Forward and clean's first results.**
