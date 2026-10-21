@@ -7,6 +7,11 @@ One entry per revision. Semantic versions:
 
 Each entry names the real incident or owner note that taught it.
 
+## 1.7.1 (2026-10-20)
+
+**Patch: public-safety scrub.** Session window names and a private config path in older method lessons are now
+plain roles ("the orchestrator", "a lead").
+
 ## 1.7.0 (2026-10-20)
 
 **Minor: two worked examples in the skill, two in EXAMPLES.md, method lessons 54-58 (the standing refinement pass).**

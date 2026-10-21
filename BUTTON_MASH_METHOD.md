@@ -404,7 +404,7 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     A self-healing loop needs garbage collection as much as it needs retries.
 18. **Resource rules belong in one runtime file every router reads.** "Route nothing to two named GPU boxes" (owner #392)
     touched the engine's render targets, fallback cards, draft boxes and voice workers, plus autopilot's GPU watch
-    and the judges' GPU list. All of them now read `~/.config/h3/boxes_off.json` at every call, so the box's owner
+    and the judges' GPU list. All of them now read one shared "boxes off" file at every call, so the box's owner
     hands it back by editing one file, with no merge.
 19. **Failover has to be rehearsed on a real pane.** Account failover (owner #394) keeps each lead's transcript and
     flags. Its first trial found that pointing `CLAUDE_CONFIG_DIR` at the default dir makes Claude Code start as a
@@ -417,12 +417,12 @@ fix. Loop numbers: since 2026-10-18 23:40: 257 merges (30.5/h), 28 land conflict
     one worktree. Self-healing loops need idempotence keys, or the healer becomes the outage.
 
 21. **"Blocked, the lead decides" is a silent wait unless the lead hears it.** hitmaker-ui blocked at 13:53 during the
-    merge jam. The line went only to the inbox, and h3:4 never saw it, so the mission sat for 45 minutes. Fix: the
+    merge jam. The line went only to the inbox, and a lead never saw it, so the mission sat for 45 minutes. Fix: the
     block goes to the lead's pane with delivery checked, and a blocked mission whose own jobs land afterwards resumes
     itself. The block was the pipe, not the goal.
 
 22. **Sequences need a hand-off, not a person.** A17's UI rounds sat idle after each landing (R1 13:45, R2 14:57)
-    until h3:0 pushed. Fix: a chain file lists the rounds, and autopilot starts the next the moment the previous
+    until the orchestrator pushed. Fix: a chain file lists the rounds, and autopilot starts the next the moment the previous
     lands. With no brief written, it tells the lead where to write one, and starts the moment the file exists. The
     first version started a second R3 beside the one the lead had just launched, in another worktree. Rounds are now
     matched by name, and a hand-started one is followed, not doubled.
@@ -448,12 +448,12 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     started. Its builder waited for "owner OK for the paid read and World calls", which are Claude subscription calls,
     and for "the voice-research hold on two draft boxes", which wasn't active. Each rule was right; the builder's facts
     were wrong. Fix: every brief names the one command that checks each fact (what counts as paid, box_hold.sh
-    status, the free-cards list), and h3:6 queued the run with the facts in its brief.
+    status, the free-cards list), and the loops lead queued the run with the facts in its brief.
 
 25. **A loose goal plus an autonomous loop will optimise the wrong thing in plain sight.** hitmaker-ui's last milestone
     said "looks premium and genre-aware". Over 15 rounds its judges and builders repainted the approved interface:
     rose background, italic serif title, heavy outlines. The owner called it terrible (owner #429). The loop did
-    exactly what the words allowed. Fix: some areas are taste, not tasks. The look belongs to h3:0's reviewed UI
+    exactly what the words allowed. Fix: some areas are taste, not tasks. The look belongs to the orchestrator's reviewed UI
     rounds; mission jobs are marked no-visual, and the commit hook refuses stylesheets and fonts. Self-direction needs
     fenced areas where only a person decides.
 
@@ -570,7 +570,7 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
   and reading git state from records instead of from slow disks.
 
 **A watchdog outside every session (owner #368).**
-- A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and h3:0
+- A system service checks a list of expectations every minute. Each is a when / expect-within / then action, and the orchestrator
   and the leads add lines there instead of writing waiter scripts.
 - It also has built-in checks: empty design calls, silent builder exits, unresolved conflicts, quiet runs, and
   production-first holds.
