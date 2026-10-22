@@ -757,6 +757,21 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     leaving a pointer and a log row each. The same rule, keep list included, now runs every hour.
 100. **Edit a hand-written file as text.** Re-serialising a status file to reorder it would have restyled every row
     the leads wrote. Move blocks as they are; generate only what is new, and check it still parses before writing.
+101. **A choice made once goes stale while the work waits.** Work was sent to a machine when it was claimed and then
+    waited there for hours while a faster one sat idle. Where work waits is decided again while it waits.
+102. **A count from one partition misreads a shared resource.** Each workspace counted only its own jobs at a shared
+    card, so a card with ninety waiters from elsewhere looked as free as an idle one. Measure the shared thing at the
+    shared place.
+103. **Two names for one thing split a queue.** One machine had two names; jobs queued under one were never claimed
+    by the worker that answered to the other, and nothing said why. Normalise names where work enters.
+104. **Every fence must honour the deliberate opening.** The orchestrator opened a window to use an idle machine; one
+    rule honoured it, another older rule moved the work away anyway. When you open an exception, find every rule that
+    guards the same door.
+105. **An exception must survive the hand-off.** A worker restarted itself on older pinned code, which ran the old
+    rule again and undid the exception. Carry the decision with the work, and close it when its reason ends.
+106. **A service outlives the worker that started it.** A builder's dev server ran day-old code for a day after the
+    builder ended, and a roll was about to rely on it. Give such services an owner, and restart them when their code
+    changes.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

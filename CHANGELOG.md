@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.18.0 (2026-10-21)
+
+**Minor: six lessons (101-106) and a worked example from the night.** Decisions revisited while work waits; shared
+resources measured where they are shared; one name per thing; every fence honouring a deliberate opening; exceptions
+that survive a restart; services restarted when their code changes.
+
 ## 1.17.0 (2026-10-21)
 
 **Minor: five lessons (96-100) and a worked example from the evening.** Checking a reported cause before fixing it; a

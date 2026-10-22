@@ -25,3 +25,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-21, v1.17.0 (standing refinement pass, evening).** A fix asked for a cause the record did not show, a
   board list that capped away the urgent mission, stale pause fields, hand disk cleanup made hourly, and a status file
   reordered as text so its hand-written rows kept their form.
+- **2026-10-21, v1.18.0 (standing refinement pass, night).** An idle machine starved by a stale per-workspace count,
+  a once-only placement and an older rule undoing an open window; a machine with two names; a builder's server
+  running day-old code.

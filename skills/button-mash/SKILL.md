@@ -187,6 +187,11 @@ default to how people use it, and log every change with who or what made it.
 Their reason field named a content check; the "waiting" text was only the last progress line. Good move: read the
 record before building the fix, say plainly what it shows, and show the real cause where people look.
 
+**The idle fast machine never got work, though everything was listed and the window was open.** Three causes in turn:
+each workspace counted only its own jobs at a shared card, the choice of card was made once and never revisited, and
+an older rule moved the work away again after a restart. Good move: fix each at its source, move the waiting work by
+hand meanwhile, and check the machine is actually busy before calling it done.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important
