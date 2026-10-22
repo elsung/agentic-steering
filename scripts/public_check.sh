@@ -1,9 +1,16 @@
 #!/bin/bash
-# public_check.sh: this repository is public. Refuse anything naming the private project: product, show and mission
-# names, character names, run and round ids, hosts, addresses and home paths. Run before every release (and by the
-# pre-push hook). Exit 1 and print the lines when something matches.
+# public_check.sh: this repository is public. Refuse anything that names the private project (its products, shows,
+# missions, characters, run and round ids, hosts, addresses, home paths). Run before every release and by the pre-push
+# hook. The patterns live in a private file on the maintainer's machine, never in this repository; without that file
+# the check fails, so nothing is pushed unchecked. Exit 1 and print the lines when something matches.
 cd "$(dirname "$0")/.." || exit 2
-PAT='hitmaker|sodareel|ffas|hayaku|justblaze|campfire|spark-bfe1|\bR0[0-9]{2}\b|\br[0-9]{2,3}\b|\bRoll 1[0-9]\b|rachel|damien|caroline|cecilia|austin|leslie|amanda|holly|previz-15|script-to-hit|motion-transfer|directing-craft|roll15|\bh3:[0-9]|/mnt/|/home/[a-z]|100\.[0-9]+\.[0-9]+\.[0-9]+|127\.0\.0\.1:81[89][0-9]'
-HITS=$(grep -rniE "$PAT" . --include='*.md' --include='*.sh' --include='*.py' --include='*.json' --include='*.yaml' --include='*.yml' --include='*.txt' | grep -v '^./.git/' | grep -v '^./scripts/public_check.sh:')
+LIST=${PUBLIC_DENYLIST:-$HOME/AI/handoffs/private/public_denylist.txt}
+if [ ! -r "$LIST" ]; then
+  echo "public check FAILED: the private denylist is missing ($LIST). Set PUBLIC_DENYLIST to its path; nothing is checked without it."
+  exit 2
+fi
+PAT=$(grep -v '^\s*#' "$LIST" | grep -v '^\s*$' | paste -sd'|')
+[ -n "$PAT" ] || { echo "public check FAILED: the denylist $LIST is empty"; exit 2; }
+HITS=$(grep -rniE "$PAT" . --include='*.md' --include='*.sh' --include='*.py' --include='*.json' --include='*.yaml' --include='*.yml' --include='*.txt' | grep -v '^./.git/')
 if [ -n "$HITS" ]; then echo "public check FAILED: private names in a public repo:"; echo "$HITS" | cut -c1-200; exit 1; fi
 echo "public check: clean"
