@@ -827,6 +827,22 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 125. **An idle loop is a hidden fan.** Dozens of idle workers re-read unchanged files every two seconds and kept the
     machine loud. Re-read only what changed, sleep longer while nothing changes, wake on a change, and exit when there
     is nothing left to do.
+126. **A safety proof covers only the writers it ran.** Copies shared the original's files through links, proven safe
+    by hashing the original around a real run of the engine. A builder's own shell command then wrote through a link
+    and broke three of the original's pictures. Prove sharing against every writer that can touch the copy, or do not
+    share what anyone can write.
+127. **Two forms of one fact never compare equal.** A record wrote a full hash and the check compared it with a
+    shortened one, so every item that held one looped as "changed". When two places record the same fact, make them
+    one function or compare them in one form.
+128. **A step must not record its own product as its input.** A stage recorded a derived file as an input, then
+    rewrote that file from its own output, so it always looked stale and re-ran. Record what a derived file is built
+    from, never the file itself.
+129. **Measure where the bytes go before naming the culprit.** The obvious suspect (agent transcripts and caches) came
+    to under one gigabyte an hour; the code checkouts made per pin were seventeen. Per-source numbers first, then the
+    fix where most of them are.
+130. **A failure nobody retries is a stale page.** A judge that hit its limit left the status page stale for over an
+    hour, because only the next hourly run would try again. A failed step says so and tries again soon, not at the
+    next scheduled slot.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

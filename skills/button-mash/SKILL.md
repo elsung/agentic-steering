@@ -220,6 +220,12 @@ guessing, fix the hot step at its source (parse only on change), make the loop s
 when nothing is open, measure the result on the real thing (0.25 % CPU idle), and stop the idle workers already
 running on old code so the relief is felt now, not at their next restart.
 
+**A disk-saving change was proven safe and landed, and three of the production roll's cast pictures turned into one
+line of text.** Copies linked the original's files; the proof hashed the original around a real run of the engine,
+but a builder's own command in a copy wrote through a link. Good move: own it at once, restore the originals from a
+known-good copy, check nothing else was hit, revert the sharing, replace the links already out there, and tell the
+orchestrator what may have read the broken files.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important

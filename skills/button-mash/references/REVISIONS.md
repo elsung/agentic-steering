@@ -41,3 +41,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   counted redo, and scratch cleanup decided from live facts.
 - **2026-10-22, v1.23.0 (standing refinement pass, 11:2x).** Per-machine claiming, unified-memory free memory, copies
   that start running, shared media proven by a production hash, and idle runners that sleep and exit.
+- **2026-10-22, v1.24.0 (standing refinement pass, 14:2x).** A media-sharing change reverted after it let a builder's
+  write reach production, a plate-hash mismatch that looped every board, a direct stage re-running on its own look
+  card, the disk's writers measured per source, and the board judge retried every 15 minutes.
