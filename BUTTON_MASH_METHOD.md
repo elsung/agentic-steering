@@ -785,6 +785,19 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     once at start, an exception passed through a restart, a carried flag, and a sweeper that stopped workers when the
     exception ended. Each fixed the one before. The decision belonged at the moment work is claimed, read fresh each
     time; there it is one rule, and the other three go away. (Owner: every fix to the core cause, said in the note.)
+111. **Alive is not acting.** A queue's head was alive and beating, so every liveness check passed, yet it never
+    took its turn: it ran older code that did not see itself as head. Judge a turn by whether it is taken, and let the
+    shared record end a turn that is not.
+112. **One job, one process.** A job was set back to queued while its process still ran, so a second process ran it
+    too; both wrote one file and the first read the other's half. Tie the job to its process at the place it runs, so a
+    twin waits instead of starting.
+113. **One name, one meaning in a scope.** An imported function and a local list shared a name in one function, so
+    every run that reached the call failed. Name each thing once where it is used.
+114. **Read the record under the name the code uses.** A lock file named after one numbering was read as another box,
+    and the diagnosis went to the wrong machine. Resolve names through the code's own mapping before reading.
+115. **Coming back by itself is a list you can check.** A restore map that read the wrong folder, a boot unit left
+    off, and flags copied in three places would each have kept the crew down after a reboot. One launch script for
+    the flags, the map regenerated with what comes back, and a dry run that prints every command.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

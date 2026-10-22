@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.21.0 (2026-10-22)
+
+**Minor: five lessons (111-115) and a worked example from the early morning.** A live head that never took its turn;
+one job run by two processes; one name with two meanings; a record read under the wrong name; what comes back after a
+reboot as a list you can check.
+
 ## 1.20.0 (2026-10-22)
 
 **Minor: a strong-steering line and lesson 110 (owner, standing rule).** Fix where the wrong thing is decided, once;

@@ -33,3 +33,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   watch reading an old task name instead of the runs live jobs target.
 - **2026-10-22, v1.20.0 (owner standing rule, 04:0x).** Every fix to the core cause, once, with no stacked guards
   and the cause named in the note; lesson 110 from a placement rule that grew four patches in one night.
+- **2026-10-22, v1.21.0 (standing refinement pass, 05:0x).** A card stalled twice by a live head on older code, a
+  production cut run by two processes at once with a shadowed name under it, a lock file read as the wrong box, and a
+  restart path with an empty map, a boot unit off and flags in three places.

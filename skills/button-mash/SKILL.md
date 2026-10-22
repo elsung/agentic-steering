@@ -202,6 +202,12 @@ started with. Good move: compare the process start with the code's last change, 
 then watch each new check act once (one of them still had a wrong match), and say plainly that the earlier "done" lines
 were not true in the running service.
 
+**A production cut failed with "no readable answer", and the first guesses were the tool updating itself or a huge
+input.** The timing record showed two starts of the same job and two ends, minutes apart: a requeue while it ran had
+started a twin, and the twin emptied the file the first then read. Under it sat a real bug, a name meaning two things.
+Good move: read the run's own timeline before choosing among guesses, fix each cause where it is decided (one process
+per job; one name per thing), and tell the owner what the live job will still do on the old code.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important
