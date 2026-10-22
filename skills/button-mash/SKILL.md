@@ -183,6 +183,10 @@ claimed, matches every name the place goes by, and leaves the job waiting with t
 default expiry had. Good move: find the real cause before guessing (the decision log said "expired"), size the
 default to how people use it, and log every change with who or what made it.
 
+**The orchestrator asked three times to stop "waits failing", and the same two items failed after every requeue.**
+Their reason field named a content check; the "waiting" text was only the last progress line. Good move: read the
+record before building the fix, say plainly what it shows, and show the real cause where people look.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important

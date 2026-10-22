@@ -22,3 +22,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   checked, failures that showed their last progress line, a default that undid a person's hold with no record of
   who, a sensor blind to jobs without a declared output, a model fallback that should be said out loud, and models
   left loaded on an idle card.
+- **2026-10-21, v1.17.0 (standing refinement pass, evening).** A fix asked for a cause the record did not show, a
+  board list that capped away the urgent mission, stale pause fields, hand disk cleanup made hourly, and a status file
+  reordered as text so its hand-written rows kept their form.

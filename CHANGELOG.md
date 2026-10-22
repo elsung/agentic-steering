@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.17.0 (2026-10-21)
+
+**Minor: five lessons (96-100) and a worked example from the evening.** Checking a reported cause before fixing it; a
+fixed-size list that dropped the urgent item; a left state's fields that kept saying it; hand cleanup made the
+system's; editing a hand-written file as text.
+
 ## 1.16.0 (2026-10-21)
 
 **Minor: six lessons (90-95) and two worked examples from the afternoon.** A held box reached through a pinned name;

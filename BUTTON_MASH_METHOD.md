@@ -746,6 +746,17 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     fallback.
 95. **Idle is a state to act on.** The main card kept tens of GB of models loaded with both queues empty. A watcher
     frees resources after a quiet stretch with nothing holding them; the next job loads what it needs.
+96. **Check the reported cause before building its fix.** The orchestrator asked three times that "waits never fail";
+    the failed jobs' reason field said a content check failed, and the same two items failed after every requeue.
+    Read the record first; the same item failing the same way after each retry is not a wait.
+97. **A fixed-size list drops the urgent item.** The board covered a fixed list of ten missions, and the one blocking
+    the main goal was not on it. Build the list from the priority source, urgent first, and never cap away the urgent.
+98. **Ending a state clears its fields.** Two missions ran for hours with pause fields still set, so every reader
+    called them paused. The step that leaves a state moves its fields to history, in the same write.
+99. **Hand cleanup that repeats becomes the system's.** A lead moved paused scratch folders off the full disk by hand,
+    leaving a pointer and a log row each. The same rule, keep list included, now runs every hour.
+100. **Edit a hand-written file as text.** Re-serialising a status file to reorder it would have restyled every row
+    the leads wrote. Move blocks as they are; generate only what is new, and check it still parses before writing.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
