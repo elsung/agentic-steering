@@ -192,6 +192,12 @@ each workspace counted only its own jobs at a shared card, the choice of card wa
 an older rule moved the work away again after a restart. Good move: fix each at its source, move the waiting work by
 hand meanwhile, and check the machine is actually busy before calling it done.
 
+**A window closed and the workers it allowed kept running; the card it was meant to free sat full.** The checks that
+should have acted had been written and reported hours earlier, but the watchdog process was still running the code it
+started with. Good move: compare the process start with the code's last change, restart it, make it reload itself,
+then watch each new check act once (one of them still had a wrong match), and say plainly that the earlier "done" lines
+were not true in the running service.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important

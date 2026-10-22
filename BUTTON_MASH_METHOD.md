@@ -772,6 +772,15 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 106. **A service outlives the worker that started it.** A builder's dev server ran day-old code for a day after the
     builder ended, and a roll was about to rely on it. Give such services an owner, and restart them when their code
     changes.
+107. **Fixed in the file is not fixed in the process.** A watchdog loaded its code once and ran it for ten hours; six
+    checks added in that time never ran, though each was reported done. A long-running loop reloads itself when its
+    code changes, and "done" means the running process has the change.
+108. **Watch a new sensor fire once.** A check meant to stop workers when a window closed matched a word their command
+    line never contained, so it was silent, and silence looked like nothing to do. Make it act once on a real case
+    before calling it live.
+109. **Ask what the work targets, not what the text mentions.** A watch flagged two missions every round for working
+    on a closed run, because an old task name in a list that only grows mentioned it. Read the targets of the live
+    work; text that only accumulates will match forever.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

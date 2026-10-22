@@ -28,3 +28,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-21, v1.18.0 (standing refinement pass, night).** An idle machine starved by a stale per-workspace count,
   a once-only placement and an older rule undoing an open window; a machine with two names; a builder's server
   running day-old code.
+- **2026-10-22, v1.19.0 (standing refinement pass, 01:4x).** A watchdog still on ten-hour-old code, so the window stop,
+  idle free, 429 relaunch and service restart had never run; a window check that matched the wrong word; a closed-run
+  watch reading an old task name instead of the runs live jobs target.
