@@ -798,6 +798,21 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 115. **Coming back by itself is a list you can check.** A restore map that read the wrong folder, a boot unit left
     off, and flags copied in three places would each have kept the crew down after a reboot. One launch script for
     the flags, the map regenerated with what comes back, and a dry run that prints every command.
+116. **A rule only acts where its code runs.** A queue rule landed in new code, but every process on one card ran
+    older code, so nothing applied it and the card stalled three more times. Put the rule in the data every version
+    already reads, and give it one caller on current code.
+117. **A message through a dead messenger never arrives.** Cancels reached a job only through the runner that
+    started it; a job whose runner died waited for five hours with its row cancelled. Let each process read its own
+    record where it already looks, instead of trusting a relay.
+118. **Decide what a thing is by its own claim, not by where it stands.** A check counted any agent in a folder as a
+    builder and blocked a status refresh because a lead worked there. Use the claim the thing makes itself (a lock it
+    holds), and leave shared places out.
+119. **Fix the class, not the instance you were shown.** A first fix let waits requeue; two more stale reasons still
+    failed the next hour. A stale result means the world moved: every kind is a redo, and only the same reason
+    repeating is a loop.
+120. **Idle is a live fact, not a declared state.** Cleanup waited for runs to be marked paused, so idle roots whose
+    runs still said running filled the disk. Read the facts that show use (processes, briefs, queued jobs, newest
+    file) and act on those.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

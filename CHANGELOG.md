@@ -13,6 +13,13 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.22.0 (2026-10-22)
+
+**Minor: five lessons (116-120) and a worked example from the morning.** A rule that only new code applied, on a card
+where every process ran old code; a cancel that needed a dead runner to deliver it; a folder taken as proof of a
+builder; a fix for one stale reason while the class still failed; idle decided by declared states while the disk
+filled.
+
 ## 1.21.0 (2026-10-22)
 
 **Minor: five lessons (111-115) and a worked example from the early morning.** A live head that never took its turn;

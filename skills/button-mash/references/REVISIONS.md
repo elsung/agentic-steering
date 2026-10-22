@@ -36,3 +36,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-22, v1.21.0 (standing refinement pass, 05:0x).** A card stalled twice by a live head on older code, a
   production cut run by two processes at once with a shadowed name under it, a lock file read as the wrong box, and a
   restart path with an empty map, a boot unit off and flags in three places.
+- **2026-10-22, v1.22.0 (standing refinement pass, 08:1x).** A card queue rule moved into fields every engine reads,
+  waiting processes that read their own rows, a builder lock in place of a folder match, every stale result made a
+  counted redo, and scratch cleanup decided from live facts.

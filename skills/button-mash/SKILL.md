@@ -208,6 +208,12 @@ started a twin, and the twin emptied the file the first then read. Under it sat 
 Good move: read the run's own timeline before choosing among guesses, fix each cause where it is decided (one process
 per job; one name per thing), and tell the owner what the live job will still do on the old code.
 
+**The same card stalled four times in two hours, and each clear by hand held only until the next old job reached the
+head.** The fix for it had landed, but every waiter on that card ran older code that never read it. Good move: stop
+clearing instances, find what every version already reads (each entry's stored rank and time), move a stuck head
+there, run the rule once a minute from current code for cards with no new waiter, and check the next stall clears on
+its own (it did: "moved to the back of the queue").
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important
