@@ -52,6 +52,10 @@ BUTTON_MASH_METHOD.md.
 - **Check beliefs against the raw data.** A story about why something is slow or broken is a hypothesis until you
   reproduce it from the real records, logs, frames or numbers, on the real thing as it really runs: a trimmed copy
   can hide the very cost you are chasing.
+- **Fix where the wrong thing is decided, once.** Find the place the bad decision is made and fix it there, not
+  where its symptom shows; remove the workarounds that fix makes unneeded, and stack no new guard on top. A chain of
+  patches that each correct the one before (a rule made at start, an exception carried through a restart, a sweeper
+  that undoes it later) is the sign you are below the cause. Say the core cause in the change note.
 - **Give the work an outside check you can run yourself** on the real output: a measurement, a comparison with the
   pro reference, or a viewer's-eye pass. It feeds the assessment loop. It is never a gate.
 - **Build durable workflows.** Give the agent the raw access and the machines it needs, so the human can leave the

@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.20.0 (2026-10-22)
+
+**Minor: a strong-steering line and lesson 110 (owner, standing rule).** Fix where the wrong thing is decided, once;
+remove the workarounds it makes unneeded; stack no new guard; say the core cause in the change note. Lesson 110: a
+stack of patches that each correct the one before means the fix sits below the cause.
+
 ## 1.19.0 (2026-10-22)
 
 **Minor: three lessons (107-109) and a worked example from the small hours.** A long-running loop that ran its start-up

@@ -781,6 +781,10 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 109. **Ask what the work targets, not what the text mentions.** A watch flagged two missions every round for working
     on a closed run, because an old task name in a list that only grows mentioned it. Read the targets of the live
     work; text that only accumulates will match forever.
+110. **A stack of patches means the fix is below the cause.** One night's placement rule grew four parts: decided
+    once at start, an exception passed through a restart, a carried flag, and a sweeper that stopped workers when the
+    exception ended. Each fixed the one before. The decision belonged at the moment work is claimed, read fresh each
+    time; there it is one rule, and the other three go away. (Owner: every fix to the core cause, said in the note.)
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
