@@ -44,3 +44,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-22, v1.24.0 (standing refinement pass, 14:2x).** A media-sharing change reverted after it let a builder's
   write reach production, a plate-hash mismatch that looped every board, a direct stage re-running on its own look
   card, the disk's writers measured per source, and the board judge retried every 15 minutes.
+- **2026-10-22, v1.25.0 (standing refinement pass, 16:4x).** Three card-stall patterns on a live roll fixed from
+  outside it, a board idle claim checked against the record, a machine-readable hold on landing, test work niced below
+  production, and light-model batches ended.

@@ -843,6 +843,20 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 130. **A failure nobody retries is a stale page.** A judge that hit its limit left the status page stale for over an
     hour, because only the next hourly run would try again. A failed step says so and tries again soon, not at the
     next scheduled slot.
+131. **A breaker must not lean on what the stall breaks.** A rule that moved a stuck queue head needed the lock to be
+    free and the same head for thirty seconds; the stalls held the lock and flipped the head, so it never fired, three
+    times. Key a breaker on how stuck looks from outside: the card free, work waiting, nothing taken.
+132. **Check the premise in the data before you build.** A board was said to hold the card through its CPU steps; its
+    holds were in fact all render time, and the idle GPU was model loading inside the renderer. The fix that was ready
+    would have gained nothing, so it was not landed.
+133. **A request in prose is invisible to the machine.** A builder wrote "do not land this yet" in its notes and was
+    landed within the hour. Give the one field the lander reads, and tell every brief about it.
+134. **Put priority on the work, not on the queue.** Test jobs ran at the production roll's CPU priority and twenty two
+    of them slowed it; running every test job a step lower lets the operating system serve production first, with
+    nothing new to run.
+135. **A rule tuned for heavy work can starve light work.** A grace that keeps a card on its loaded model, to save
+    minutes of reloading, kept it on a light voice model whose short calls kept renewing it while heavy jobs waited. Say
+    which work a rule is for.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

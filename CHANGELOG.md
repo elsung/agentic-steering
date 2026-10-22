@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.25.0 (2026-10-22)
+
+**Minor: five lessons (131-135) and a worked example from the afternoon.** Breakers that leaned on what the stall
+broke; a premise checked in the data before building; a builder's prose request the lander never read; test jobs
+lowered below production on the CPU; a grace for heavy models that starved light ones.
+
 ## 1.24.0 (2026-10-22)
 
 **Minor: five lessons (126-130) and a worked example from the afternoon.** Shared files broken by a writer the safety

@@ -226,6 +226,12 @@ but a builder's own command in a copy wrote through a link. Good move: own it at
 known-good copy, check nothing else was hit, revert the sharing, replace the links already out there, and tell the
 orchestrator what may have read the broken files.
 
+**A live roll's card stalled three times in an afternoon, a different way each time, each after a fix for the last.**
+A lock held by a waiter, then a holder that was not the waiter, then no holder at all with five versions disagreeing
+on who was next. Good move: for each, read the queue's own record to see what the breaker saw, make the breaker key on
+the outside symptom (free card, waiters, nothing taken), check every running version would agree with the fix, land it
+where it reaches the live roll without a restart, and watch it act once on the real card.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important
