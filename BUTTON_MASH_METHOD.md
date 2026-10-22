@@ -813,6 +813,20 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 120. **Idle is a live fact, not a declared state.** Cleanup waited for runs to be marked paused, so idle roots whose
     runs still said running filled the disk. Read the facts that show use (processes, briefs, queued jobs, newest
     file) and act on those.
+121. **What serves the work must match how the work is placed.** Jobs were spread across three boxes, but each worker
+    served one box label and only one worker per project was allowed, so two free boxes sat idle beside queued work.
+    Let one server take everything its work lists, and count limits per box.
+122. **Read a measure the way the hardware means it.** On shared-memory machines the card's own free figure left out
+    memory the system could reclaim, so every large step waited with most of the memory free. Ask the machine what it
+    is (its own name), not a size that happens to match another kind.
+123. **A copy should not inherit a decision about the original.** Copies of a paused run were born paused and did
+    nothing. A copy exists to be run: reset what was a choice about its source, and say so in the copy's record.
+124. **Share instead of duplicating, and prove the original untouched.** Copies duplicated read-only media, about a
+    gigabyte each, many times an hour. Link what is never rewritten, make writers replace a file instead of writing
+    through it, then hash the original before and after a real run.
+125. **An idle loop is a hidden fan.** Dozens of idle workers re-read unchanged files every two seconds and kept the
+    machine loud. Re-read only what changed, sleep longer while nothing changes, wake on a change, and exit when there
+    is nothing left to do.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

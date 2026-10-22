@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.23.0 (2026-10-22)
+
+**Minor: five lessons (121-125) and a worked example from the late morning.** Workers that served one box while
+work was spread over three; a free-memory figure read the wrong way on shared-memory machines; copies born with their
+source's pause; copies duplicating read-only media; idle loops re-reading unchanged files.
+
 ## 1.22.0 (2026-10-22)
 
 **Minor: five lessons (116-120) and a worked example from the morning.** A rule that only new code applied, on a card

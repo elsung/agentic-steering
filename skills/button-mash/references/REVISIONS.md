@@ -39,3 +39,5 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-22, v1.22.0 (standing refinement pass, 08:1x).** A card queue rule moved into fields every engine reads,
   waiting processes that read their own rows, a builder lock in place of a folder match, every stale result made a
   counted redo, and scratch cleanup decided from live facts.
+- **2026-10-22, v1.23.0 (standing refinement pass, 11:2x).** Per-machine claiming, unified-memory free memory, copies
+  that start running, shared media proven by a production hash, and idle runners that sleep and exit.

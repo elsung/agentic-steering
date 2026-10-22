@@ -214,6 +214,12 @@ clearing instances, find what every version already reads (each entry's stored r
 there, run the rule once a minute from current code for cards with no new waiter, and check the next stall clears on
 its own (it did: "moved to the back of the queue").
 
+**The machine's fans were loud with the GPU idle: dozens of idle workers each used a third of a core.** A profile of
+one idle tick showed most of it re-parsing configuration files that had not changed. Good move: profile before
+guessing, fix the hot step at its source (parse only on change), make the loop sleep while nothing changes and exit
+when nothing is open, measure the result on the real thing (0.25 % CPU idle), and stop the idle workers already
+running on old code so the relief is felt now, not at their next restart.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important
