@@ -879,6 +879,15 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     assets the code serves. Move evidence to a data drive automatically when work lands, and leave a link at the same
     path so notes still open. Add a size and tracked-media check to the doctor. Then rewrite the history once, with a
     mirror kept as an object alternate so every old commit still resolves.
+142. **A history rewrite moves more than branches.** The rewrite also moved the detached HEAD of every release checkout
+    to its new commit, so a release folder named for its old commit read as foreign and was set aside and checked out
+    again. Before a rewrite, list everything that names a commit (releases, pins, worktrees); after it, check each one
+    still matches.
+143. **Idle means done, not quiet.** A prune treated a worktree with no live process as idle; one held a finished
+    builder's branch that had not landed yet. Its registration was moved, and its land failed. Judge idle by the work's
+    state (landed or not), not by whether a process is running.
+144. **A move across disks is a copy.** Moving a folder to another disk copies it first, and a cleaner running at the
+    same moment removed the half-made copy. Copy, check the copy, and only then set the source aside.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

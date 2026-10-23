@@ -52,3 +52,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   check whose word list moved out of the repository.
 - **2026-10-22, v1.27.0 (owner ask, 22:4x).** Repository hygiene: code repositories hold code, evidence lives on the
   data drive. Media ignored at setup, evidence moved at land, a doctor size check, one history rewrite behind a mirror.
+- **2026-10-22, v1.28.0 (standing refinement pass, 22:5x).** After a repository's history rewrite: release checkouts
+  re-pointed to their own commits, a branch waiting to land restored after a prune, and a cross-disk move redone as a
+  checked copy.
