@@ -13,6 +13,11 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.32.0 (2026-10-23)
+
+**Minor: five lessons (154-158).** A wrapper's lock its own child waited on; a disk priority the scheduler ignored; a
+note file that a worker committed; an A/B run on a shared card; relabels counted as revisions.
+
 ## 1.31.0 (2026-10-23)
 
 **Minor: three lessons (151-153).** Builders that stopped at a verified cause outside their scope; a copy that kept a

@@ -63,3 +63,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-23, v1.31.0 (standing refinement pass, 04:5x).** A worker widens its own scope to a verified cause (or
   queues behind the holder), a copy drops production-only settings with a note, and new workspaces check out only what
   the work edits.
+- **2026-10-23, v1.32.0 (standing refinement pass, 08:0x).** A wrapper hands its lock to its children, a priority
+  setting is checked before it is relied on, notes go in the worker's message, an A/B holds its resource, and a relabel
+  is not a revision.

@@ -924,6 +924,23 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 153. **Make each new workspace as small as its work.** Worktrees grew back to hundreds of gigabytes after a cleanup,
     because every new one checked out the whole tree again, including versioned pages and large text evidence. Change the
     maker, not the cleaner: check out only what the work edits, and keep evidence on the data drive.
+154. **A lock that is re-entrant in one thread is not re-entrant for the child of a wrapper.** Leads were told to wrap
+    their scripts in a wrapper that takes the card lock; the code inside asked for the same lock and waited on its own
+    wrapper for most of an hour. When a wrapper holds a lock for a command, hand the hold down to its children (and
+    check the holder is still a live ancestor), so wrapping is always safe.
+155. **Check that a priority setting is honoured before you rely on it.** Background movers were put on idle disk
+    priority to spare live work, but that disk's scheduler ignores the setting, so they kept competing at full speed
+    and test copies crawled. Read what the system really does with the setting; if it does nothing, pause the
+    background work or have it limit itself.
+156. **A note for a worker goes in its message, not in its working tree.** A warning file dropped into builders' trees
+    was committed by their finish step and landed at the repository root. Send notes through the channel the worker
+    reads, and keep its tree for its own work.
+157. **A measurement on a shared resource measures the sharing.** A speed A/B ran while other tests used the same card;
+    one leg also ran on a copy missing inputs. Neither number could be compared. Hold the resource for the A/B, run
+    both legs on one complete input, and say "not measured" rather than report a number the setup cannot support.
+158. **A change that only relabels is not a revision.** Judges re-sent the same goals with reworded titles, and each
+    resend counted as a new version with history and a notice. Compare what matters (the goals themselves), let a
+    label fill only where none exists, and do not version a relabel.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
