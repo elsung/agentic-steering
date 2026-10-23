@@ -232,6 +232,12 @@ on who was next. Good move: for each, read the queue's own record to see what th
 the outside symptom (free card, waiters, nothing taken), check every running version would agree with the fix, land it
 where it reaches the live roll without a restart, and watch it act once on the real card.
 
+**A no-redo switch for a live roll stopped the roll twice in its first hour.** First it skipped items whose outputs
+grew after their job ran, then everything waited for an upstream step it would never remake. Good move: read the
+run's own notes and queue to find what was skipped and why, fix where "made" and "ready" are decided (not where the
+job is queued), dry-run the exact commit on the live state read only, name the items it now makes, and when the
+applied fix differs from yours, dry-run that one too and say what it still misses.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important

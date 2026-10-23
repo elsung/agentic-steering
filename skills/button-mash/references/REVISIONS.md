@@ -47,3 +47,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-22, v1.25.0 (standing refinement pass, 16:4x).** Three card-stall patterns on a live roll fixed from
   outside it, a board idle claim checked against the record, a machine-readable hold on landing, test work niced below
   production, and light-model batches ended.
+- **2026-10-22, v1.26.0 (standing refinement pass, 19:4x).** A no-redo run switch that skipped first makes and held
+  everything downstream, a partly applied fix caught by a dry run, test copies built at the source's pin, and a leak
+  check whose word list moved out of the repository.

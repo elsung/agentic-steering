@@ -13,6 +13,13 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.26.0 (2026-10-22)
+
+**Minor: five lessons (136-140) and a worked example from the evening.** A no-redo switch that judged "made" by the
+job and skipped first makes; downstream readiness left waiting for an upstream nobody would remake; a fix applied in
+part and caught by a dry run of the pinned code; test copies at new code that restaled everything; a leak check that
+held its own private list.
+
 ## 1.25.0 (2026-10-22)
 
 **Minor: five lessons (131-135) and a worked example from the afternoon.** Breakers that leaned on what the stall

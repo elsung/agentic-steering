@@ -857,6 +857,20 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 135. **A rule tuned for heavy work can starve light work.** A grace that keeps a card on its loaded model, to save
     minutes of reloading, kept it on a light voice model whose short calls kept renewing it while heavy jobs waited. Say
     which work a rule is for.
+136. **Judge "made" by the result, not by the job.** A switch that turns a run's redos into review notes counted any
+    item whose job had run as made. Items whose outputs grew after they ran (new looks named later) were noted
+    instead of made, and the roll drew no boards for an hour. A first make is never a redo, whoever ran before.
+137. **What you stop remaking, everything after it must accept.** The same switch kept a stale upstream step as it was,
+    but every later step still waited for a current one, so nothing downstream could ever start. When you stop a
+    redo, change the readiness rule in the same change: a made item counts as done for what follows.
+138. **Dry-run the exact code that will run.** A two-part fix was applied to a live run with one part left out. A
+    read-only planner pass of that exact commit on the live state showed six items still skipped, minutes before the
+    run went idle on them. Prove the commit that is pinned, on the state that is live.
+139. **A test copy at new code is a different run.** A copy pinned to the newest code restaled its whole world and
+    started redoing it, and marking the stopped work "failed" made the planner retry it. Copy at the source's own pin
+    plus your commits, and stop work as cancelled, the state the planner leaves alone.
+140. **A check must not carry what it hides.** A public repository's leak check held the private words it refused, in
+    plain text. Keep the list outside the repository, and fail closed when it is missing.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
