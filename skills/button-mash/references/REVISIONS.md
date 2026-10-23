@@ -57,3 +57,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   checked copy.
 - **2026-10-22, v1.29.0 (owner ask, 23:5x).** Retrospectives as standing practice: in the repository, linked back,
   indexed, updated through prep and checked before the next run.
+- **2026-10-23, v1.30.0 (standing refinement pass, 01:5x).** A stopped launcher whose worker ran on, a per-item lock for
+  movers, a previews-first order moved into planning, switch cost measured as the slower first call, and the memory
+  guard moved to system RAM.

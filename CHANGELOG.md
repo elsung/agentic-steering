@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.30.0 (2026-10-23)
+
+**Minor: five lessons (146-150) from the night.** A launcher stopped while its worker ran on; two movers on one
+folder; a rank that could not hold back work that was not waiting; a switch cost hidden in the first sampling step; a
+memory guard on the wrong resource.
+
 ## 1.29.0 (2026-10-22)
 
 **Minor: lesson 145 and a worked example: retrospectives as standing practice.** Every run ends with a retrospective

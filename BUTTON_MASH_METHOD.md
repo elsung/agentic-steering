@@ -898,6 +898,21 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     Link it to the one before, and keep a rolling index with each run's date and headline numbers. Update it while the
     fixes land. Before the next run starts, tick its checklist and check its regression table. The file is the source of
     truth; any shared doc is only a view.
+146. **Stop the worker, not its launcher, and check it is gone.** A long job was started through a wrapper that forks;
+    stopping the wrapper's process left the real worker running for an hour, beside the jobs that replaced it. Find the
+    process that does the work, stop that one, and check the work itself has stopped.
+147. **Two movers on one folder need one lock, not care.** Two passes that moved folders between disks picked the same
+    folder; one copied files while the other removed them. Give every mover the same per-item lock, held for the whole
+    move, so a second mover skips what the first holds.
+148. **An order that only ranks waiters cannot hold back work that is not waiting.** A priority put previews ahead of
+    final renders, but only among calls queued at the card. While the previews ran on the CPU, a ready render took the
+    free card. If the order must hold, put it where work is planned, not only where it waits.
+149. **Measure a switch by the slow first call, not by the load step.** Loader steps added up to a few minutes because
+    the weights move to the GPU lazily, inside the first sampling step. Compare a call's first run after a switch with its
+    usual time to see what a switch really costs, and how often a big model really reloads.
+150. **Put the guard where the failure is.** A safety margin was held back on the GPU, which can be filled almost to
+    the top, while the machine that froze had run out of system memory. Measure the real peaks, keep only the margin the
+    peaks need, and set the floor on the resource whose exhaustion actually breaks the box.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
