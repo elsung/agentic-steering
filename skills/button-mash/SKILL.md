@@ -238,6 +238,13 @@ run's own notes and queue to find what was skipped and why, fix where "made" and
 job is queued), dry-run the exact commit on the live state read only, name the items it now makes, and when the
 applied fix differs from yours, dry-run that one too and say what it still misses.
 
+**A repository of code had become gigabytes of evidence, and every worktree paid for it.** Agents committed
+their screenshots and clips beside their notes, nothing refused them, and each new worktree, land copy and release
+copied over a gigabyte. Good move: measure what is tracked (by type and folder, not by guess), ignore media at the
+source with an allow-list for what the code itself serves, move evidence to the data drive automatically when work
+lands (a link at the same path, so notes still open), add a size check to the doctor, and only then rewrite the
+history once. Keep a mirror as an object alternate, so old pins still resolve and nothing running breaks.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important

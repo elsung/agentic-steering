@@ -871,6 +871,14 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     plus your commits, and stop work as cancelled, the state the planner leaves alone.
 140. **A check must not carry what it hides.** A public repository's leak check held the private words it refused, in
     plain text. Keep the list outside the repository, and fail closed when it is missing.
+141. **A code repository holds code: megabytes, not gigabytes.** Agents saved their evidence (boards, strips, clips,
+    logs) beside their notes and committed it. Nothing refused it, so a repository of 12-30 MB of source grew to 1.7 GB
+    of tracked media and a 1.5 GB history. Every one of hundreds of worktrees, every land copy and every release
+    checkout carried it, so each new worktree wrote 150 MB or more to the SSD, every repack rewrote the history, and
+    clones slowed to minutes. The fix pattern has three parts. Ignore media at setup, with an allow-list for the few
+    assets the code serves. Move evidence to a data drive automatically when work lands, and leave a link at the same
+    path so notes still open. Add a size and tracked-media check to the doctor. Then rewrite the history once, with a
+    mirror kept as an object alternate so every old commit still resolves.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

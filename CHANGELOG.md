@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.27.0 (2026-10-22)
+
+**Minor: lesson 141 and a worked example on repository hygiene.** A code repository grew to gigabytes of
+committed evidence media, copied into every worktree and release. The fix: ignore media at setup, move evidence to a
+data drive with links at land, check the size in the doctor, then rewrite the history once, behind a mirror alternate.
+
 ## 1.26.0 (2026-10-22)
 
 **Minor: five lessons (136-140) and a worked example from the evening.** A no-redo switch that judged "made" by the

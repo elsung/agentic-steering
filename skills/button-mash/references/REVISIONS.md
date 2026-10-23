@@ -50,3 +50,5 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-22, v1.26.0 (standing refinement pass, 19:4x).** A no-redo run switch that skipped first makes and held
   everything downstream, a partly applied fix caught by a dry run, test copies built at the source's pin, and a leak
   check whose word list moved out of the repository.
+- **2026-10-22, v1.27.0 (owner ask, 22:4x).** Repository hygiene: code repositories hold code, evidence lives on the
+  data drive. Media ignored at setup, evidence moved at land, a doctor size check, one history rewrite behind a mirror.
