@@ -13,6 +13,11 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.31.0 (2026-10-23)
+
+**Minor: three lessons (151-153).** Builders that stopped at a verified cause outside their scope; a copy that kept a
+production-only setting; worktrees that grew back because the maker checked out everything.
+
 ## 1.30.0 (2026-10-23)
 
 **Minor: five lessons (146-150) from the night.** A launcher stopped while its worker ran on; two movers on one

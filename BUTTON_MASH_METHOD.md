@@ -913,6 +913,17 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 150. **Put the guard where the failure is.** A safety margin was held back on the GPU, which can be filled almost to
     the top, while the machine that froze had run out of system memory. Measure the real peaks, keep only the margin the
     peaks need, and set the floor on the resource whose exhaustion actually breaks the box.
+151. **A worker that has found the cause outside its scope should be given the files, not stopped.** Builders found and
+    checked a core cause in files outside their areas, then stopped with "needs a change outside my scope", and each
+    needed a second worker started by hand. Let the worker widen its own scope to the files the cause is in when no one
+    else holds them, and queue the follow-up behind the holder when someone does. Either way, nothing waits on a person.
+152. **A copy must not inherit settings that only the original should have.** A scratch copy of a production run kept
+    its no-retry setting, so the copy's trials stopped at their first miss and read as a bug. When you make a copy, drop
+    the settings that belong only to production, and note what was dropped and why, so the copy's behaviour explains
+    itself.
+153. **Make each new workspace as small as its work.** Worktrees grew back to hundreds of gigabytes after a cleanup,
+    because every new one checked out the whole tree again, including versioned pages and large text evidence. Change the
+    maker, not the cleaner: check out only what the work edits, and keep evidence on the data drive.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
