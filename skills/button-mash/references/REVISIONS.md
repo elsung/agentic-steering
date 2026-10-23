@@ -55,3 +55,5 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-22, v1.28.0 (standing refinement pass, 22:5x).** After a repository's history rewrite: release checkouts
   re-pointed to their own commits, a branch waiting to land restored after a prune, and a cross-disk move redone as a
   checked copy.
+- **2026-10-22, v1.29.0 (owner ask, 23:5x).** Retrospectives as standing practice: in the repository, linked back,
+  indexed, updated through prep and checked before the next run.

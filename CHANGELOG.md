@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.29.0 (2026-10-22)
+
+**Minor: lesson 145 and a worked example: retrospectives as standing practice.** Every run ends with a retrospective
+in the repository: result, where the time went, causes and fixes, a pre-flight checklist and a regression table. It
+links back, has a rolling index, is updated through prep, and is checked before the next run.
+
 ## 1.28.0 (2026-10-22)
 
 **Minor: three lessons (142-144) from the history rewrite.** The rewrite moved every release checkout's HEAD; a

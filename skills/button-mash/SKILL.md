@@ -245,6 +245,15 @@ source with an allow-list for what the code itself serves, move evidence to the 
 lands (a link at the same path, so notes still open), add a size check to the doctor, and only then rewrite the
 history once. Keep a mirror as an object alternate, so old pins still resolve and nothing running breaks.
 
+**Two production runs in one day each hit causes the run before had already met.** Their write-ups were shared docs
+outside the repository, so the next run's prep never read them. Good move: give every run a retrospective in the
+repository as plain text, with:
+- the result, where the time went, and right and wrong with each cause and its fix;
+- a pre-flight checklist and a regression table;
+- a link back to the previous run's retrospective, and a row in a rolling index.
+
+Update it as fixes land. Tick the checklist and check the table before the next run starts.
+
 More worked examples: references/EXAMPLES.md.
 
 ## How to tell stale from important

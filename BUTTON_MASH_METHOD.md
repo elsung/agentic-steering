@@ -888,6 +888,16 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     state (landed or not), not by whether a process is running.
 144. **A move across disks is a copy.** Moving a folder to another disk copies it first, and a cleaner running at the
     same moment removed the half-made copy. Copy, check the copy, and only then set the source aside.
+145. **Every run ends with a retrospective, and the next run starts from it.** Fixes made during a run were scattered
+    across chat and notes, so the next run met the same causes again. Write the retrospective in the repository the next
+    run's prep reads. It covers:
+    - the result against its targets, and where the time went;
+    - what went right, and what went wrong with each cause and its fix at that cause;
+    - a pre-flight checklist for the next run, and a regression table it must match or beat.
+
+    Link it to the one before, and keep a rolling index with each run's date and headline numbers. Update it while the
+    fixes land. Before the next run starts, tick its checklist and check its regression table. The file is the source of
+    truth; any shared doc is only a view.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
