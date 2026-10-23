@@ -941,6 +941,20 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 158. **A change that only relabels is not a revision.** Judges re-sent the same goals with reworded titles, and each
     resend counted as a new version with history and a notice. Compare what matters (the goals themselves), let a
     label fill only where none exists, and do not version a relabel.
+159. **A check made before you take a lock is stale once you hold it.** Each episode checked the shared voice pool,
+    then waited for the card lock; by the time it held the lock the first episode had filled the pool, but the later
+    ones voiced every line again and added most of an hour. Make the check again under the lock, and act only on
+    what it finds there.
+160. **A periodic job's due time must allow for its tick.** A status writer ran every 15 minutes and wrote the board
+    only when it was 55 minutes old, so a tick a few minutes early skipped a whole hour and the status went stale. Set
+    the due time to the period minus the tick (and the write time), so the job can never miss a period.
+161. **Count what was really made, not what the plan says.** A lean-cards change counted planned cards and promised a
+    small cut, but the run had made half as many renders again as the plan showed: retries, extra seeds and redraws
+    that the plan never lists. Measure the cost from the run's own record of renders, then cut the paths that
+    multiply it.
+162. **When you remove a thing, move every reader of it in the same change.** A card was dropped and the readers that
+    failed loudly were moved, but others only checked whether the file existed, so under the new setting they would
+    quietly find nothing and drop the feature. Search for every use of the name, not only the ones that break.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

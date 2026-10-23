@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.33.0 (2026-10-23)
+
+**Minor: four lessons (159-162).** A pool checked before the lock, so later episodes re-voiced every line; a status
+job whose due time ignored its tick; a cut promised from the plan while retries made the cost; a removed card whose
+silent readers were left behind.
+
 ## 1.32.0 (2026-10-23)
 
 **Minor: five lessons (154-158).** A wrapper's lock its own child waited on; a disk priority the scheduler ignored; a

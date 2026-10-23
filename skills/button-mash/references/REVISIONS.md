@@ -66,3 +66,5 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-23, v1.32.0 (standing refinement pass, 08:0x).** A wrapper hands its lock to its children, a priority
   setting is checked before it is relied on, notes go in the worker's message, an A/B holds its resource, and a relabel
   is not a revision.
+- **2026-10-23, v1.33.0 (standing refinement pass, 11:0x).** Check again under the lock, set a periodic job's due time
+  from its tick, count the renders really made rather than the plan, and move every reader when a thing is removed.
