@@ -955,6 +955,24 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 162. **When you remove a thing, move every reader of it in the same change.** A card was dropped and the readers that
     failed loudly were moved, but others only checked whether the file existed, so under the new setting they would
     quietly find nothing and drop the feature. Search for every use of the name, not only the ones that break.
+163. **A live session's working folder is in use, even between its commands.** A cleanup moved a folder because no
+    process had it open, but an agent session was working in it: the session keeps its folder in memory and opens it
+    only while a command runs, so every later command failed. Count as in use every folder a session recently
+    recorded as its working folder (the session's own log says), not only what the process table shows.
+164. **Give a name one resolver, and make every stage call it.** One stage named a set by its canon id and another
+    named the file by its own short form, so every board looked for a file that would never exist. Do not translate
+    at each reader: put the one mapping where the name is made, and route every opener through the same function, so
+    old and new names both resolve.
+165. **A retry rule must match the error's real wording.** A failure was meant to retry once its missing input landed,
+    but the retry pattern matched another wording of "missing", so nothing retried and every board would have been
+    dropped. When you write a rule that reacts to an error, take its pattern from a real failure line, not from memory.
+166. **One word must not carry two orders.** "Paused" meant "no more judge rounds" to the leads who set it and "stop
+    the work" to the sweep that read it, so pausing a mission's reviews killed its live test runs, twice in a day. Split
+    the two into two words (here a judges-paused flag beside the full pause), and make the common one the default.
+167. **A stage that waits for nothing it needs is made too early, once.** A draft was split from its boards to start
+    sooner; it then mixed the animatic before any board existed, and a straight-through run treated it as done, so
+    the result was slates over black and the later episodes got none. Split a stage by its real inputs: the early
+    part waits for what it reads, and the part that reads the boards waits for them, planned for every episode.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

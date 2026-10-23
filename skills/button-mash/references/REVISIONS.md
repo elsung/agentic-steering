@@ -68,3 +68,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   is not a revision.
 - **2026-10-23, v1.33.0 (standing refinement pass, 11:0x).** Check again under the lock, set a periodic job's due time
   from its tick, count the renders really made rather than the plan, and move every reader when a thing is removed.
+- **2026-10-23, v1.34.0 (standing refinement pass, 14:0x).** A session's recorded working folder counts as in use; one
+  resolver for a name across stages; a retry rule takes its pattern from a real failure; split a word that carries two
+  orders; split a stage by its real inputs (lessons 163-167).

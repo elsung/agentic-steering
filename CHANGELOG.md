@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.34.0 (2026-10-23)
+
+**Minor: five lessons (163-167).** A cleanup that moved a live session's working folder; a name two stages spelled
+two ways; a retry rule whose pattern missed the real error; one word, paused, that carried two orders; a draft split
+from its boards that mixed too early and was never made again.
+
 ## 1.33.0 (2026-10-23)
 
 **Minor: four lessons (159-162).** A pool checked before the lock, so later episodes re-voiced every line; a status
