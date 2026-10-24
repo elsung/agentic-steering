@@ -71,3 +71,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-23, v1.34.0 (standing refinement pass, 14:0x).** A session's recorded working folder counts as in use; one
   resolver for a name across stages; a retry rule takes its pattern from a real failure; split a word that carries two
   orders; split a stage by its real inputs (lessons 163-167).
+- **2026-10-23, v1.35.0 (standing refinement pass, 17:0x).** A test copy shares what it only reads; a fix does not
+  reach a pinned process; give agents the paths they need; never switch branches in a shared checkout; waits use the
+  run's own rule for made (lessons 168-172).

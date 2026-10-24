@@ -973,6 +973,23 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     sooner; it then mixed the animatic before any board existed, and a straight-through run treated it as done, so
     the result was slates over black and the later episodes got none. Split a stage by its real inputs: the early
     part waits for what it reads, and the part that reads the boards waits for them, planned for every episode.
+168. **A copy for testing should share what it only reads.** A test copy of a run wrote 7 GB of finished videos it
+    never changed, because its files had to be real so that a redo could not write through into the source. A
+    copy-on-write clone gives both: it costs nothing until it is written, and a write gets its own blocks. A copy
+    should cost what it makes, not what it read.
+169. **A fix on main does not reach a process pinned to older code.** A runner pinned to the code of an hour before
+    still matched jobs by one of two names for the same machine, so its jobs sat unclaimed for an hour after the fix
+    had landed. When a live process misbehaves, first check which code it runs; then unstick its work in place, and
+    say which runners still carry the old code.
+170. **Give an agent the paths it needs, or it will search for them.** A reviewing agent wanted a change note that
+    was not in its evidence and searched the whole disk for it, at full CPU. List the files an agent is meant to read,
+    by path, in what it is given; then a forbidden search has no reason to happen.
+171. **Never switch branches in a checkout others use.** The main checkout is read and landed into by other
+    processes; checking out a branch there, even for a minute, changes the files under them. Make a separate working
+    copy for your change.
+172. **Readiness must use the same "made" rule as the rest of the run.** In a run that makes each thing once, a card
+    that was made but later read as out of date was still counted as a wait, so two episodes' drafts never started.
+    When a run treats made as final, every wait must too.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

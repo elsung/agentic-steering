@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.35.0 (2026-10-23)
+
+**Minor: five lessons (168-172).** A test copy that wrote 7 GB it only read; a fix that did not reach a pinned runner;
+an agent that searched the disk for a file it was never given; a branch switched in a shared checkout; a wait that
+did not use the run's own rule for made.
+
 ## 1.34.0 (2026-10-23)
 
 **Minor: five lessons (163-167).** A cleanup that moved a live session's working folder; a name two stages spelled
