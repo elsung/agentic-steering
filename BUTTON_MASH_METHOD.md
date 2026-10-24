@@ -1042,6 +1042,15 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 189. **A watchdog must never undo the owner's own work.** A rule that took back work sent around the lock would have
     cancelled the owner's hand runs, which never take the lock. When the owner is hands-on, the watchdog's corrective
     actions stand down; it may report, never cancel.
+190. **A relaunch repeats the brief it was saved with.** A worker whose job was to start a timing run died after starting
+    it; the relaunch read the saved brief, "start a new run", and would have started a second one. When a worker's
+    task moves on (from "start it" to "measure it"), update the brief a relaunch reads, not only the worker.
+191. **Write an allow-list in the matcher's own terms.** A list of who may use a machine was written as sentences, and the
+    check looked for list words inside job names, so it matched nobody and moved a priority job off the machine. Name
+    the allowed jobs as the check sees them, or give the list an explicit "open to all" switch.
+192. **What the owner wants to compare must be a setting, not a constant.** Two runs on one code version were meant to
+    differ only in a voice size that was fixed in the code. Make the setting per run, and make it part of whatever
+    caches its results, so one run never reuses the other's.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

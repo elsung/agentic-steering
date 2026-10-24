@@ -13,6 +13,11 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.39.0 (2026-10-24)
+
+**Minor: three lessons (190-192).** A relaunch that would have started a second run from a stale brief; an allow-list
+written as sentences that matched no job; a compared setting that was a code constant.
+
 ## 1.38.0 (2026-10-24)
 
 **Minor: seven lessons (183-189).** The crew's two phases, read by every rule; a test copy that re-planned itself; a

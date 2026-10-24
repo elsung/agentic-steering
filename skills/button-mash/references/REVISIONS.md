@@ -83,3 +83,5 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-24, v1.38.0 (owner's process write-up, 03:0x).** Name the phase and let every rule read it; a test copy
   keeps its plan; keep tests off live machines at the socket; paused work is not idle; read a result by its job; one
   resource, one lock; a watchdog never undoes the owner's work (lessons 183-189).
+- **2026-10-24, v1.39.0 (standing refinement pass, 03:2x).** Keep the relaunch brief current; write allow-lists in the
+  matcher's terms; a compared setting is per run and part of its cache key (lessons 190-192).
