@@ -990,6 +990,21 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 172. **Readiness must use the same "made" rule as the rest of the run.** In a run that makes each thing once, a card
     that was made but later read as out of date was still counted as a wait, so two episodes' drafts never started.
     When a run treats made as final, every wait must too.
+173. **A job waiting for a shared resource must give back what it holds.** Board jobs took a CPU slot to build their
+    layout, then kept it while they waited for the graphics card, so the voice work queued behind them for an hour.
+    Count a job by what it is doing now: a job waiting at the card holds no other slot.
+174. **When one thing becomes two, find every reader of its old mark.** A draft was split into a voice part and a mix,
+    and both kept the old "draft" flag; the scheduler still read only that flag and put the voice part, which renders,
+    in the processor pool. Give each part its own mark, and move every reader that keys on the old one.
+175. **Every wait needs a maker.** Ten boards waited for a prop that was a variant of another prop; the variant has no
+    card of its own and nothing planned its base, so the wait could never end, and its label blamed another step.
+    When a thing waits, the planner must name the job that makes what it waits for; a wait with no maker is a bug.
+176. **One writer per part of a file; a checker only reports.** A watcher "fixed" a status file every round by adding a
+    row under one name, and the refresher removed it as a duplicate under another. Give each part of a shared file one
+    owner; every other process reads it, and flags, in the owner's own terms.
+177. **An urgent line must name its reader.** An urgent finding sat in a shared inbox for 30 minutes because it fell
+    between the reader's checks, and the run lost that time. Address urgent lines to the one who must act, so they
+    can watch for their own name.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

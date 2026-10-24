@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.36.0 (2026-10-23)
+
+**Minor: five lessons (173-177).** Board jobs that kept a processor slot while waiting for the card; a split whose
+scheduler still read the old flag; a wait for a prop nothing made; two writers in one status file; an urgent line
+read 30 minutes late.
+
 ## 1.35.0 (2026-10-23)
 
 **Minor: five lessons (168-172).** A test copy that wrote 7 GB it only read; a fix that did not reach a pinned runner;

@@ -74,3 +74,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-23, v1.35.0 (standing refinement pass, 17:0x).** A test copy shares what it only reads; a fix does not
   reach a pinned process; give agents the paths they need; never switch branches in a shared checkout; waits use the
   run's own rule for made (lessons 168-172).
+- **2026-10-23, v1.36.0 (standing refinement pass, 20:0x).** A waiting job gives back what it holds; a split moves every
+  reader of the old mark; every wait needs a maker; one writer per part of a file; an urgent line names its reader
+  (lessons 173-177).
