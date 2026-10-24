@@ -1067,6 +1067,17 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     running" and another as "stop: take my jobs down". The stop tool sent the restart signal, so every stop left
     orphaned jobs holding a shared lock. Use the signal that means what you intend, in the one tool everyone uses.
 
+198. **Reordering serial work moves the first result, not the last.** Voices were moved to right after each episode's
+    boards to make the pre-viz faster; the first episode's animatic came forward, but the last one did not move, because
+    the same card still did the same work one job after another. To cut the end figure, move work into idle time or do
+    less of it; reorder only to get an early result sooner.
+199. **A "this before that" gate should hold back only what needs it.** An order that put all the previz before the
+    renders counted a review copy as previz, so every take waited for a mix that no take reads. List what the later
+    work really reads; anything else runs beside it.
+200. **Read the honest figure, not the first one that looks like it.** The animatics landed at 74 minutes, but they
+    carried one person's voice; the real ones came at 131, and without the break about 88. Say what a number includes
+    before you compare it with a target.
+
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
   0, and deadlocks fell to 0.
