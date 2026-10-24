@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.38.0 (2026-10-24)
+
+**Minor: seven lessons (183-189).** The crew's two phases, read by every rule; a test copy that re-planned itself; a
+test stub bypassed by a direct address; paused work moved as idle; a stale file read as a result; one machine with
+three locks; a watchdog rule that would have cancelled the owner's runs.
+
 ## 1.37.0 (2026-10-24)
 
 **Minor: five lessons (178-182).** A worker handed an owner machine's address; a stopped worker's half-made change

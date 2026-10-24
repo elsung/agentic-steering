@@ -1020,6 +1020,28 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 182. **A worker's background waiter dies with the worker's session.** Workers that parked themselves on a background
     waiter were idle, not dead, when their session restarted, and nothing woke them. Tell workers to wait in the
     foreground, and to write enough state that a relaunch continues where they stopped.
+183. **Name the phase the crew is in, and let every rule read it.** When the owner tests by hand, their machines and
+    their runs are off limits; when they step away, every machine runs the crew's tests. Keep the phase and the
+    machine roles in one file each, and make the scheduler, the watchdog and the status loop read them, so nobody
+    keeps a private list that goes stale at the switch.
+184. **A test copy keeps the plan it was copied from.** A copy made to compare two settings re-planned its own story,
+    because its holds were cleared so it would run, and the later results were on a different plan from the earlier
+    ones. Hold the planning steps on a copy from creation; release them only to re-plan on purpose.
+185. **Keep tests off live machines at the lowest level.** A test stub that only set one address setting was bypassed
+    by code that named the machine directly, and a test run read the live card. Refuse the live ports at the socket
+    in the test setup, so no path can reach them.
+186. **Paused work is not idle work.** A cleanup that moved quiet folders took ones whose leads had paused them on
+    purpose, waiting for a machine. Treat a paused, held or queued run as someone's live work, and give it far longer
+    than an idle copy.
+187. **Read a result by the job that made it, not by the file being there.** A file left by an earlier attempt looks the
+    same as a new result. Name the job, its status and its start time against the change being tested, and only then
+    open the file.
+188. **One resource, one lock, whatever it is called.** One machine had three locks because it could be named three
+    ways, so jobs on it did not wait for each other and a reader saw a busy machine as free. Map every name of a
+    resource to its one lock.
+189. **A watchdog must never undo the owner's own work.** A rule that took back work sent around the lock would have
+    cancelled the owner's hand runs, which never take the lock. When the owner is hands-on, the watchdog's corrective
+    actions stand down; it may report, never cancel.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

@@ -80,3 +80,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-24, v1.37.0 (standing refinement pass, 00:0x).** Put a machine rule where every caller passes; a stopped
   worker has not finished; find where the clock goes before cutting; count a thing's readers before dropping it; waiters
   die with their session (lessons 178-182).
+- **2026-10-24, v1.38.0 (owner's process write-up, 03:0x).** Name the phase and let every rule read it; a test copy
+  keeps its plan; keep tests off live machines at the socket; paused work is not idle; read a result by its job; one
+  resource, one lock; a watchdog never undoes the owner's work (lessons 183-189).
