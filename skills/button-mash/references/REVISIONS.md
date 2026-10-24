@@ -85,3 +85,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   resource, one lock; a watchdog never undoes the owner's work (lessons 183-189).
 - **2026-10-24, v1.39.0 (standing refinement pass, 03:2x).** Keep the relaunch brief current; write allow-lists in the
   matcher's terms; a compared setting is per run and part of its cache key (lessons 190-192).
+- **2026-10-24, v1.40.0 (standing refinement pass, 06:0x).** Look at what a fallback covers before removing it; hand a
+  reader everything it opens; write shared files then rename; one log format for every test; send the stop signal that
+  means stop (lessons 193-197).

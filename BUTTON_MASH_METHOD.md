@@ -1051,6 +1051,21 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 192. **What the owner wants to compare must be a setting, not a constant.** Two runs on one code version were meant to
     differ only in a voice size that was fixed in the code. Make the setting per run, and make it part of whatever
     caches its results, so one run never reuses the other's.
+193. **A fallback can hide a bug for days; when you remove one, look at what it was covering.** A path that never
+    existed went unnoticed for three days because a fallback quietly invented what was missing. The day the fallback
+    was removed (rightly), every run that reached it broke. Before removing a fallback, count how often it fires and why.
+194. **A link to one folder does not bring the files beside it.** A scratch folder linked in the cards it needed, but the
+    reader also looked for two settings files next to that folder, found none, and guessed a name that does not exist.
+    When you hand a reader part of a tree, give it everything the reader opens, or let it follow the link home.
+195. **Write a shared file to a temp name and rename it into place.** Two jobs started in the same second; one began
+    writing a shared clip and the other read it while it was still empty. Anything another process may read while you
+    write it appears only when whole: write, then rename.
+196. **One log, one format, one writer for every test.** Results recorded in different ways on different samples could
+    not be compared. Keep one row format for every arm, a small writer that checks each row before it is added, and one
+    page that reads the rows live and shows each variable with and without.
+197. **Know what each stop signal means to a supervisor.** A runner treats one signal as "restart: leave my jobs
+    running" and another as "stop: take my jobs down". The stop tool sent the restart signal, so every stop left
+    orphaned jobs holding a shared lock. Use the signal that means what you intend, in the one tool everyone uses.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

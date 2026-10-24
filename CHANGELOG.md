@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.40.0 (2026-10-24)
+
+**Minor: five lessons (193-197).** A three-day-old wrong path revealed when a fallback was removed; a linked folder
+missing the files beside it; a shared clip read while being written; one log format for every test; a stop tool that
+sent the restart signal.
+
 ## 1.39.0 (2026-10-24)
 
 **Minor: three lessons (190-192).** A relaunch that would have started a second run from a stale brief; an allow-list
