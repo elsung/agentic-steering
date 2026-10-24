@@ -90,3 +90,5 @@ Each revision names the stall or correction that led to it. The full lessons are
   means stop (lessons 193-197).
 - **2026-10-24, v1.41.0 (standing refinement pass, 09:0x).** Reorder serial work only for an early result; a "before"
   gate holds back only what needs it; read the honest figure (lessons 198-200).
+- **2026-10-24, v1.42.0 (standing refinement pass, 12:3x).** Read a stale test's error before updating it; when
+  everything hangs, look at the shared disk; report a step's result, not its attempt (lessons 201-203).

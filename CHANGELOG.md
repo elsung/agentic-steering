@@ -13,6 +13,11 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.42.0 (2026-10-24)
+
+**Minor: three lessons (201-203).** A test called stale that was guarding a real break; a test suite that "hung"
+because the data disk was saturated; a merge step that reported success when git had refused.
+
 ## 1.41.0 (2026-10-24)
 
 **Minor: three lessons (198-200).** Reordering two serial jobs that brought the first episode forward but not the

@@ -1078,6 +1078,16 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     carried one person's voice; the real ones came at 131, and without the break about 88. Say what a number includes
     before you compare it with a target.
 
+201. **A "stale" test can be guarding a real break; read its error before you update it.** A test said to be out of date
+    failed because the engine could no longer plan any dry run: a strict lookup for a method that has no files. Fixing
+    the test alone would have hidden that. Read what the failure says; if the engine is wrong, fix the engine.
+202. **When everything hangs at once, look at the disk.** Every test session hung at its end, on fresh code and old
+    code alike. The data disk was saturated: its kernel threads waiting, a long copy reading at full speed, and the
+    tests' temp folders on it. When unrelated things stall together, check the shared disk before the code.
+203. **Report a step's result, not its attempt.** The landing step wrote "merged" after it ran the merge, whatever git
+    did, so a merge refused by a stray file was reported as landed. Read the outcome (is the branch in main?) and
+    say what really happened, with the reason when it failed.
+
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
   0, and deadlocks fell to 0.
