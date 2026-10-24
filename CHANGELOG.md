@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.37.0 (2026-10-24)
+
+**Minor: five lessons (178-182).** A worker handed an owner machine's address; a stopped worker's half-made change
+landed; a run's idle first twenty minutes; a picture called unused that most boards started from; workers parked on
+waiters that died with their session.
+
 ## 1.36.0 (2026-10-23)
 
 **Minor: five lessons (173-177).** Board jobs that kept a processor slot while waiting for the card; a split whose

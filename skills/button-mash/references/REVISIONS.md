@@ -77,3 +77,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-23, v1.36.0 (standing refinement pass, 20:0x).** A waiting job gives back what it holds; a split moves every
   reader of the old mark; every wait needs a maker; one writer per part of a file; an urgent line names its reader
   (lessons 173-177).
+- **2026-10-24, v1.37.0 (standing refinement pass, 00:0x).** Put a machine rule where every caller passes; a stopped
+  worker has not finished; find where the clock goes before cutting; count a thing's readers before dropping it; waiters
+  die with their session (lessons 178-182).

@@ -1005,6 +1005,21 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 177. **An urgent line must name its reader.** An urgent finding sat in a shared inbox for 30 minutes because it fell
     between the reader's checks, and the run lost that time. Address urgent lines to the one who must act, so they
     can watch for their own name.
+178. **Put a machine rule where every caller passes, not in a name list.** A rule kept agents off the owner's test
+    machines by name, and a worker that was handed a machine's address went straight to it. Check the rule in the one
+    place every connection is made, and match every form a machine can be named by.
+179. **A stopped worker has not finished.** A worker stopped mid-task still wrote its last reply, and the landing step
+    read that as done and merged its half-made change. Record a stop where it happens, and land only work whose worker
+    wrote its own finish report after the last stop.
+180. **Before you cut, find where the clock really goes.** The first hour of a run looked like slow boards; bucketed by
+    ten minutes, the card was idle for the first twenty while the text stages ran, then busy without a gap. The target
+    then reads as two numbers: the lead-in, and the card work after it.
+181. **Check that a thing is unused before you drop it as unused.** A picture was called unused because one reader was
+    checked; on most boards it was the next step's starting picture, and dropping it re-framed every close-up. Count
+    its readers on the real run first; then test the drop by eye on the cases it protects.
+182. **A worker's background waiter dies with the worker's session.** Workers that parked themselves on a background
+    waiter were idle, not dead, when their session restarted, and nothing woke them. Tell workers to wait in the
+    foreground, and to write enough state that a relaunch continues where they stopped.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
