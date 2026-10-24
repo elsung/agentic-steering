@@ -92,3 +92,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   gate holds back only what needs it; read the honest figure (lessons 198-200).
 - **2026-10-24, v1.42.0 (standing refinement pass, 12:3x).** Read a stale test's error before updating it; when
   everything hangs, look at the shared disk; report a step's result, not its attempt (lessons 201-203).
+- **2026-10-24, v1.43.0 (standing refinement pass, 15:3x).** A recovery lives where the failure happens; a model's
+  answer uses the code's spellings; background work yields by priority; compare like with like before blaming a setting
+  (lessons 204-207).

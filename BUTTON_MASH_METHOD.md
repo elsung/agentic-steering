@@ -1087,6 +1087,19 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 203. **Report a step's result, not its attempt.** The landing step wrote "merged" after it ran the merge, whatever git
     did, so a merge refused by a stray file was reported as landed. Read the outcome (is the branch in main?) and
     say what really happened, with the reason when it failed.
+204. **A self-correction belongs to the thing it corrects, not to one path that calls it.** An out-of-memory retry
+    (free the card's other server, run once more) lived inside one scheduler's branch, so a run on the other scheduler
+    failed outright twice beside a large idle cache. Put the recovery where the failure happens, so every caller has it.
+205. **Give a model's structured answer the code's own spellings.** A matching call answered every pair right, but it
+    wrote "prop" where the code reads "props", and all its answers were dropped without a word. A schema with an enum of
+    the code's keys removes the class; keying the answer's cache by the schema retires answers made under the old one.
+206. **Background work yields to live work by priority, not by a cap.** Each test runner sized its CPU pool as if it had
+    the machine alone, so several of them stacked work beside a live production run. Running test runners at a lower
+    CPU priority fixes it without slowing a test on an idle machine, and without a gate.
+207. **Before you blame a setting for a cost, compare like with like.** A new control was estimated at 18 s a picture
+    by comparing pictures that loaded their model cold with pictures that did not; the cold ones cost the same without
+    the control. Measured warm against warm, it cost 2.4 s. Split a cost by kind first (cold and warm, before and after),
+    then name the delta; the big lever was the cold loads, the same in both runs.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
