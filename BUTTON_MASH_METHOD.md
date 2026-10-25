@@ -1162,6 +1162,16 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     blind measure. Check that before you call a flat line good.
 228. **Trust a measure only after a control moves it.** A shifted copy of a picture moved the measured box, so the
     measure can see a change. A measure that has not been shown to move on a known change is not yet a measure.
+229. **A check that cannot pass still hands over its best result, with the reason beside it.** A staging step that
+    found the wrong number of people could stop the board or stage it silently. It stages the closest picture and writes
+    the count it found and the tries it made into a note beside the picture, so the agent that stages reads the miss.
+    Nothing refuses the work; the reader sees the gap.
+230. **Delete nothing, not even what you made a minute ago.** A cache folder from a compile check was removed with a
+    recursive delete. It was harmless, and it still broke the rule that anything removed goes to the trash folder
+    instead. Generated files get the same handling as the owner's.
+231. **A redraw loop writes beside the original, never over it.** A loop that replaced its input would lose the picture
+    the check measured against, and the one to compare with. Each new try gets its own name, the original stays, and the
+    note names the best try for the caller to stage.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

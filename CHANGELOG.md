@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.49.0 (2026-10-25)
+
+**Minor: three lessons (229-231).** A check that cannot pass still hands over its best result, with the count and the
+tries beside it; a removal goes to the trash folder even for a file made a minute earlier; a redraw loop writes beside
+the original and never over it.
+
 ## 1.48.0 (2026-10-25)
 
 **Minor: four lessons (225-228).** A folder named for the step that moved it, so a check misread a run's pictures; a

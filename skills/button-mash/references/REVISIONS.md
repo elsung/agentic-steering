@@ -107,3 +107,4 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-25, v1.48.0 (standing refinement pass, 06:3x).** Name a moved-aside folder for its contents; replay the
   recorded input before blaming the measure; identical scores need identical pixels; a measure is trusted after a
   control moves it (lessons 225-228).
+- **2026-10-25, v1.49.0 (standing refinement pass, 09:3x).** A check that cannot pass still hands over its best result, with the reason beside it; delete nothing, even what was made a minute ago; a redraw loop writes beside the original, never over it (lessons 229-231).
