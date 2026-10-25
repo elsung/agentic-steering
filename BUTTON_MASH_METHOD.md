@@ -1099,7 +1099,23 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 207. **Before you blame a setting for a cost, compare like with like.** A new control was estimated at 18 s a picture
     by comparing pictures that loaded their model cold with pictures that did not; the cold ones cost the same without
     the control. Measured warm against warm, it cost 2.4 s. Split a cost by kind first (cold and warm, before and after),
-    then name the delta; the big lever was the cold loads, the same in both runs.
+    then name the delta.
+208. **To keep a fix fixed, build an assessment loop, not a gate.** After every change to the chain a fix lives in,
+    render a small regression set again on an idle machine, measure each case, and show one sheet with each number
+    against the last run and a trend line. The cases a person flags join the set automatically. Nothing waits on it and
+    nothing is refused by it; a regression is seen the same hour it lands.
+209. **Tie a side effect to its sender where it is made.** A cleanup that guessed whether work was orphaned from a lock's
+    holders took back live work that ran outside the lock. Stamping each request with its sender (host, process, job)
+    when it is sent lets the cleanup ask the only question that matters: is the sender still alive?
+210. **When a status page is slow, look for one call per copy.** A refresh spent eleven minutes waiting on disk for four
+    seconds of work: one version-control call inside each of nine hundred working copies. The facts were all in the
+    central store; reading them there in one batch took under a second.
+211. **Read a failed proof against its own records before fixing the engine.** A proof reported two defects; its job rows
+    showed both were its clock, which counted a half-hour pause the proof did not cause. A proof's clock starts from its
+    own first job, and its cap excludes time it spent waiting for someone else.
+212. **A copy that cannot be a clone is made once and kept.** Across two disks, a copy is a full copy; made per run it
+    outlived its caller and left a partial copy behind. One kept copy, refreshed only where the run changes it, costs
+    nothing per run.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

@@ -95,3 +95,6 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-24, v1.43.0 (standing refinement pass, 15:3x).** A recovery lives where the failure happens; a model's
   answer uses the code's spellings; background work yields by priority; compare like with like before blaming a setting
   (lessons 204-207).
+- **2026-10-24, v1.44.0 (standing refinement pass, 18:3x).** An assessment loop, not a gate; tie a side effect to its
+  sender; one batch from the central store, not a call per copy; read a failed proof against its records; copy once
+  and keep (lessons 208-212).

@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.44.0 (2026-10-24)
+
+**Minor: five lessons (208-212).** A regression set re-rendered after each change, shown not gated; a cleanup that took
+back live work it guessed was orphaned; a refresh slow from one call per working copy; a proof's false defects from its
+own clock; a per-run cross-disk copy.
+
 ## 1.43.0 (2026-10-24)
 
 **Minor: four lessons (204-207).** A retry that lived in one scheduler's branch; a model's right answers dropped over a
