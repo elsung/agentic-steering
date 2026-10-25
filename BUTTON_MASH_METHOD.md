@@ -1183,6 +1183,11 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     picture without going through the draw (a pick in the web page) still needs the same call, and until it has one the
     record says which copy it describes.
 
+234. **Land the module before the caller that imports it.** A lab tool was changed to import a new shared module before that
+    module reached the engine it runs on. Any caller that started in that window would have failed at import. Land the
+    module first, then point the caller at it, and check the caller imports against the engine it actually loads, not
+    against a branch that has the module.
+
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
   0, and deadlocks fell to 0.

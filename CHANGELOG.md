@@ -13,6 +13,11 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.51.0 (2026-10-25)
+
+**Minor: one lesson (234).** A caller imports a new shared module only after the module is on the engine it runs on; a
+lab tool that imported it early would have failed for every caller in that window.
+
 ## 1.50.0 (2026-10-25)
 
 **Minor: two lessons (232-233).** A check writes no cache, so nothing is left to delete (the same slip as lesson 230, a
