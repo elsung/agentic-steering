@@ -98,3 +98,5 @@ Each revision names the stall or correction that led to it. The full lessons are
 - **2026-10-24, v1.44.0 (standing refinement pass, 18:3x).** An assessment loop, not a gate; tie a side effect to its
   sender; one batch from the central store, not a call per copy; read a failed proof against its records; copy once
   and keep (lessons 208-212).
+- **2026-10-24, v1.45.0 (standing refinement pass, 21:3x).** Importing must not change the process; a polite waiter
+  starves; trigger on the harm, not a sign of it; a child process escapes the test's guards (lessons 213-216).

@@ -13,6 +13,11 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.45.0 (2026-10-24)
+
+**Minor: four lessons (213-216).** A module whose import replaced a core check; a loop starved by a busy owner's queue;
+an alert that counted pings as intrusions; a test guard its child process went around.
+
 ## 1.44.0 (2026-10-24)
 
 **Minor: five lessons (208-212).** A regression set re-rendered after each change, shown not gated; a cleanup that took

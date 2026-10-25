@@ -1116,6 +1116,19 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 212. **A copy that cannot be a clone is made once and kept.** Across two disks, a copy is a full copy; made per run it
     outlived its caller and left a partial copy behind. One kept copy, refreshed only where the run changes it, costs
     nothing per run.
+213. **Importing a module must not change how the rest of the process behaves.** Loading a web app replaced a core check
+    for the whole process with its own older copy of the rules, so the dashboard judged work by rules the planner had
+    moved past, and tests failed only when that module happened to load first. Keep one body for a rule, and install
+    any override when the app is created, not when it is imported.
+214. **A polite waiter starves on a busy shared machine.** A loop that sent work only when the machine's queue was empty
+    sent nothing for 80 minutes: the owner's jobs left gaps shorter than the loop's tick. Queue one job whenever nothing
+    else is waiting; that is still one at a time, and it never jumps ahead of the owner.
+215. **An alert's trigger is the harm itself, not a sign that often comes with it.** An intrusion alert fired on every
+    health-check ping because it counted connections, not GPU memory. Trigger on the thing that hurts (memory on the
+    card, work posted around the lock), and the alert stops crying wolf.
+216. **A test's child process escapes the test's guards.** A test blocked network calls to the live server in its own
+    process, but the command it ran in a child process reached the live server anyway. Redirect what the child reaches
+    too, or the guard is only half a guard.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
