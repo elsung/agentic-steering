@@ -102,3 +102,5 @@ Each revision names the stall or correction that led to it. The full lessons are
   starves; trigger on the harm, not a sign of it; a child process escapes the test's guards (lessons 213-216).
 - **2026-10-25, v1.46.0 (standing refinement pass, 00:3x).** A stall watch fires on silence; judge on the protected
   number; a commit waits for its test; a copied record is not a made card (lessons 217-220).
+- **2026-10-25, v1.47.0 (standing refinement pass, 03:3x).** A result not produced says why; a cache's window must not
+  hide a test's own write; measure a shared box busy over a window; a silent worker is unread, not done (lessons 221-224).

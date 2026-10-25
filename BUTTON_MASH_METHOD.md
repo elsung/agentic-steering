@@ -1140,6 +1140,18 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 220. **A record is part of what counts as made.** A copied skim card kept its skim record, which named the skim's id, so
     the read's id was queued again and drawn twice. Copy the picture and leave the record behind; the rule for "made"
     reads the record.
+221. **A result that was not produced must say why, not show a stale number.** A shot the regression loop did not
+    remake showed its last score with no note, so a reader could take an old picture for a new one. Print the planner's
+    own reason beside every shot that was not remade.
+222. **A cache's freshness window must not hide a write the test made itself.** A test that wrote files straight to disk
+    and listed them inside the dashboard's two-second window failed one run in four. Drop the cache on the write path,
+    rather than waiting out the window, so the test sees what it wrote.
+223. **Measure a shared box as busy over a window, not in a snapshot.** A status said "idle" for a box that was rendering
+    between prompts, and a lead queued into the gap. Count the box busy when work is queued or running within the last
+    few minutes.
+224. **A worker that exits with no output is a failure to read, not a pass.** A proof builder exited with nothing new and
+    the autopilot recorded it as "died silent". Read its log and its job rows before taking its report, or any silence, as
+    done.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

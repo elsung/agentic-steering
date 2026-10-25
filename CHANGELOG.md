@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.47.0 (2026-10-25)
+
+**Minor: four lessons (221-224).** A regression shot shown with a stale score and no reason; a cache window that hid a
+test's own write; a "idle" status for a box rendering between prompts; a proof builder that exited silently and was taken
+as done.
+
 ## 1.46.0 (2026-10-25)
 
 **Minor: four lessons (217-220).** A stall watch that reported errors and missed an 80-minute silence; a verdict counted
