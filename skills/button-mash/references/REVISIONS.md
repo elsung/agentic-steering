@@ -100,3 +100,5 @@ Each revision names the stall or correction that led to it. The full lessons are
   and keep (lessons 208-212).
 - **2026-10-24, v1.45.0 (standing refinement pass, 21:3x).** Importing must not change the process; a polite waiter
   starves; trigger on the harm, not a sign of it; a child process escapes the test's guards (lessons 213-216).
+- **2026-10-25, v1.46.0 (standing refinement pass, 00:3x).** A stall watch fires on silence; judge on the protected
+  number; a commit waits for its test; a copied record is not a made card (lessons 217-220).

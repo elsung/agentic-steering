@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.46.0 (2026-10-25)
+
+**Minor: four lessons (217-220).** A stall watch that reported errors and missed an 80-minute silence; a verdict counted
+on any dip instead of the protected number; a command chain that committed past a failing test; a copied record that
+kept a skim's identity and drew a card twice.
+
 ## 1.45.0 (2026-10-24)
 
 **Minor: four lessons (213-216).** A module whose import replaced a core check; a loop starved by a busy owner's queue;

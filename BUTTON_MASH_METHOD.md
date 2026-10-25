@@ -1129,6 +1129,17 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 216. **A test's child process escapes the test's guards.** A test blocked network calls to the live server in its own
     process, but the command it ran in a child process reached the live server anyway. Redirect what the child reaches
     too, or the guard is only half a guard.
+217. **A stall watch must fire on silence, not only on errors.** The watch on the set's loop reported failures and
+    publishes, so for 80 minutes it reported nothing and the loop sent nothing. Silence is the failure to catch: alert
+    when the expected progress has not happened within its window, and say so once.
+218. **Judge a verdict on the number the system exists to protect.** A sheet counted a shot worse on any single dip
+    in a noisy size or head ratio, and reported 11 worse while the set's mean agreement rose. Let the protected number
+    decide the verdict; keep the rest as detail.
+219. **A command chain that commits must check the result before it does.** A chain ran its commit and landing after a
+    failing test, so a broken fix reached main and was fixed a minute later. Stop the chain on the failing step, then commit.
+220. **A record is part of what counts as made.** A copied skim card kept its skim record, which named the skim's id, so
+    the read's id was queued again and drawn twice. Copy the picture and leave the record behind; the rule for "made"
+    reads the record.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
