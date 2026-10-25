@@ -1152,6 +1152,16 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
 224. **A worker that exits with no output is a failure to read, not a pass.** A proof builder exited with nothing new and
     the autopilot recorded it as "died silent". Read its log and its job rows before taking its report, or any silence, as
     done.
+225. **Name a moved-aside folder for what it holds, not for the step that moved it.** A folder named for the run that
+    moved it held the run before's pictures, so a check read run 3's board as run 4's and nearly reported a defect that
+    was a misread. Name it for its contents.
+226. **Before you blame the measure, replay its exact recorded input.** A stored result looked wrong; replaying the same
+    input reproduced the stored layout box exactly, which cleared the measure and located the real change in the picture.
+227. **Identical scores mean identical pictures; check the pixels before you read a flat trend as a result.** Three runs
+    scored the same to three decimals, and the picture files were pixel-identical, so the flat line was real and not a
+    blind measure. Check that before you call a flat line good.
+228. **Trust a measure only after a control moves it.** A shifted copy of a picture moved the measured box, so the
+    measure can see a change. A measure that has not been shown to move on a known change is not yet a measure.
 
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to

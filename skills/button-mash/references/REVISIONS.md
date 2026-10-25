@@ -104,3 +104,6 @@ Each revision names the stall or correction that led to it. The full lessons are
   number; a commit waits for its test; a copied record is not a made card (lessons 217-220).
 - **2026-10-25, v1.47.0 (standing refinement pass, 03:3x).** A result not produced says why; a cache's window must not
   hide a test's own write; measure a shared box busy over a window; a silent worker is unread, not done (lessons 221-224).
+- **2026-10-25, v1.48.0 (standing refinement pass, 06:3x).** Name a moved-aside folder for its contents; replay the
+  recorded input before blaming the measure; identical scores need identical pixels; a measure is trusted after a
+  control moves it (lessons 225-228).
