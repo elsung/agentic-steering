@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.50.0 (2026-10-25)
+
+**Minor: two lessons (232-233).** A check writes no cache, so nothing is left to delete (the same slip as lesson 230, a
+second time: the fix is in the check, not the cleanup); a record of what a picture was made from is written by the step
+that makes it, from the files on disk.
+
 ## 1.49.0 (2026-10-25)
 
 **Minor: three lessons (229-231).** A check that cannot pass still hands over its best result, with the count and the

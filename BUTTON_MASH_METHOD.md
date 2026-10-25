@@ -1173,6 +1173,16 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     the check measured against, and the one to compare with. Each new try gets its own name, the original stays, and the
     note names the best try for the caller to stage.
 
+232. **Make the check write nothing, so there is nothing to delete.** A compile check left a bytecode folder behind, and a
+    recursive delete removed it: the same slip as lesson 230, a second time. The cause was the check, not the cleanup. Run a
+    compile or import check with the interpreter's no-bytecode setting, so it writes no cache. A rule a lesson already
+    states has failed once it recurs; fix the step that makes the mess.
+233. **Write the record of what a picture was made from in the step that made it, from the files on disk.** Staged pictures
+    carried no record of their sources, so each review page was assembled by hand. The draw is where the renders, the cards
+    and the steps are known, so the draw writes the record, and rebuilds it from the folder each time. A path that changes a
+    picture without going through the draw (a pick in the web page) still needs the same call, and until it has one the
+    record says which copy it describes.
+
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
   0, and deadlocks fell to 0.

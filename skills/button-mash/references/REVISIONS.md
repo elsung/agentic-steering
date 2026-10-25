@@ -108,3 +108,4 @@ Each revision names the stall or correction that led to it. The full lessons are
   recorded input before blaming the measure; identical scores need identical pixels; a measure is trusted after a
   control moves it (lessons 225-228).
 - **2026-10-25, v1.49.0 (standing refinement pass, 09:3x).** A check that cannot pass still hands over its best result, with the reason beside it; delete nothing, even what was made a minute ago; a redraw loop writes beside the original, never over it (lessons 229-231).
+- **2026-10-25, v1.50.0 (standing refinement pass, 12:0x).** A check writes no cache, so nothing is left to delete; a record of what a picture was made from is written by the step that makes it, from the files on disk (lessons 232-233).
