@@ -13,6 +13,13 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.52.0 (2026-10-25)
+
+**Minor: the north star comes first (owner #1480, renamed #1482).** A new section in the skill: every project has one
+north star, the goal behind every goal in the owner's own words. Read it at the start of every session, round and brief;
+assess results against it before the spec; treat rules as hypotheses that retire when they stop serving it; keep the
+owner's voice. A worked example shows a creative pipeline that grew narrow rules and got more correct without moving.
+
 ## 1.51.0 (2026-10-25)
 
 **Minor: one lesson (234).** A caller imports a new shared module only after the module is on the engine it runs on; a

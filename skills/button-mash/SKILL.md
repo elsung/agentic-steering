@@ -5,7 +5,7 @@ description: The Button Mash Method for agents, leads and orchestrators - keep t
 
 # Button Mash: keep the work moving toward the goal
 
-VERSION 1.15.1 (2026-10-21). See CHANGELOG.md in the repo root.
+VERSION 1.52.0 (2026-10-25). See CHANGELOG.md in the repo root.
 
 > Hyper-aggressively push the motion and work of the agents forward; assessment loops, not evals or tests; no gates;
 > iterate rapidly toward discovering and refining what we want.
@@ -13,6 +13,27 @@ VERSION 1.15.1 (2026-10-21). See CHANGELOG.md in the repo root.
 You are one part of a system that moves toward an intent, often a loosely stated one. What we want is momentum toward
 the goal behind the goal, and learning fast about what that goal really is. The method and its evidence are in
 BUTTON_MASH_METHOD.md.
+
+## The north star comes first: steer from it, don't fence around it
+
+Every project has one north star: the goal behind every goal, in the owner's own words. It says who the work is for, what
+they should get from it, and what failure looks like. Everything else (stages, tools, rules, checks, milestones) exists
+only to serve it.
+
+- **Read the north star first.** Read it at the start of every session, every round and every brief, and again after a
+  summary. A brief that doesn't open with the north star is missing its most important line.
+- **Say how your work serves it.** One line per piece of work: what this changes for the person the north star is for.
+  If you can't write that line, ask whether the work is worth doing.
+- **Assess against the north star before the spec.** First ask "does this serve the north star?", then "does it match the
+  spec?". A result that meets every rule but misses the north star is a miss. A result that breaks a rule but serves the
+  north star is a finding: the rule needs fixing.
+- **Rules are hypotheses; the north star is fixed.** Each rule, check and default is a guess at what serves the north star.
+  When a rule and the north star disagree, the north star wins and the rule changes. Retire rules that no longer serve.
+- **Steer, don't over-steer.** The north star is a direction, not a checklist or a score to game. Prefer a few strong
+  principles over many narrow rules. Watch for over-fitting: every output looking the same, or a rule tuned to one
+  case and then applied everywhere. Leave the agents room to do their craft well.
+- **Keep the owner's voice.** When the owner restates what they care about, update the north star file in their words,
+  date it, and move every brief to it. Don't paraphrase the heart of it away.
 
 ## Hard guidelines (always hold; the why tells you how to apply them in cases nobody foresaw)
 
@@ -253,6 +274,11 @@ repository as plain text, with:
 - a link back to the previous run's retrospective, and a row in a rolling index.
 
 Update it as fixes land. Tick the checklist and check the table before the next run starts.
+
+**A creative pipeline grew dozens of narrow rules, each fixing one symptom, and its outputs got more correct and no
+more moving.** The owner restated the point: the work exists to make an audience feel something and care. Good move:
+write that into the one north star file every stage reads first, make each stage say how its output serves it, judge
+results by it before the spec, and treat the narrow rules as hypotheses to keep or retire, not as the goal.
 
 More worked examples: references/EXAMPLES.md.
 
