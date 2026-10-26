@@ -13,6 +13,12 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.55.0 (2026-10-26)
+
+**Minor: two lessons (239-240).** Fix the writer as well as the file: a status file rewritten on a timer undoes a hand
+edit unless the writer's prompt carries the same rule. And when the owner's named source cannot be read, use the copy
+the owner pointed to, say which one, and do not create the missing file.
+
 ## 1.54.0 (2026-10-25)
 
 **Minor: two lessons (237-238).** Read why a worker exited before relaunching it with the same brief: four builders

@@ -1209,6 +1209,16 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     there. The rows cited the inbox lines that announced each fix, labelled the commit as not readable, and asked the lab
     lead for the hashes. A row that names a commit you have not seen is a claim you cannot check.
 
+239. **Fix the writer as well as the file, or the next timed rewrite undoes the fix.** A status file was rewritten every 30
+    minutes by an agent working from a prompt. A hand edit to the file, a new top block and corrected lines, would have
+    been overwritten at the next rewrite, unless the agent's prompt carried the same rule. The prompt was changed in the
+    same pass, and the file was checked to still parse. A hand edit to a file a machine rewrites is a patch on a timer.
+
+240. **When the source the owner names cannot be read, use the copy the owner pointed to, say which you used, and do not
+    create the missing file.** The game plan's artifact returned "not found", and the file named as the north star's section
+    was not on disk. The plan was taken from the header the owner had said mirrored it, and the report named both gaps. A
+    file made to fill a gap is a second source that will drift from the owner's.
+
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
   0, and deadlocks fell to 0.
