@@ -1241,6 +1241,10 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     page still showed the old set. Before a lead posts done, fetch the live endpoint or open the live page and read it. Post
     what the check showed, not what the report said.
 
+246. **Report the real output, not a test run.** A builder reported "tests pass" for a card fix. The evidence that mattered was
+    the card the crashed scene now builds, read on the page. Builders write no unit tests and run no test files; they look at
+    what the user sees (the page, the file, the render, the run) and say what they saw. A passing test is not progress.
+
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
   0, and deadlocks fell to 0.

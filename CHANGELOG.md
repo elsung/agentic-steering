@@ -13,6 +13,11 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.57.0 (2026-10-26)
+
+**Patch-level lesson (246, owner #1644: no gates, no coding tests).** Builders report the real output (the page, the file,
+the render, the run) and not a test run. A "tests pass" report is not progress, so none counts as evidence.
+
 ## 1.56.0 (2026-10-26)
 
 **Minor: five lessons from the drive loop (241-245, owner #1642).** Idle means an empty prompt over an unchanged pane, not
