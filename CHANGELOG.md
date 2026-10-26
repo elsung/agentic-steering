@@ -13,6 +13,13 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.56.0 (2026-10-26)
+
+**Minor: five lessons from the drive loop (241-245, owner #1642).** Idle means an empty prompt over an unchanged pane, not
+"no child processes". A watch that re-flags the same cards without acting is motion, not progress, so each flag is acted
+on or closed. Grep the inbox and the other lead's posts before starting a builder. Read a file's reader before writing a
+new shape into it. A "done" report is checked on the live endpoint before it is posted.
+
 ## 1.55.0 (2026-10-26)
 
 **Minor: two lessons (239-240).** Fix the writer as well as the file: a status file rewritten on a timer undoes a hand

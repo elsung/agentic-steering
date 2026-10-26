@@ -1219,6 +1219,28 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     was not on disk. The plan was taken from the header the owner had said mirrored it, and the report named both gaps. A
     file made to fill a gap is a second source that will drift from the owner's.
 
+241. **Idle means an empty prompt over an unchanged pane, not "no child processes".** A lead's turn ends when it stops typing,
+    and a background waiter keeps the pane looking busy. Capture the pane twice a minute apart: an empty prompt with the same
+    text is idle. At 02:06 the autopilot learned this: an idle lead with no card next gets the game plan's next step, not
+    silence.
+
+242. **A watch that flags the same cards without acting is motion, not progress.** A regression watch re-posted the same 12
+    stale cards three times, and nothing closed or moved one. Every flag needs one of two outcomes that day: act (send the
+    next step, relaunch) or close (one line saying why). A flag that repeats with neither is noise.
+
+243. **Grep the inbox and the other lead's posts before you start a builder.** Two leads started duplicate builders four
+    times in one night (render, context pack, scene builder, sphere head). Before a build, search the inbox for the card
+    name and read the other lead's last post. One lead found its duplicate fix already on main, did not commit its copy,
+    and removed the worktree.
+
+244. **Read the reader of a file before you write a new shape into it.** One quick config edit (`allow_runs: true`) broke every
+    GPU claim for six minutes, because the claim reader expected the old shape. Find what reads the file, and test the new
+    shape against that reader before the write is live. A config edit is a change to every reader at once.
+
+245. **A "done" report is checked live, not taken on its own word.** The Director library reported "live" while the served
+    page still showed the old set. Before a lead posts done, fetch the live endpoint or open the live page and read it. Post
+    what the check showed, not what the report said.
+
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
   0, and deadlocks fell to 0.
