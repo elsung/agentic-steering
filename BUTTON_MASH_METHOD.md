@@ -1199,6 +1199,16 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     extensions off: the first quoted the north star, the second said none. Test on a new probe run, never on a live lead,
     so a check cannot disturb the work it is checking.
 
+237. **Read why a worker exited before you relaunch it with the same brief.** A watchdog relaunched four builders that had
+    each exited with no commits, every one with the same brief. The first one checked had a brief path that the job guard
+    refuses, so the relaunch would have failed the same way. A relaunch that repeats the brief repeats the exit. Read the
+    exit reason, fix the one input that caused it, then relaunch; if the reason is not found, say so instead of retrying.
+
+238. **When the fix lives where you cannot read it, cite the record that says it landed and mark the row unconfirmed.** A
+    round retrospective needed commit hashes for three runner fixes, and the runner's repository could not be read from
+    there. The rows cited the inbox lines that announced each fix, labelled the commit as not readable, and asked the lab
+    lead for the hashes. A row that names a commit you have not seen is a claim you cannot check.
+
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
   0, and deadlocks fell to 0.

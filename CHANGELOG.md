@@ -13,6 +13,13 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.54.0 (2026-10-25)
+
+**Minor: two lessons (237-238).** Read why a worker exited before relaunching it with the same brief: four builders
+relaunched unchanged exited the same way, and the first one checked had a path the job guard refuses. A retrospective
+row that cites a fix you cannot read cites the record that announced it and is marked unconfirmed until the commit is
+seen.
+
 ## 1.53.0 (2026-10-25)
 
 **Minor: two lessons (235-236).** A standing rule is checked for reach in the running agent's transcript, not in the file
