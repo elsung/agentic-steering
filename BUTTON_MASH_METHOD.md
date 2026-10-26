@@ -1188,6 +1188,17 @@ Loop numbers: since 2026-10-18 23:40: 515 merges (25.6/h), 310 land conflicts, 0
     module first, then point the caller at it, and check the caller imports against the engine it actually loads, not
     against a branch that has the module.
 
+235. **Check that a standing rule reached a running agent in its transcript, not in the file that carries it.** The north
+    star was written into a system-prompt file and a settings hook, and both looked finished. A running session reads its
+    system prompt only at start, and a prompt hook fires only on that session's next user prompt. So the file proved
+    nothing about reach. The reach came from the transcripts (a hook hit in each session that had prompted since the change),
+    and every session that had not prompted yet was listed as not reached, not as reached.
+
+236. **Each runtime reads its own hooks, so probe each one with a fresh session that shows the text back.** A Claude hook did
+    not reach an omp session, which reads no Claude hooks. The probe ran omp once with the extension loaded and once with
+    extensions off: the first quoted the north star, the second said none. Test on a new probe run, never on a live lead,
+    so a check cannot disturb the work it is checking.
+
 **Today's results (2026-10-20).**
 - A replay of real run histories through the scheduler simulator: GPU idle time with runnable work fell from 2.9 h to
   0, and deadlocks fell to 0.

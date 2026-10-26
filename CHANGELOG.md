@@ -13,6 +13,13 @@ Each entry names the real incident or owner note that taught it.
 dropping a source, a practice or a signal: the weekly fitness-function report detail, one repeated quote and three
 loose phrases went; every link, figure and starting-point verdict stayed.
 
+## 1.53.0 (2026-10-25)
+
+**Minor: two lessons (235-236).** A standing rule is checked for reach in the running agent's transcript, not in the file
+that carries it: a system prompt is read at start and a prompt hook fires on the next prompt, so the file alone proves
+nothing. Each runtime needs its own per-turn hook and its own probe; an omp session read no Claude hook, and the probe
+ran on a fresh session, never on a live lead.
+
 ## 1.52.0 (2026-10-25)
 
 **Minor: the north star comes first (owner #1480, renamed #1482).** A new section in the skill: every project has one
